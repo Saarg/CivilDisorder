@@ -6,7 +6,7 @@ using UnityEngine;
 namespace VehicleBehaviour {
     [RequireComponent(typeof(Rigidbody))]
     public class WheelVehicle : MonoBehaviour {
-
+        
         [Header("Inputs")]
         public PlayerNumber playerNumber = PlayerNumber.Player1;
         public string throttleInput = "Throttle";

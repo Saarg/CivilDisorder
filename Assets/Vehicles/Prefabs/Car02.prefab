@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 146014540103652148}
   - component: {fileID: 114507247422366396}
   - component: {fileID: 114660666600106808}
+  - component: {fileID: 114822347051870414}
   m_Layer: 10
   m_Name: FLWheel
   m_TagString: Untagged
@@ -102,6 +103,7 @@ GameObject:
   - component: {fileID: 146802126822764044}
   - component: {fileID: 114526905319013540}
   - component: {fileID: 114296079895394842}
+  - component: {fileID: 114783648448176536}
   m_Layer: 10
   m_Name: FRWheel
   m_TagString: Untagged
@@ -180,6 +182,7 @@ GameObject:
   - component: {fileID: 146793865263719070}
   - component: {fileID: 114341878329182152}
   - component: {fileID: 114326089816106746}
+  - component: {fileID: 114303260965533220}
   m_Layer: 10
   m_Name: BLWheel
   m_TagString: Untagged
@@ -404,6 +407,7 @@ GameObject:
   - component: {fileID: 146504509095465980}
   - component: {fileID: 114800290297643028}
   - component: {fileID: 114349392867792572}
+  - component: {fileID: 114649827415014558}
   m_Layer: 10
   m_Name: BRWheel
   m_TagString: Untagged
@@ -1602,6 +1606,26 @@ MonoBehaviour:
   _components:
   - {fileID: 146802126822764044}
   - {fileID: 114526905319013540}
+  - {fileID: 114783648448176536}
+--- !u!114 &114303260965533220
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1398208134900576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae437f48cab54a31b2c01d2e4d2ced7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  width: 0.15
+  decayTime: 60
+  material: {fileID: 2100000, guid: cf67cfc288c6d4eba9e67404b1952a43, type: 2}
+  roughness: 0
+  softSourceEnd: 1
+  trailing: 0
+  parent: {fileID: 4616151917948992}
+  offset: {x: 0, y: -0.15, z: 0}
 --- !u!114 &114324531732377096
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1628,6 +1652,7 @@ MonoBehaviour:
   _components:
   - {fileID: 146793865263719070}
   - {fileID: 114341878329182152}
+  - {fileID: 114303260965533220}
 --- !u!114 &114341878329182152
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1654,6 +1679,7 @@ MonoBehaviour:
   _components:
   - {fileID: 146504509095465980}
   - {fileID: 114800290297643028}
+  - {fileID: 114649827415014558}
 --- !u!114 &114356438414703964
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1736,6 +1762,15 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
+      value: 100
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 100
       value: 200
       inSlope: 0
       outSlope: 0
@@ -1889,6 +1924,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _guid: f506635f-33e3-4a1a-8187-a002da34e269
+--- !u!114 &114649827415014558
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1958784462827370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae437f48cab54a31b2c01d2e4d2ced7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  width: 0.15
+  decayTime: 60
+  material: {fileID: 2100000, guid: cf67cfc288c6d4eba9e67404b1952a43, type: 2}
+  roughness: 0
+  softSourceEnd: 1
+  trailing: 0
+  parent: {fileID: 4079527284605248}
+  offset: {x: 0, y: -0.15, z: 0}
 --- !u!114 &114656977063327466
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1927,6 +1981,7 @@ MonoBehaviour:
   _components:
   - {fileID: 146014540103652148}
   - {fileID: 114507247422366396}
+  - {fileID: 114822347051870414}
 --- !u!114 &114663076428335586
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1962,6 +2017,25 @@ MonoBehaviour:
   m_Script: {fileID: 1491221649, guid: 325c5b2a7434372429c2ca9d61dba58e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114783648448176536
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1268253799892292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae437f48cab54a31b2c01d2e4d2ced7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  width: 0.15
+  decayTime: 60
+  material: {fileID: 2100000, guid: cf67cfc288c6d4eba9e67404b1952a43, type: 2}
+  roughness: 0
+  softSourceEnd: 1
+  trailing: 0
+  parent: {fileID: 4799495039464946}
+  offset: {x: 0, y: -0.15, z: 0}
 --- !u!114 &114784223585173672
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1997,6 +2071,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _guid: 1438180484
+--- !u!114 &114822347051870414
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1019865406441478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae437f48cab54a31b2c01d2e4d2ced7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  width: 0.15
+  decayTime: 60
+  material: {fileID: 2100000, guid: cf67cfc288c6d4eba9e67404b1952a43, type: 2}
+  roughness: 0
+  softSourceEnd: 1
+  trailing: 0
+  parent: {fileID: 4978630911698712}
+  offset: {x: 0, y: -0.15, z: 0}
 --- !u!114 &114840261040018634
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2076,13 +2169,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 1.5
+    m_Stiffness: 2
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1.5
+    m_Stiffness: 2
   m_Enabled: 1
 --- !u!146 &146504509095465980
 WheelCollider:
@@ -2105,13 +2198,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 1.5
+    m_Stiffness: 2
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1.5
+    m_Stiffness: 2
   m_Enabled: 1
 --- !u!146 &146793865263719070
 WheelCollider:
@@ -2134,13 +2227,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 1.5
+    m_Stiffness: 2
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1.5
+    m_Stiffness: 2
   m_Enabled: 1
 --- !u!146 &146802126822764044
 WheelCollider:
@@ -2163,11 +2256,11 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 1.5
+    m_Stiffness: 2
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1.5
+    m_Stiffness: 2
   m_Enabled: 1
