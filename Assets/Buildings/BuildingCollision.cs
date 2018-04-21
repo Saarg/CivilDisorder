@@ -17,11 +17,6 @@ namespace Buildings {
 
 			colliders = new List<Collider>(GetComponents<Collider>());
 		}
-		
-		// Update is called once per frame
-		void Update () {
-			
-		}
 
 		void OnTriggerEnter(Collider col) {
 			if (triggetLager == (triggetLager | (1 << col.gameObject.layer))) {
@@ -35,6 +30,8 @@ namespace Buildings {
 
 					rb.isKinematic = false;
 				}
+
+				col.gameObject.SendMessageUpwards("AddScore", 5000f, SendMessageOptions.DontRequireReceiver);
 			}
 		}
 	}

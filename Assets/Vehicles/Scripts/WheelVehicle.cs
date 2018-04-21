@@ -12,7 +12,6 @@ namespace VehicleBehaviour {
         public string throttleInput = "Throttle";
         public string brakeInput = "Brake";
         public string turnInput = "Horizontal";
-        public string jumpInput = "Jump";
         public string resetInput = "Reset";
 
         [Header("Wheels")]
@@ -80,6 +79,9 @@ namespace VehicleBehaviour {
             {
                 transform.position = spawnPosition;
                 transform.rotation = spawnRotation;
+
+                _rb.velocity = Vector3.zero;
+                _rb.angularVelocity = Vector3.zero;
             }
 
 
