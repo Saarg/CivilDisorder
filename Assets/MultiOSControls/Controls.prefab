@@ -85,7 +85,7 @@ MonoBehaviour:
   locked: 0
   players:
   - name: Player1
-    controller: 4
+    controller: 0
     keyboard: 1
     inputs:
     - name: Horizontal
