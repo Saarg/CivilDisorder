@@ -120,6 +120,9 @@ GameObject:
   - component: {fileID: 114480634463563898}
   - component: {fileID: 54726730266023392}
   - component: {fileID: 114466540805545632}
+  - component: {fileID: 114844343462721302}
+  - component: {fileID: 114704326713349534}
+  - component: {fileID: 114270385828144558}
   m_Layer: 9
   m_Name: Car01
   m_TagString: Untagged
@@ -1577,6 +1580,27 @@ MonoBehaviour:
     - {fileID: 1740689809567536}
     - {fileID: 1043648440425546}
   _assetGuid: ee0bb8960b2b94c55ad6df393c84a17c
+--- !u!114 &114270385828144558
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1366243911189104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 3
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 500
+  m_InterpolateMovement: 1
 --- !u!114 &114293484777299700
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1757,7 +1781,6 @@ MonoBehaviour:
   throttleInput: Throttle
   brakeInput: Brake
   turnInput: Horizontal
-  jumpInput: Jump
   resetInput: Reset
   driveWheel:
   - {fileID: 146612621070234940}
@@ -1989,6 +2012,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _guid: 3158354614
+--- !u!114 &114704326713349534
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1366243911189104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 205
+    i1: 94
+    i2: 127
+    i3: 100
+    i4: 242
+    i5: 38
+    i6: 4
+    i7: 56
+    i8: 203
+    i9: 120
+    i10: 48
+    i11: 149
+    i12: 60
+    i13: 56
+    i14: 74
+    i15: 94
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
 --- !u!114 &114769408696468048
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2057,6 +2112,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _guid: b7f02553-dbde-4a9c-8f76-ea6804e56d9c
+--- !u!114 &114844343462721302
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1366243911189104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d699a03369d44e0e8e865ef6b2eba4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerNumber: 0
+  boostInput: Boost
+  score: 0
+  maxLife: 100
+  life: 100
+  maxBoost: 10
+  boost: 10
+  boostRegen: 0.2
+  boostForce: 10000
+  steamId: 0
 --- !u!114 &114876208903839134
 MonoBehaviour:
   m_ObjectHideFlags: 1

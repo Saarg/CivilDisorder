@@ -1,8 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
+using Steamworks;
+using UnityEngine.Networking.NetworkSystem;
 
-public class Player : MonoBehaviour {
+
+public class Player : NetworkBehaviour {
 
 	[Header("Inputs")]
 	[SerializeField] PlayerNumber playerNumber = PlayerNumber.Player1;
@@ -28,6 +32,28 @@ public class Player : MonoBehaviour {
 	new Rigidbody rigidbody;
 	PlayerUI ui;
 
+	[SyncVar]
+    [SerializeField] ulong steamId;
+
+    public override void OnStartServer()
+    {
+        base.OnStartServer();
+
+        StartCoroutine(SetNameWhenReady());
+    }
+
+    IEnumerator SetNameWhenReady()
+    {
+        // Wait for client to get authority, then retrieve the player's Steam ID
+        var id = GetComponent<NetworkIdentity>();
+        while (id.clientAuthorityOwner == null)
+        {
+            yield return null;
+        }
+
+        steamId = SteamNetworkManager.Instance.GetSteamIDForConnection(id.clientAuthorityOwner).m_SteamID;
+    }
+
 	void Start () {
 		rigidbody = GetComponent<Rigidbody>();
 
@@ -35,7 +61,8 @@ public class Player : MonoBehaviour {
 		boost = maxBoost;
 
 		ui = FindObjectOfType<PlayerUI>();
-		ui.SetPlayer(this);
+		if (ui != null)
+			ui.SetPlayer(this);
 	}
 
 	public void AddScore(float s) {
