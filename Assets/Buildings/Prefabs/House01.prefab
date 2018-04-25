@@ -3534,7 +3534,7 @@ MonoBehaviour:
     m_Bits: 512
 --- !u!114 &114091334657499476
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 11
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1544342978039486}
@@ -3636,7 +3636,7 @@ MonoBehaviour:
   _guid: 721b6851-7801-4b5a-a45c-89c3bb500986
 --- !u!114 &114181745617689542
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 11
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1544342978039486}
@@ -4168,6 +4168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canBetriggered: 0
   triggetLager:
     serializedVersion: 2
     m_Bits: 512

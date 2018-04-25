@@ -15,8 +15,13 @@ namespace Utils {
 		void Start () {
 			Player.onPlayerSpawn += OnPlayerSpawn;
 
-			GameManager.Instance.onStartGame += OnStartGame;
-			GameManager.Instance.onEndGame += OnEndGame;
+			GameManager.onStartGame += OnStartGame;
+			GameManager.onEndGame += OnEndGame;
+		}
+
+		void OnDestroy() {
+			GameManager.onStartGame -= OnStartGame;
+			GameManager.onEndGame -= OnEndGame;
 		}
 
 		void OnPlayerSpawn(Player p) {

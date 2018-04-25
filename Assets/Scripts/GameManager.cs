@@ -16,13 +16,13 @@ public class GameManager : NetworkBehaviour {
 
 	// Events
 	public delegate void OnStartCountDown();
-	public OnStartCountDown onStartCountDown;
+	public static OnStartCountDown onStartCountDown;
 
 	public delegate void OnStartGame();
-	public OnStartGame onStartGame;
+	public static OnStartGame onStartGame;
 
 	public delegate void OnEndGame();
-	public OnEndGame onEndGame;
+	public static OnEndGame onEndGame;
 
 	// States
 	public GameStates gameState { get; protected set; } = GameStates.Waiting;

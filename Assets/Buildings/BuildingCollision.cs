@@ -11,19 +11,15 @@ namespace Buildings {
 		List<Rigidbody> rigidbodies;
 		List<Collider> colliders;
 
-		GameManager gameManager;
-
 		// Use this for initialization
 		void Start () {
 			rigidbodies = new List<Rigidbody>(GetComponentsInChildren<Rigidbody>());
 
 			colliders = new List<Collider>(GetComponents<Collider>());
-
-			gameManager = GameManager.Instance;
 		}
 
 		void OnTriggerEnter(Collider col) {
-			if (gameManager.gameState == GameManager.GameStates.Game && triggetLager == (triggetLager | (1 << col.gameObject.layer))) {
+			if (GameManager.Instance != null && GameManager.Instance.gameState == GameManager.GameStates.Game && triggetLager == (triggetLager | (1 << col.gameObject.layer))) {
 				foreach(Collider c in colliders) {
 					c.enabled = false;
 				}

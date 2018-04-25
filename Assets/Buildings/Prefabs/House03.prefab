@@ -3461,7 +3461,7 @@ MonoBehaviour:
   _guid: 0bcd30e8-12f3-4090-8a8a-3585f8f6522c
 --- !u!114 &114415070827791086
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 11
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1570524956553398}
@@ -3651,6 +3651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canBetriggered: 0
   triggetLager:
     serializedVersion: 2
     m_Bits: 512
@@ -3691,6 +3692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canBetriggered: 0
   triggetLager:
     serializedVersion: 2
     m_Bits: 512
@@ -3800,7 +3802,7 @@ MonoBehaviour:
   _guid: fb258c55-4013-43eb-94dc-05a68baca136
 --- !u!114 &114701208528460154
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 11
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1570524956553398}
@@ -3835,6 +3837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canBetriggered: 0
   triggetLager:
     serializedVersion: 2
     m_Bits: 512
@@ -3901,6 +3904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canBetriggered: 0
   triggetLager:
     serializedVersion: 2
     m_Bits: 512
