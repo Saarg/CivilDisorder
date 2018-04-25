@@ -274,6 +274,9 @@ GameObject:
   - component: {fileID: 114151479863760868}
   - component: {fileID: 54013180283023842}
   - component: {fileID: 114415631047791334}
+  - component: {fileID: 114405640822027916}
+  - component: {fileID: 114424393643937346}
+  - component: {fileID: 114289216828250102}
   m_Layer: 9
   m_Name: Car02
   m_TagString: Untagged
@@ -1592,6 +1595,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _guid: a33319cc-2cc6-47fd-bd93-09cb4937c679
+--- !u!114 &114289216828250102
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1637335803908784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d699a03369d44e0e8e865ef6b2eba4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerNumber: 0
+  boostInput: Boost
+  score: 0
+  maxLife: 90
+  life: 90
+  maxBoost: 8
+  boost: 8
+  boostRegen: 0.2
+  boostForce: 10000
+  steamId: 0
 --- !u!114 &114296079895394842
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1710,6 +1734,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _guid: 1438180484
+--- !u!114 &114405640822027916
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1637335803908784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 175
+    i1: 56
+    i2: 76
+    i3: 165
+    i4: 155
+    i5: 15
+    i6: 36
+    i7: 72
+    i8: 59
+    i9: 1
+    i10: 99
+    i11: 242
+    i12: 174
+    i13: 25
+    i14: 254
+    i15: 16
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
 --- !u!114 &114405794508850460
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1749,7 +1805,6 @@ MonoBehaviour:
   throttleInput: Throttle
   brakeInput: Brake
   turnInput: Horizontal
-  jumpInput: Jump
   resetInput: Reset
   driveWheel:
   - {fileID: 146793865263719070}
@@ -1798,6 +1853,27 @@ MonoBehaviour:
   handbreak: 0
   speed: 0
   gasParticle: {fileID: 0}
+--- !u!114 &114424393643937346
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1637335803908784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 3
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 500
+  m_InterpolateMovement: 1
 --- !u!114 &114507247422366396
 MonoBehaviour:
   m_ObjectHideFlags: 1

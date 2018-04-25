@@ -52,10 +52,15 @@ public class GameManager : NetworkBehaviour {
 		}
 	}
 
-
 	// Settings
-	[Header("Settings")]
+	[Header("Lobby settings")]
+	[SerializeField] GameObject lobbyHolder;
+	[SerializeField] Lobby lobbyPlayer;
+	List<Lobby> lobbyPlayers = new List<Lobby>();
+
 	[SerializeField] int minPlayers;
+
+	[Header("Game settings")]
 	List<Player> players = new List<Player>();
 
 	[SerializeField] int countDownTime;
@@ -86,6 +91,20 @@ public class GameManager : NetworkBehaviour {
 	void Start() {
 		WaitingEnter();
 	}
+
+	public override void OnStartServer() {
+		NetworkServer.RegisterHandler(MsgType.Connect, OnPlayerConnect);
+	}
+
+	public override void OnStartAuthority() {
+		if (isClient && isServer) {
+			SpawnLobbyPlayer(connectionToClient);
+		}
+	}
+
+	public override void OnStartClient() {
+		lobbyPlayers.AddRange(GameObject.FindObjectsOfType<Lobby>());
+	}
 	
 	void Update () {
 		switch (this.gameState) {
@@ -98,6 +117,43 @@ public class GameManager : NetworkBehaviour {
 			case GameStates.Game:
 				GameUpdate();	
 				break;
+		}
+	}
+
+	void OnPlayerConnect(NetworkMessage netMsg) {
+		if (gameState == GameStates.Waiting) {
+			StartCoroutine(SpawnLobbyPlayerWhenReady(netMsg.conn));
+		}
+	}
+
+	IEnumerator SpawnLobbyPlayerWhenReady(NetworkConnection conn) {
+		while(!conn.isReady) {			
+			yield return new WaitForSeconds(0.1f);
+		}
+					
+		SpawnLobbyPlayer(conn);
+	}
+
+	void SpawnLobbyPlayer(NetworkConnection conn) {
+		GameObject lobbyPlayerGO = GameObject.Instantiate(lobbyPlayer.gameObject);
+
+		NetworkServer.SpawnWithClientAuthority(lobbyPlayerGO, conn);
+
+		RpcAddLobbyPlayer(lobbyPlayerGO);
+	}
+
+	[ClientRpc]
+	void RpcAddLobbyPlayer(GameObject l) {
+		lobbyPlayers.Add(l.GetComponent<Lobby>());
+	}
+	
+	void UpdatePositionPlayerUI() {
+		for(int i = 0; i < lobbyPlayers.Count; i++) {
+			RectTransform t = lobbyPlayers[i].transform as RectTransform;
+
+			t.SetParent(lobbyHolder.transform);
+			t.anchoredPosition = new Vector2(-(lobbyPlayers.Count * 300)/2 + (i * 300) + 150, 0);
+			t.localScale = Vector3.one;
 		}
 	}
 
@@ -124,6 +180,8 @@ public class GameManager : NetworkBehaviour {
 	}
 
 	void WaitingUpdate() {
+		UpdatePositionPlayerUI();
+
 		if (players.Count >= minPlayers) {
 			NextState();
 		}

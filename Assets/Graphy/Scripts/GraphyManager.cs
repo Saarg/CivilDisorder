@@ -318,6 +318,7 @@ namespace Tayx.Graphy
         void Start()
         {
             Init();
+            ToggleActive();
         }
 
         void Update()

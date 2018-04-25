@@ -2126,10 +2126,10 @@ MonoBehaviour:
   playerNumber: 0
   boostInput: Boost
   score: 0
-  maxLife: 100
-  life: 100
-  maxBoost: 10
-  boost: 10
+  maxLife: 120
+  life: 120
+  maxBoost: 12
+  boost: 12
   boostRegen: 0.2
   boostForce: 10000
   steamId: 0
