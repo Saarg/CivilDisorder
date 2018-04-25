@@ -6,20 +6,24 @@ namespace Buildings {
 	[RequireComponent(typeof(Collider))]
 	public class BuildingCollision : MonoBehaviour {
 
+		[SerializeField] bool canBetriggered = false;
 		[SerializeField] LayerMask triggetLager;
 		List<Rigidbody> rigidbodies;
 		List<Collider> colliders;
 
+		GameManager gameManager;
+
 		// Use this for initialization
 		void Start () {
-			int childCount = transform.childCount;
 			rigidbodies = new List<Rigidbody>(GetComponentsInChildren<Rigidbody>());
 
 			colliders = new List<Collider>(GetComponents<Collider>());
+
+			gameManager = GameManager.Instance;
 		}
 
 		void OnTriggerEnter(Collider col) {
-			if (triggetLager == (triggetLager | (1 << col.gameObject.layer))) {
+			if (gameManager.gameState == GameManager.GameStates.Game && triggetLager == (triggetLager | (1 << col.gameObject.layer))) {
 				foreach(Collider c in colliders) {
 					c.enabled = false;
 				}

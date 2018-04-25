@@ -397,11 +397,14 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4377442719986746}
+  - component: {fileID: 114586968056507366}
+  - component: {fileID: 114827004126602336}
   - component: {fileID: 114415070827791086}
   - component: {fileID: 114701208528460154}
   - component: {fileID: 65265110449725424}
   - component: {fileID: 65891610902635744}
   - component: {fileID: 114712824059353378}
+  - component: {fileID: 114564235028363758}
   m_Layer: 11
   m_Name: House03
   m_TagString: Untagged
@@ -3637,6 +3640,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _guid: 9987016a-0f52-4d81-802e-51064ed68d9e
+--- !u!114 &114564235028363758
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1570524956553398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggetLager:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!114 &114573171428918202
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3663,6 +3680,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _guid: 630c83c7-75bb-4a9a-9a8a-1c04b9cd6f56
+--- !u!114 &114586968056507366
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1570524956553398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggetLager:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!114 &114590390196830090
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3859,6 +3890,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _guid: e8963ecf-ebcd-4f2e-bdd7-a118da67317d
+--- !u!114 &114827004126602336
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1570524956553398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggetLager:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!114 &114833574519554228
 MonoBehaviour:
   m_ObjectHideFlags: 1

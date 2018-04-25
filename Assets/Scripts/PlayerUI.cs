@@ -9,20 +9,28 @@ public class PlayerUI : MonoBehaviour {
 	[SerializeField] Player player;
 	WheelVehicle vehicle;
 	
-	public void SetPlayer(Player p) { player = p; vehicle = p.GetComponent<WheelVehicle>(); }
+	public void SetPlayer(Player p) { 
+		player = p;
+		if (p != null)
+			vehicle = p.GetComponent<WheelVehicle>(); 
+		
+		if (player != null && vehicle != null) playerUI.gameObject.SetActive(true);
+		else playerUI.gameObject.SetActive(true);
+	}
 	public Player GetPlayer() { return player; }
 	public WheelVehicle GetPlayerVehicle() { return vehicle; }
+
+	[SerializeField] GameObject playerUI;	
 
 	[SerializeField] Text scoreText;
 	[SerializeField] Image lifeBar;
 	[SerializeField] Image boostBar;
 	[SerializeField] RectTransform speedo;
-
-	void Start () {
-		
-	}
 	
 	void Update () {
+		if (player == null || vehicle == null)
+			return;
+
 		scoreText.text = "Score: " + Mathf.FloorToInt(player.Score);
 		scoreText.transform.localScale = Vector3.Lerp(scoreText.transform.localScale, Vector3.one + Vector3.one * (player.Score / 200000), Time.deltaTime);
 

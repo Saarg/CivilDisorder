@@ -479,8 +479,6 @@ public class SteamNetworkManager : MonoBehaviour
         Debug.Log("Connected to UNET server.");
         myClient.UnregisterHandler(MsgType.Connect);
 
-        myClient.RegisterHandler(MsgType.Ready, OnReady);
-
         RegisterNetworkPrefabs();
 
         var conn = myClient.connection;
@@ -491,9 +489,5 @@ public class SteamNetworkManager : MonoBehaviour
             myClient.Send(NetworkMessages.SpawnRequestMsg, new StringMessage(SteamUser.GetSteamID().m_SteamID.ToString()));
         }
 
-    }
-
-    void OnReady(NetworkMessage msg) {
-        Debug.Log("Ready");
     }
 }

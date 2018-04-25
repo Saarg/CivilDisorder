@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Utils {
 	public class CameraFollow : MonoBehaviour {
-
+		[SerializeField] bool follow = false;
 		[SerializeField] Transform target;
 		[SerializeField] Vector3 offset;
 		[Range(0, 10)]
@@ -12,17 +12,30 @@ namespace Utils {
 		[Range(0, 10)]		
 		[SerializeField] float lerpRotationMultiplier = 1f;
 
-		// Use this for initialization
 		void Start () {
-			
+			Player.onPlayerSpawn += OnPlayerSpawn;
+
+			GameManager.Instance.onStartGame += OnStartGame;
+			GameManager.Instance.onEndGame += OnEndGame;
 		}
-		
-		// Update is called once per frame
-		void Update () {
-			
+
+		void OnPlayerSpawn(Player p) {
+			if (p.hasAuthority) {
+				target = p.transform;
+			}
+		}
+
+		void OnStartGame() {
+			follow = true;
+		}
+
+		void OnEndGame() {
+			follow = false;			
 		}
 
 		void LateUpdate() {
+			if (!follow) return;
+
 			Quaternion curRot = transform.rotation;
 
 			Rigidbody rb = target.GetComponent<Rigidbody>();

@@ -6,7 +6,15 @@ using Steamworks;
 using UnityEngine.Networking.NetworkSystem;
 
 
+[RequireComponent(typeof(VehicleBehaviour.WheelVehicle))]
+
 public class Player : NetworkBehaviour {
+
+	public delegate void OnPlayerSpawn(Player p);
+	public static OnPlayerSpawn onPlayerSpawn;
+
+	public delegate void OnPlayerDestroy(Player p);
+	public static OnPlayerDestroy onPlayerDestroy;
 
 	[Header("Inputs")]
 	[SerializeField] PlayerNumber playerNumber = PlayerNumber.Player1;
@@ -30,6 +38,8 @@ public class Player : NetworkBehaviour {
 	public float BoostForce { get { return boostForce; } }
 
 	new Rigidbody rigidbody;
+
+	GameManager gameManager;
 	PlayerUI ui;
 
 	[SyncVar]
@@ -39,7 +49,8 @@ public class Player : NetworkBehaviour {
     {
         base.OnStartServer();
 
-        StartCoroutine(SetNameWhenReady());
+		if (SteamNetworkManager.Instance != null)
+        	StartCoroutine(SetNameWhenReady());
     }
 
     IEnumerator SetNameWhenReady()
@@ -63,13 +74,27 @@ public class Player : NetworkBehaviour {
 		ui = FindObjectOfType<PlayerUI>();
 		if (ui != null)
 			ui.SetPlayer(this);
+
+		if (onPlayerSpawn != null)
+			onPlayerSpawn.Invoke(this);
+		
+		gameManager = GameManager.Instance;
+	}
+
+	void OnDestroy() {
+		if (onPlayerDestroy != null)
+			onPlayerDestroy.Invoke(this);		
 	}
 
 	public void AddScore(float s) {
+		if (gameManager.gameState != GameManager.GameStates.Game) return;
+
 		score += s;
 	}
 
 	public void AddScore(Collision c) {
+		if (gameManager.gameState != GameManager.GameStates.Game) return;		
+
 		score += c.relativeVelocity.sqrMagnitude;
 	}
 	
