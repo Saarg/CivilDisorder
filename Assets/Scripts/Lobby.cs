@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Steamworks;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
+using UnityEngine.Networking.NetworkSystem;
 using VehicleBehaviour;
 
 public class Lobby : NetworkBehaviour {
 
-	[SerializeField] InputField pseudoInput;
+	[SerializeField] Text pseudoText;
 	[SerializeField] Button nextCarButton;
 	[SerializeField] Button previousCarButton;
 	[SerializeField] Image carPreview;
@@ -28,9 +30,31 @@ public class Lobby : NetworkBehaviour {
 
 	public bool isReady { get; protected set; } = false;
 
+	[SyncVar]
+    [SerializeField] ulong steamId;
+
 	public override void OnStartServer() {
 		GameManager.onStartCountDown += SpawnPlayer;
-	}
+
+		if (SteamNetworkManager.Instance != null) {
+        	StartCoroutine(SetNameWhenReady());
+		} else {
+            name = "Player " + playerControllerId;
+            pseudoText.text = name;
+		}
+    }
+
+    IEnumerator SetNameWhenReady()
+    {
+        // Wait for client to get authority, then retrieve the player's Steam ID
+        var id = GetComponent<NetworkIdentity>();
+        while (id.clientAuthorityOwner == null)
+        {
+            yield return null;
+        }
+
+        steamId = SteamNetworkManager.Instance.GetSteamIDForConnection(id.clientAuthorityOwner).m_SteamID;
+    }
 
 	public override void OnStartClient() {
 		readyButton.gameObject.SetActive(false);
@@ -40,19 +64,37 @@ public class Lobby : NetworkBehaviour {
 	}
 
 	public override void OnStartAuthority() {
-		nextCarButton.onClick.AddListener(CmdNextCar);
-		previousCarButton.onClick.AddListener(CmdPreviousCar);
+		nextCarButton.onClick.AddListener(NextCar);
+		previousCarButton.onClick.AddListener(PreviousCar);
 
-		readyButton.onClick.AddListener(CmdReady);
-		notReadyButton.onClick.AddListener(CmdNotReady);
+		readyButton.onClick.AddListener(Ready);
+		notReadyButton.onClick.AddListener(NotReady);
 
 		readyButton.gameObject.SetActive(true);
 		notReadyButton.gameObject.SetActive(false);
 	}
 
+	void Update() {
+		if (SteamNetworkManager.Instance != null) {
+			name = SteamFriends.GetFriendPersonaName(new CSteamID(steamId));
+            pseudoText.text = name;
+		} else {
+            name = "Player " + playerControllerId;
+            pseudoText.text = name;
+		}
+	}
+
+	void NextCar() {
+		CmdNextCar();
+	}
+
 	[Command]
 	void CmdNextCar() {
 		curVehicle = (curVehicle + 1) % vehicles.Count;
+	}
+
+	void PreviousCar() {
+		CmdPreviousCar();
 	}
 
 	[Command]
@@ -73,8 +115,13 @@ public class Lobby : NetworkBehaviour {
 		weightBar.fillAmount = rb.mass / 3000f;
 	}
 
+	void Ready() {
+		CmdReady();
+	}
+
 	[Command]
 	void CmdReady() {
+		Debug.Log("CmdReady");
 		isReady = true;
 
 		RpcReady();
@@ -88,6 +135,10 @@ public class Lobby : NetworkBehaviour {
 		} else {
 			// feedback other player is ready
 		}
+	}
+
+	void NotReady() {
+		CmdNotReady();
 	}
 
 	[Command]
