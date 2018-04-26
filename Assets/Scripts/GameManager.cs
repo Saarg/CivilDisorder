@@ -58,7 +58,8 @@ public class GameManager : NetworkBehaviour {
 	[SerializeField] Lobby lobbyPlayer;
 	List<Lobby> lobbyPlayers = new List<Lobby>();
 
-	[SerializeField] int minPlayers;
+	[SerializeField] int minPlayers = 2;
+	[SerializeField] int maxPlayers = 4;
 
 	[Header("Game settings")]
 	List<Player> players = new List<Player>();
@@ -74,6 +75,7 @@ public class GameManager : NetworkBehaviour {
 	[Header("UI")]
 	[SerializeField] Canvas countDownCanvas;
 	[SerializeField] Text countDownText;
+	[SerializeField] Text playerCountText;
 
 	void Awake () {
 		if (instance != null) {
@@ -121,8 +123,10 @@ public class GameManager : NetworkBehaviour {
 	}
 
 	void OnPlayerConnect(NetworkMessage netMsg) {
-		if (gameState == GameStates.Waiting) {
+		if (gameState == GameStates.Waiting && lobbyPlayers.Count < maxPlayers) {
 			StartCoroutine(SpawnLobbyPlayerWhenReady(netMsg.conn));
+		} else {
+			// Spawn as spec
 		}
 	}
 
@@ -137,7 +141,7 @@ public class GameManager : NetworkBehaviour {
 	void SpawnLobbyPlayer(NetworkConnection conn) {
 		GameObject lobbyPlayerGO = GameObject.Instantiate(lobbyPlayer.gameObject);
 
-		NetworkServer.SpawnWithClientAuthority(lobbyPlayerGO, conn);
+		NetworkServer.AddPlayerForConnection(conn, lobbyPlayerGO, (short) lobbyPlayers.Count);
 
 		RpcAddLobbyPlayer(lobbyPlayerGO);
 	}
@@ -176,18 +180,26 @@ public class GameManager : NetworkBehaviour {
 
 	// Waiting state
 	void WaitingEnter() {
-
+		lobbyHolder.SetActive(true);
 	}
 
 	void WaitingUpdate() {
 		UpdatePositionPlayerUI();
 
-		if (players.Count >= minPlayers) {
+		playerCountText.text = lobbyPlayers.Count.ToString() + "/" + maxPlayers.ToString();
+
+		bool allReady = true;
+		lobbyPlayers.ForEach((Lobby l) => {
+			if (!l.isReady)
+				allReady = false;
+		});
+
+		if (allReady && lobbyPlayers.Count >= minPlayers) {
 			NextState();
 		}
 	}
 	void WaitingExit() {
-
+		lobbyHolder.SetActive(false);			
 	}
 
 	// CountDown state

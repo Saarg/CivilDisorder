@@ -3238,11 +3238,13 @@ MonoBehaviour:
   lobbyHolder: {fileID: 1191777102}
   lobbyPlayer: {fileID: 114406943834554118, guid: e9422efc17cd64f2d9d5142a08b48fa1,
     type: 2}
-  minPlayers: 2
+  minPlayers: 1
+  maxPlayers: 4
   countDownTime: 3
   gameTime: 300
   countDownCanvas: {fileID: 788303460}
   countDownText: {fileID: 586123722}
+  playerCountText: {fileID: 175214197}
 --- !u!114 &190603988
 MonoBehaviour:
   m_ObjectHideFlags: 0

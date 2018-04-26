@@ -1777,6 +1777,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c241727a8fc83048b56bdd0b450f8fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  preview: {fileID: 21300000, guid: 2a5e45cd106e14aefb01e98f9ea52792, type: 3}
   playerNumber: 0
   throttleInput: Throttle
   brakeInput: Brake

@@ -65,6 +65,8 @@ public class Lobby : NetworkBehaviour {
 		Player p = vehicles[curVehicle].GetComponent<Player>();
 		Rigidbody rb = vehicles[curVehicle].GetComponent<Rigidbody>();
 
+		carPreview.sprite = v.preview;
+
 		lifeBar.fillAmount = p.MaxLife / 200f;
 		speedBar.fillAmount = 0.5f;
 		boostBar.fillAmount = p.MaxBoost / 20f;
@@ -110,8 +112,6 @@ public class Lobby : NetworkBehaviour {
 			return;
 		
 		GameObject player = GameObject.Instantiate(vehicles[curVehicle].gameObject);
-		NetworkServer.SpawnWithClientAuthority(player, gameObject);
-
-		NetworkServer.Destroy(gameObject);
+		NetworkServer.ReplacePlayerForConnection(connectionToClient, player, playerControllerId);
 	}
 }

@@ -6,6 +6,8 @@ using UnityEngine;
 namespace VehicleBehaviour {
     [RequireComponent(typeof(Rigidbody))]
     public class WheelVehicle : MonoBehaviour {
+
+        [SerializeField] public Sprite preview;
         
         [Header("Inputs")]
         public PlayerNumber playerNumber = PlayerNumber.Player1;
