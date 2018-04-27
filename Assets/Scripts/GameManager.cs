@@ -76,6 +76,8 @@ public class GameManager : NetworkBehaviour {
 	[SerializeField] Canvas countDownCanvas;
 	[SerializeField] Text countDownText;
 	[SerializeField] Text playerCountText;
+	[SerializeField] Slider maxPlayerSlider;
+	[SerializeField] Text maxPlayerText;	
 
 	void Awake () {
 		if (instance != null) {
@@ -88,6 +90,11 @@ public class GameManager : NetworkBehaviour {
 
 		Player.onPlayerSpawn += OnAddPlayer;
 		Player.onPlayerDestroy += OnRemovePlayer;
+
+		maxPlayerSlider.onValueChanged.AddListener((float v) => {
+			maxPlayers = Mathf.FloorToInt(v);
+			maxPlayerText.text = maxPlayers.ToString() + " Player game";
+		});
 	}
 
 	void Start() {

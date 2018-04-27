@@ -69,6 +69,8 @@ public class UNETServerController {
         NetworkServer.dontListen = true;
         NetworkServer.Listen(0);
 
+        NetworkServer.SpawnObjects();
+
         // Create a local client-to-server connection to the "server"
         // Connect to localhost to trick UNET's ConnectState state to "Connected", which allows data to pass through TransportSend
         myClient = ClientScene.ConnectLocalServer();
@@ -84,10 +86,8 @@ public class UNETServerController {
         // register networked prefabs
         SteamNetworkManager.Instance.RegisterNetworkPrefabs();
 
-
-        // Spawn self
         ClientScene.Ready(serverToClientConn);
-        // spawn self
+        /* Spawn self
         if (SpawnPlayer(serverToClientConn))
         {
             Debug.Log("Spawned player");
@@ -95,7 +95,7 @@ public class UNETServerController {
         } else {
             Debug.Log("Failed to spawn player");
             return;
-        }
+        }*/
 
         if (inviteFriendOnStart)
         {

@@ -121,7 +121,6 @@ public class Lobby : NetworkBehaviour {
 
 	[Command]
 	void CmdReady() {
-		Debug.Log("CmdReady");
 		isReady = true;
 
 		RpcReady();
