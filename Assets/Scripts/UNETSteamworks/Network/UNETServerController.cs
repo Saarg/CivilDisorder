@@ -8,10 +8,6 @@ using UnityEngine.Networking.NetworkSystem;
 [System.Serializable]
 public class UNETServerController {
 
-    // inspector vars
-    public string autoInviteSteamId;  // Set this in the Inspector to automatically invite a Steam user - good for testing in Editor
-    public GameObject playerPrefab;
-
     // UNET vars
     private List<NetworkConnection> connectedClients = new List<NetworkConnection>();
 
@@ -86,16 +82,17 @@ public class UNETServerController {
         // register networked prefabs
         SteamNetworkManager.Instance.RegisterNetworkPrefabs();
 
+        // Spawn self
         ClientScene.Ready(serverToClientConn);
-        /* Spawn self
-        if (SpawnPlayer(serverToClientConn))
-        {
-            Debug.Log("Spawned player");
-            return;
-        } else {
-            Debug.Log("Failed to spawn player");
-            return;
-        }*/
+
+        // Hack trick to find and respawn NetworkIdentity objects to enable rpc
+        NetworkIdentity[] objectsToSpawn = GameObject.FindObjectsOfType<NetworkIdentity>();
+        foreach (NetworkIdentity uv in objectsToSpawn) {
+            NetworkServer.UnSpawn(uv.gameObject);
+            NetworkServer.Spawn(uv.gameObject);
+        }
+
+        NetworkServer.SetClientReady(serverToClientConn);
 
         if (inviteFriendOnStart)
         {
@@ -120,24 +117,8 @@ public class UNETServerController {
 
     public void InviteFriendsToLobby()
     {
-        if (!string.IsNullOrEmpty(autoInviteSteamId.Trim()))
-        {
-            Debug.Log("Sending invite");
-            SteamFriends.InviteUserToGame(new CSteamID(ulong.Parse(autoInviteSteamId)), "+connect_lobby " + SteamLobbyID.m_SteamID.ToString());
-        }
-        else
-        {
-            Debug.Log("Showing invite friend dialog");
-            SteamFriends.ActivateGameOverlayInviteDialog(SteamLobbyID);
-        }
-    }
-
-    bool SpawnPlayer(NetworkConnection conn)
-    {
-        NetworkServer.SetClientReady(conn);
-        var player = GameObject.Instantiate(playerPrefab);
-
-        return NetworkServer.SpawnWithClientAuthority(player, conn);
+        Debug.Log("Showing invite friend dialog");
+        SteamFriends.ActivateGameOverlayInviteDialog(SteamLobbyID);
     }
 
     void DestroyPlayer(NetworkConnection conn)
@@ -173,15 +154,7 @@ public class UNETServerController {
 
                 if (conn != null)
                 {
-                    // spawn peer
-                    if (SpawnPlayer(conn))
-                    {
-                        Debug.Log("Spawned player");
-                        return;
-                    } else {
-                        Debug.Log("Failed to spawn player");
-                        return;
-                    }
+                    NetworkServer.SetClientReady(conn);
                 }
             }
         }

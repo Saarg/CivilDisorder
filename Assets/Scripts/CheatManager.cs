@@ -7,8 +7,10 @@ public class CheatManager : MonoBehaviour {
 	[SerializeField] GameObject graphy;
 	
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.LeftControl)) {
-			
+		if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftAlt)) {
+			if (Input.GetKeyDown(KeyCode.N)) {
+				GameManager.Instance.NextState();
+			}
 		}
 	}
 }

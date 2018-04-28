@@ -3312,8 +3312,8 @@ MonoBehaviour:
   lobbyHolder: {fileID: 1191777102}
   lobbyPlayer: {fileID: 114406943834554118, guid: e9422efc17cd64f2d9d5142a08b48fa1,
     type: 2}
-  minPlayers: 1
-  maxPlayers: 2
+  minPlayers: 2
+  maxPlayers: 4
   countDownTime: 3
   gameTime: 300
   countDownCanvas: {fileID: 788303460}
@@ -36493,9 +36493,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UNETServerController:
-    autoInviteSteamId: 
-    playerPrefab: {fileID: 1366243911189104, guid: cd5e7f64f2260438cb7830953c384a5e,
-      type: 2}
     inviteFriendOnStart: 0
   networkPrefabs:
   - {fileID: 1366243911189104, guid: cd5e7f64f2260438cb7830953c384a5e, type: 2}
@@ -39622,6 +39619,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1428863716}
   - component: {fileID: 1428863717}
+  - component: {fileID: 1428863718}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -39659,6 +39657,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unetmanager: {fileID: 1206431162}
   steamnetmanager: {fileID: 1273866415}
+--- !u!114 &1428863718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1428863715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06c70b28745ec49c28635628bf2dfcff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  graphy: {fileID: 940874116}
 --- !u!1 &1440254712
 GameObject:
   m_ObjectHideFlags: 0
@@ -60700,7 +60710,6 @@ GameObject:
   - component: {fileID: 2091506117}
   - component: {fileID: 2091506116}
   - component: {fileID: 2091506115}
-  - component: {fileID: 2091506119}
   - component: {fileID: 2091506120}
   m_Layer: 5
   m_Name: UI
@@ -60790,18 +60799,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &2091506119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2091506114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06c70b28745ec49c28635628bf2dfcff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  graphy: {fileID: 940874116}
 --- !u!114 &2091506120
 MonoBehaviour:
   m_ObjectHideFlags: 0

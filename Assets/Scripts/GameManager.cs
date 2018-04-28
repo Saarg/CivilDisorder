@@ -27,7 +27,7 @@ public class GameManager : NetworkBehaviour {
 	// States
 	public GameStates gameState { get; protected set; } = GameStates.Waiting;
 
-	void NextState() {
+	public void NextState() {
 		if (isServer)
 			RpcNextState();
 	}
@@ -105,12 +105,6 @@ public class GameManager : NetworkBehaviour {
 		NetworkServer.RegisterHandler(MsgType.Connect, OnPlayerConnect);
 	}
 
-	public override void OnStartAuthority() {
-		if (isClient && isServer) {
-			SpawnLobbyPlayer(connectionToClient);
-		}
-	}
-
 	public override void OnStartClient() {
 		lobbyPlayers.AddRange(GameObject.FindObjectsOfType<Lobby>());
 	}
@@ -149,12 +143,13 @@ public class GameManager : NetworkBehaviour {
 		GameObject lobbyPlayerGO = GameObject.Instantiate(lobbyPlayer.gameObject);
 
 		NetworkServer.AddPlayerForConnection(conn, lobbyPlayerGO, (short) lobbyPlayers.Count);
+		// NetworkServer.SpawnWithClientAuthority(lobbyPlayerGO, conn);
 
 		RpcAddLobbyPlayer(lobbyPlayerGO);
 	}
 
 	[ClientRpc]
-	void RpcAddLobbyPlayer(GameObject l) {
+	void RpcAddLobbyPlayer(GameObject l) {	
 		lobbyPlayers.Add(l.GetComponent<Lobby>());
 	}
 	

@@ -11,7 +11,7 @@ using Steamworks;
 public class SteamNetworkManager : MonoBehaviour
 {
     public const int MAX_USERS = 4;
-    public const string GAME_ID = "CivilDisorder_TestMatch"; // Unique identifier for matchmaking so we don't match up with other Spacewar games
+    public const string GAME_ID = "CivilDisorder_FFA"; // Unique identifier for matchmaking so we don't match up with other Spacewar games
 
     public enum SessionConnectionState
     {
@@ -37,7 +37,7 @@ public class SteamNetworkManager : MonoBehaviour
     public SessionConnectionState lobbyConnectionState {get; private set;}
 	[HideInInspector]
     public CSteamID steamLobbyId;
-    
+
     // callbacks
     private Callback<LobbyEnter_t> m_LobbyEntered;
     private Callback<GameLobbyJoinRequested_t> m_GameLobbyJoinRequested;
@@ -318,20 +318,16 @@ public class SteamNetworkManager : MonoBehaviour
 
         UNETServerController.inviteFriendOnStart = true;
         lobbyConnectionState = SessionConnectionState.CONNECTING;
-        SteamMatchmaking.CreateLobby(ELobbyType.k_ELobbyTypeFriendsOnly, MAX_USERS);
+        SteamMatchmaking.CreateLobby(ELobbyType.k_ELobbyTypePrivate, MAX_USERS);
         // ...continued in OnLobbyEntered callback
     }
 
     public void CreateLobby()
     {
-        if (!SteamManager.Initialized) {
-            lobbyConnectionState = SessionConnectionState.FAILED;
-            return;
-        }
+        Debug.Log("Creating lobby"); 
 
         UNETServerController.inviteFriendOnStart = false;
-        lobbyConnectionState = SessionConnectionState.CONNECTING;
-        SteamMatchmaking.CreateLobby(ELobbyType.k_ELobbyTypeFriendsOnly, MAX_USERS);
+        SteamMatchmaking.CreateLobby(ELobbyType.k_ELobbyTypePublic, MAX_USERS);
         // ...continued in OnLobbyEntered callback
     }
 
@@ -356,19 +352,13 @@ public class SteamNetworkManager : MonoBehaviour
 
         if (numLobbies <= 0)
         {
-            // no lobbies found. create one
-            Debug.Log("Creating lobby");
-
-            UNETServerController.inviteFriendOnStart = false;
-            SteamMatchmaking.CreateLobby(ELobbyType.k_ELobbyTypePublic, MAX_USERS);
-            // ...continued in OnLobbyEntered callback
+            CreateLobby();
         }
         else
         {
             // If multiple lobbies are returned we can iterate over them with SteamMatchmaking.GetLobbyByIndex and choose the "best" one
             // In this case we are just joining the first one
-            Debug.Log("Joining lobby");           
-
+            Debug.Log("Joining lobby");
             var lobby = SteamMatchmaking.GetLobbyByIndex(0);
             JoinLobby(lobby);
         }
@@ -380,7 +370,6 @@ public class SteamNetworkManager : MonoBehaviour
     {
         if (!SteamManager.Initialized) {
             lobbyConnectionState = SessionConnectionState.FAILED;
-            Debug.Log("Failed to connect to Lobby");            
             return;
         }
 
@@ -391,7 +380,7 @@ public class SteamNetworkManager : MonoBehaviour
 
         var hostUserId = SteamMatchmaking.GetLobbyOwner(steamLobbyId);
         var me = SteamUser.GetSteamID();
-        if ( hostUserId.m_SteamID == me.m_SteamID)
+        if (hostUserId.m_SteamID == me.m_SteamID)
         {
             SteamMatchmaking.SetLobbyData(steamLobbyId, "game", GAME_ID);
             UNETServerController.StartUNETServer();
