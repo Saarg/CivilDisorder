@@ -16,6 +16,8 @@ namespace VehicleBehaviour {
         public string turnInput = "Horizontal";
         public string resetInput = "Reset";
 
+        [SerializeField] AnimationCurve turnInputCurve;
+
         [Header("Wheels")]
         public WheelCollider[] driveWheel;
         public WheelCollider[] turnWheel;
@@ -69,11 +71,11 @@ namespace VehicleBehaviour {
                 // throttle = Input.GetAxis(throttleInput) != 0 ? Input.GetAxis(throttleInput) : Mathf.Clamp(throttle, -1, 1);
                 throttle = MultiOSControls.GetValue(throttleInput, playerNumber) - MultiOSControls.GetValue(brakeInput, playerNumber); 
             }
-
+            
             // Turn
             foreach (WheelCollider wheel in turnWheel)
             {
-                wheel.steerAngle = Mathf.Lerp(wheel.steerAngle, MultiOSControls.GetValue(turnInput, playerNumber) * steerAngle, steerSpeed);
+                wheel.steerAngle = Mathf.Lerp(wheel.steerAngle, turnInputCurve.Evaluate(MultiOSControls.GetValue(turnInput, playerNumber)) * steerAngle, steerSpeed);
             }
 
             // Reset

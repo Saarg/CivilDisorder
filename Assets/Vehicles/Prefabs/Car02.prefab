@@ -1364,7 +1364,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1200
   m_Drag: 0.03
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
@@ -1614,7 +1614,7 @@ MonoBehaviour:
   maxBoost: 8
   boost: 8
   boostRegen: 0.2
-  boostForce: 10000
+  boostForce: 5000
   steamId: 0
 --- !u!114 &114296079895394842
 MonoBehaviour:
@@ -1807,6 +1807,39 @@ MonoBehaviour:
   brakeInput: Brake
   turnInput: Horizontal
   resetInput: Reset
+  turnInputCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -1
+      value: -1
+      inSlope: 2.1869175
+      outSlope: 2.1869175
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.052173913
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.0021973
+      value: 1.0023422
+      inSlope: 2.0658808
+      outSlope: 2.0658808
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.13125665
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   driveWheel:
   - {fileID: 146793865263719070}
   - {fileID: 146504509095465980}
@@ -1819,21 +1852,12 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 300
-      inSlope: -5.9354258
-      outSlope: -5.9354258
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.04909985
-    - serializedVersion: 3
-      time: 100
-      value: 200
-      inSlope: 1.0281519
-      outSlope: 0
-      tangentMode: 1
-      weightedMode: 0
-      inWeight: 0.13338768
-      outWeight: 0.33333334
+      outWeight: 0.12282609
     - serializedVersion: 3
       time: 300
       value: 0
@@ -1846,8 +1870,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  brakeForce: 1500
-  steerAngle: 30
+  brakeForce: 500
+  steerAngle: 25
   steerSpeed: 0.2
   centerOfMass: {fileID: 4688843054088998}
   steering: 0
@@ -2231,28 +2255,28 @@ WheelCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1019865406441478}
-  m_Center: {x: 0, y: 0.1, z: 0}
+  m_Center: {x: 0, y: 0.15, z: 0}
   m_Radius: 0.3
   m_SuspensionSpring:
-    spring: 30000
+    spring: 40000
     damper: 6000
-    targetPosition: 0.5
-  m_SuspensionDistance: 0.1
+    targetPosition: 0.6
+  m_SuspensionDistance: 0.15
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
+    m_ExtremumSlip: 0.6
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 3
+    m_Stiffness: 2
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
+    m_ExtremumSlip: 0.4
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1
+    m_Stiffness: 1.7
   m_Enabled: 1
 --- !u!146 &146504509095465980
 WheelCollider:
@@ -2260,28 +2284,28 @@ WheelCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1958784462827370}
-  m_Center: {x: 0, y: 0.1, z: 0}
+  m_Center: {x: 0, y: 0.15, z: 0}
   m_Radius: 0.3
   m_SuspensionSpring:
-    spring: 30000
+    spring: 40000
     damper: 6000
-    targetPosition: 0.5
-  m_SuspensionDistance: 0.1
+    targetPosition: 0.6
+  m_SuspensionDistance: 0.15
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
+    m_ExtremumSlip: 0.6
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 3
+    m_Stiffness: 2
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
+    m_ExtremumSlip: 0.4
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1
+    m_Stiffness: 1.7
   m_Enabled: 1
 --- !u!146 &146793865263719070
 WheelCollider:
@@ -2289,28 +2313,28 @@ WheelCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1398208134900576}
-  m_Center: {x: 0, y: 0.1, z: 0}
+  m_Center: {x: 0, y: 0.15, z: 0}
   m_Radius: 0.3
   m_SuspensionSpring:
-    spring: 30000
+    spring: 40000
     damper: 6000
-    targetPosition: 0.5
-  m_SuspensionDistance: 0.1
+    targetPosition: 0.6
+  m_SuspensionDistance: 0.15
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
+    m_ExtremumSlip: 0.6
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 3
+    m_Stiffness: 2
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
+    m_ExtremumSlip: 0.4
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1
+    m_Stiffness: 1.7
   m_Enabled: 1
 --- !u!146 &146802126822764044
 WheelCollider:
@@ -2318,26 +2342,26 @@ WheelCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1268253799892292}
-  m_Center: {x: 0, y: 0.1, z: 0}
+  m_Center: {x: 0, y: 0.15, z: 0}
   m_Radius: 0.3
   m_SuspensionSpring:
-    spring: 30000
+    spring: 40000
     damper: 6000
-    targetPosition: 0.5
-  m_SuspensionDistance: 0.1
+    targetPosition: 0.6
+  m_SuspensionDistance: 0.15
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
+    m_ExtremumSlip: 0.6
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 3
+    m_Stiffness: 2
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
+    m_ExtremumSlip: 0.4
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1
+    m_Stiffness: 1.7
   m_Enabled: 1
