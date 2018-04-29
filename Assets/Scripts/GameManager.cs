@@ -58,8 +58,12 @@ public class GameManager : NetworkBehaviour {
 	[SerializeField] Lobby lobbyPlayer;
 	List<Lobby> lobbyPlayers = new List<Lobby>();
 
+	[SyncVar]
 	[SerializeField] int minPlayers = 2;
+	public int MinPlayers { get { return minPlayers; } }
+	[SyncVar]
 	[SerializeField] int maxPlayers = 4;
+	public int MaxPlayers { get { return maxPlayers; } }	
 
 	[Header("Game settings")]
 	List<Player> players = new List<Player>();
@@ -67,6 +71,7 @@ public class GameManager : NetworkBehaviour {
 	[SerializeField] int countDownTime;
 	float countDownStartTime;
 	[SyncVar] float countDownTimeLeft;
+	[SyncVar]
 	[SerializeField] int gameTime;
 	public float GameTime { get { return gameTime; } }	
 	float gameStartTime;
@@ -94,16 +99,16 @@ public class GameManager : NetworkBehaviour {
 
 		Player.onPlayerSpawn += OnAddPlayer;
 		Player.onPlayerDestroy += OnRemovePlayer;
+	}
 
-		maxPlayerSlider.onValueChanged.AddListener((float v) => {
-			maxPlayers = Mathf.FloorToInt(v);
-			maxPlayerText.text = maxPlayers.ToString() + " player game";
-		});
+	public void OnChangePlayerNumber (float v) {
+		maxPlayers = Mathf.FloorToInt(v);
+		maxPlayerText.text = maxPlayers.ToString() + " player game";
+	}
 
-		gameTimeSlider.onValueChanged.AddListener((float v) => {
-			gameTime = Mathf.FloorToInt(v * 60f);
-			gameTimeText.text = v.ToString() + " minutes game";
-		});
+	public void OnChangeGameTime (float v) {
+		gameTime = Mathf.FloorToInt(v * 60f);
+		gameTimeText.text = v.ToString() + " minutes game";
 	}
 
 	void Start() {

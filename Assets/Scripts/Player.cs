@@ -72,7 +72,7 @@ public class Player : NetworkBehaviour {
 		boost = maxBoost;
 
 		ui = FindObjectOfType<PlayerUI>();
-		if (ui != null)
+		if (ui != null && isLocalPlayer)
 			ui.SetPlayer(this);
 
 		if (onPlayerSpawn != null)
