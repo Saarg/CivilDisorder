@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public enum PlayerNumber { Player1, Player2, Player3, Player4, All }
+public enum PlayerNumber { Player1, Player2, Player3, Player4, FreeCamera, All }
 public enum ControllerNumber { Controller1, Controller2, Controller3, Controller4, None }
 
 public enum XboxControllerAxis { Mouse_X, Mouse_Y, Left_X, Left_Y, Right_X, Right_Y, Left_Trigger, Right_Trigger, Cross_X, Cross_Y }

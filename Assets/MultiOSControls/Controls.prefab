@@ -85,7 +85,7 @@ MonoBehaviour:
   locked: 0
   players:
   - name: Player1
-    controller: 0
+    controller: 4
     keyboard: 1
     inputs:
     - name: Horizontal
@@ -156,7 +156,7 @@ MonoBehaviour:
       deadzone: 0
       value: 0
   - name: Player2
-    controller: 0
+    controller: 1
     keyboard: 0
     inputs:
     - name: Horizontal
@@ -367,4 +367,64 @@ MonoBehaviour:
       axis: 
       buttons: 03000000
       deadzone: 0
+      value: 0
+  - name: FreeCam
+    controller: 0
+    keyboard: 0
+    inputs:
+    - name: CameraRotationX
+      posKeys: []
+      negKeys: []
+      axis: 04000000
+      buttons: 
+      deadzone: 0.2
+      value: 0
+    - name: CameraRotationY
+      posKeys: []
+      negKeys: []
+      axis: 05000000
+      buttons: 
+      deadzone: 0.2
+      value: 0
+    - name: VerticalFreeCam
+      posKeys:
+      - up
+      negKeys:
+      - down
+      axis: 03000000
+      buttons: 
+      deadzone: 0.2
+      value: 0
+    - name: HorizontalFreeCam
+      posKeys:
+      - right
+      negKeys:
+      - left
+      axis: 02000000
+      buttons: 
+      deadzone: 0.2
+      value: 0
+    - name: Up
+      posKeys:
+      - q
+      negKeys: []
+      axis: 07000000
+      buttons: 
+      deadzone: 0.2
+      value: 0
+    - name: Down
+      posKeys:
+      - e
+      negKeys: []
+      axis: 06000000
+      buttons: 
+      deadzone: 0.2
+      value: 0
+    - name: HideCursor
+      posKeys:
+      - c
+      negKeys: []
+      axis: 
+      buttons: 03000000
+      deadzone: 0.2
       value: 0
