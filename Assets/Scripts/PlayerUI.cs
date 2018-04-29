@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.Text;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -26,13 +27,17 @@ public class PlayerUI : MonoBehaviour {
 	[SerializeField] Image lifeBar;
 	[SerializeField] Image boostBar;
 	[SerializeField] RectTransform speedo;
+
+	[SerializeField] Text timeText;
+
+	GameManager gameManager;	
 	
 	void Update () {
 		if (player == null || vehicle == null)
 			return;
 
 		scoreText.text = "Score: " + Mathf.FloorToInt(player.Score);
-		scoreText.transform.localScale = Vector3.Lerp(scoreText.transform.localScale, Vector3.one + Vector3.one * (player.Score / 200000), Time.deltaTime);
+		scoreText.fontSize = Mathf.FloorToInt(Mathf.Clamp(40 + 20 * (player.Score / 200000), 40, 60));
 
 		lifeBar.fillAmount = Mathf.Lerp(lifeBar.fillAmount, player.Life / player.MaxLife, Time.deltaTime);
 		boostBar.fillAmount = Mathf.Lerp(boostBar.fillAmount, player.Boost / player.MaxBoost, Time.deltaTime);
@@ -42,5 +47,23 @@ public class PlayerUI : MonoBehaviour {
 
 		speedoAngle = Mathf.Lerp(speedo.rotation.eulerAngles.z, speedoAngle, Time.deltaTime * 2f);
 		speedo.rotation = Quaternion.Euler(0, 0, speedoAngle);
+
+		if (gameManager == null && GameManager.Instance != null) {
+			gameManager = GameManager.Instance;
+		}
+
+		if (gameManager != null && gameManager.gameState == GameManager.GameStates.Game) {
+			StringBuilder sb = new StringBuilder();
+			sb.Append(Mathf.FloorToInt(gameManager.GameTimeLeft / 60).ToString());
+			sb.Append(":");
+			if (gameManager.GameTimeLeft % 60 < 10)
+				sb.Append("0");
+			sb.Append(Mathf.FloorToInt(gameManager.GameTimeLeft % 60).ToString());
+
+			timeText.text = sb.ToString();
+			timeText.fontSize = Mathf.FloorToInt(Mathf.Clamp(60 + 20 * ((gameManager.GameTime - gameManager.GameTimeLeft) / gameManager.GameTime), 60, 80));
+		} else {
+			timeText.text = "";
+		}
 	}
 }

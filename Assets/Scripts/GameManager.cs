@@ -68,8 +68,10 @@ public class GameManager : NetworkBehaviour {
 	float countDownStartTime;
 	[SyncVar] float countDownTimeLeft;
 	[SerializeField] int gameTime;
+	public float GameTime { get { return gameTime; } }	
 	float gameStartTime;
 	[SyncVar] float gameTimeLeft;
+	public float GameTimeLeft { get { return gameTimeLeft; } }
 
 	// UI
 	[Header("UI")]
@@ -78,6 +80,8 @@ public class GameManager : NetworkBehaviour {
 	[SerializeField] Text playerCountText;
 	[SerializeField] Slider maxPlayerSlider;
 	[SerializeField] Text maxPlayerText;	
+	[SerializeField] Slider gameTimeSlider;
+	[SerializeField] Text gameTimeText;
 
 	void Awake () {
 		if (instance != null) {
@@ -93,7 +97,12 @@ public class GameManager : NetworkBehaviour {
 
 		maxPlayerSlider.onValueChanged.AddListener((float v) => {
 			maxPlayers = Mathf.FloorToInt(v);
-			maxPlayerText.text = maxPlayers.ToString() + " Player game";
+			maxPlayerText.text = maxPlayers.ToString() + " player game";
+		});
+
+		gameTimeSlider.onValueChanged.AddListener((float v) => {
+			gameTime = Mathf.FloorToInt(v * 60f);
+			gameTimeText.text = v.ToString() + " minutes game";
 		});
 	}
 
