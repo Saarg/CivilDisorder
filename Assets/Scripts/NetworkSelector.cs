@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Steamworks;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 
 public class NetworkSelector : MonoBehaviour {
@@ -31,5 +32,17 @@ public class NetworkSelector : MonoBehaviour {
 		} else {
 			unetmanager.StartClient();
 		}
+	}
+
+	public void Disconect() {
+		if (SteamNetworkManager.Instance != null) {
+			NetworkServer.Shutdown();
+		} else {
+			unetmanager.StopClient();
+			unetmanager.StopHost();
+		}
+
+		SceneManager.LoadScene(0);
+		return;
 	}
 }

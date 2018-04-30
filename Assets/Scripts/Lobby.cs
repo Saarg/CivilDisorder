@@ -44,6 +44,10 @@ public class Lobby : NetworkBehaviour {
 		}
     }
 
+	void OnDestroy() {
+		GameManager.onStartCountDown -= SpawnPlayer;		
+	}
+
     IEnumerator SetNameWhenReady()
     {
         // Wait for client to get authority, then retrieve the player's Steam ID

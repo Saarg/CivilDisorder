@@ -47,7 +47,13 @@ public class GameManager : NetworkBehaviour {
 				break;
 			case GameStates.Game:
 				GameExit();
-				gameState = GameStates.Finished;	
+				gameState = GameStates.Finished;
+				GameFinishEnter();
+				break;
+			case GameStates.Finished:
+				GameFinishExit();
+				gameState = GameStates.Waiting;
+				WaitingEnter();
 				break;
 		}
 	}
@@ -87,6 +93,8 @@ public class GameManager : NetworkBehaviour {
 	[SerializeField] Text maxPlayerText;	
 	[SerializeField] Slider gameTimeSlider;
 	[SerializeField] Text gameTimeText;
+	[SerializeField] GameObject endOfGameUI;
+	[SerializeField] Text mainText;
 
 	void Awake () {
 		if (instance != null) {
@@ -133,6 +141,9 @@ public class GameManager : NetworkBehaviour {
 				break;
 			case GameStates.Game:
 				GameUpdate();	
+				break;
+			case GameStates.Finished:
+				GameFinishUpdate();	
 				break;
 		}
 	}
@@ -267,8 +278,38 @@ public class GameManager : NetworkBehaviour {
 			}
 		}
 	}
+
 	void GameExit() {
 		if (onEndGame != null)
 			onEndGame.Invoke();
+	}
+
+	// GameFinish state
+	void GameFinishEnter() {
+		endOfGameUI.SetActive(true);
+
+		Player[] players = GameObject.FindObjectsOfType<Player>();
+
+		int bestIndex = 0;
+
+		for (int i = 1; i < players.Length; i++)
+		{
+			if (players[bestIndex].Score > players[i].Score)
+				bestIndex = i;
+		}
+
+		mainText.text = players[bestIndex].name + " is the best\n" + Mathf.FloorToInt(players[bestIndex].Score) + " points";		
+	}
+
+	void GameFinishUpdate() {
+
+	}
+	
+	void GameFinishExit() {
+		endOfGameUI.SetActive(false);		
+	}
+
+	public void Quit() {
+		Application.Quit();
 	}
 }
