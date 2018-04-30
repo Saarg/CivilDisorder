@@ -20,11 +20,13 @@ public class Player : NetworkBehaviour {
 	[SerializeField] PlayerNumber playerNumber = PlayerNumber.Player1;
 	[SerializeField] string boostInput = "Boost";
 
-	[Header("Stats")]	
+	[Header("Stats")]
+	[SyncVar]
 	[SerializeField] float score = 0f;
 	public float Score { get { return score; } }
 	[SerializeField] float maxLife = 100f;
 	public float MaxLife { get { return maxLife; } }
+	[SyncVar]
 	[SerializeField] float life = 100f;
 	public float Life { get { return life; } }
 	[SerializeField] float maxBoost = 10f;
@@ -87,15 +89,22 @@ public class Player : NetworkBehaviour {
 	}
 
 	public void AddScore(float s) {
-		if (gameManager.gameState != GameManager.GameStates.Game) return;
+		if (gameManager.gameState != GameManager.GameStates.Game && isLocalPlayer) return;
 
-		score += s;
+		CmdAddScore(s);
 	}
 
 	public void AddScore(Collision c) {
-		if (gameManager.gameState != GameManager.GameStates.Game) return;		
+		if (gameManager.gameState != GameManager.GameStates.Game && isLocalPlayer) return;		
 
-		score += c.relativeVelocity.sqrMagnitude;
+		CmdAddScore(c.relativeVelocity.sqrMagnitude);
+	}
+
+	[Command]
+	public void CmdAddScore(float s) {
+		if (gameManager.gameState != GameManager.GameStates.Game) return;
+
+		score += s;
 	}
 	
 	void Update() {
@@ -109,6 +118,29 @@ public class Player : NetworkBehaviour {
 
 			boost -= Time.fixedDeltaTime;
 			if (boost < 0f) { boost = 0f; }
+		}
+	}
+
+	void OnCollisionEnter(Collision col) {
+		if (gameObject.layer == col.gameObject.layer && isServer) {
+			Vector3 myDir = transform.forward;
+			Vector3 normal = col.relativeVelocity;
+
+			myDir.y = 0;
+			myDir.Normalize();
+			normal.y = 0;
+			normal.Normalize();
+
+			float angle = Vector3.Angle(myDir, normal);
+
+			// Debug.DrawLine(transform.position, transform.position + myDir, Color.red, 10f);
+			// Debug.DrawLine(transform.position, transform.position + normal, Color.green, 10f);
+
+			if (angle > 150f) {
+				AddScore(col.relativeVelocity.sqrMagnitude);
+			} else {
+				life -= col.relativeVelocity.sqrMagnitude / 30f * col.rigidbody.mass / rigidbody.mass;
+			}
 		}
 	}
 }
