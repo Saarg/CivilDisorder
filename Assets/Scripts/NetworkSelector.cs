@@ -10,6 +10,8 @@ public class NetworkSelector : MonoBehaviour {
 	[SerializeField] NetworkManager unetmanager;
 	[SerializeField] SteamNetworkManager steamnetmanager;
 
+	[SerializeField] GameManager gameManager;
+
 	void Start() {
 		if (SteamNetworkManager.Instance != null) {
 			Destroy(unetmanager.gameObject);
@@ -36,7 +38,7 @@ public class NetworkSelector : MonoBehaviour {
 
 	public void Disconect() {
 		if (SteamNetworkManager.Instance != null) {
-			NetworkServer.Shutdown();
+			steamnetmanager.Disconnect();
 		} else {
 			unetmanager.StopClient();
 			unetmanager.StopHost();

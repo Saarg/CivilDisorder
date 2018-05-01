@@ -47,12 +47,12 @@ public class UNETServerController {
         }
     }
 
-    public void StartUNETServer()
+    public bool StartUNETServer()
     {
         if (SteamNetworkManager.Instance.lobbyConnectionState != SteamNetworkManager.SessionConnectionState.CONNECTED)
         {
             Debug.LogError("Not connected to lobby");
-            return;
+            return false;
         }
 
         Debug.Log("Starting UNET server");
@@ -99,6 +99,8 @@ public class UNETServerController {
             // prompt to invite friend
             SteamNetworkManager.Instance.StartCoroutine (DoShowInviteDialogWhenReady ());
         }
+
+        return true;
     }
 
     IEnumerator DoShowInviteDialogWhenReady()

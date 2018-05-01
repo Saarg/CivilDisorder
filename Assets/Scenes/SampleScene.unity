@@ -4010,12 +4010,14 @@ MonoBehaviour:
   lobbyHolder: {fileID: 1191777102}
   lobbyPlayer: {fileID: 114406943834554118, guid: e9422efc17cd64f2d9d5142a08b48fa1,
     type: 2}
+  lobbyAccess: 1
   minPlayers: 2
   maxPlayers: 4
   countDownTime: 3
   gameTime: 300
   countDownCanvas: {fileID: 788303460}
   countDownText: {fileID: 586123722}
+  lobbyAccessDropDown: {fileID: 1966091804}
   playerCountText: {fileID: 175214197}
   maxPlayerSlider: {fileID: 2089988838}
   maxPlayerText: {fileID: 1496983535}
@@ -36432,7 +36434,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1206431160
 Transform:
   m_ObjectHideFlags: 0
@@ -38626,7 +38628,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1273866415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38645,6 +38647,7 @@ MonoBehaviour:
   - {fileID: 1637335803908784, guid: af384ca59b0f24483b0163f2ae19fe10, type: 2}
   - {fileID: 1805317872799104, guid: e9422efc17cd64f2d9d5142a08b48fa1, type: 2}
   - {fileID: 1257478006224870, guid: 0e395c70fae214776ac9f3f8cb609d69, type: 2}
+  lobbyAccess: 1
   steamLobbyId:
     m_SteamID: 0
 --- !u!4 &1273866416
@@ -42012,6 +42015,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unetmanager: {fileID: 1206431162}
   steamnetmanager: {fileID: 1273866415}
+  gameManager: {fileID: 0}
 --- !u!114 &1428863718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60798,7 +60802,18 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 190603987}
+        m_MethodName: OnChangeLobbyAccess
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Dropdown+DropdownEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1966091805

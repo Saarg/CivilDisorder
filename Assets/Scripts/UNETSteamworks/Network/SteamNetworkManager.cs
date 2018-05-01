@@ -1,16 +1,16 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.Networking;
-using System.Collections.Generic;
-using System.Net;
+using UnityEngine.SceneManagement;
 using UnityEngine.Networking.NetworkSystem;
+using System.Collections.Generic;
+using System.Collections;
+using System.Net;
 using System;
 using Steamworks;
  
-
 public class SteamNetworkManager : MonoBehaviour
 {
-    public const int MAX_USERS = 4;
+    public const int MAX_USERS = 6;
     public const string GAME_ID = "CivilDisorder_FFA"; // Unique identifier for matchmaking so we don't match up with other Spacewar games
 
     public enum SessionConnectionState
@@ -29,6 +29,8 @@ public class SteamNetworkManager : MonoBehaviour
     [SerializeField] 
     private UNETServerController UNETServerController;
     public List<GameObject> networkPrefabs;
+
+    public ELobbyType lobbyAccess = ELobbyType.k_ELobbyTypeFriendsOnly;
 
     // Client-to-server connection
     public NetworkClient myClient;
@@ -71,7 +73,7 @@ public class SteamNetworkManager : MonoBehaviour
     {
 		// init
         Instance = this;
-        DontDestroyOnLoad(this);
+        // DontDestroyOnLoad(this);
 
         LogFilter.currentLogLevel = LogFilter.Info;
 
@@ -229,6 +231,10 @@ public class SteamNetworkManager : MonoBehaviour
         return myClient != null && myClient.connection != null && myClient.connection.isConnected;
     }
 
+    void OnDestroy() {
+        Disconnect();
+    }
+
     public void Disconnect()
     {
         lobbyConnectionState = SessionConnectionState.DISCONNECTED;
@@ -289,6 +295,14 @@ public class SteamNetworkManager : MonoBehaviour
         // ...continued in OnLobbyEntered callback
     }
 
+    public void SetLobbyJoinable(bool joinable) {
+        SteamMatchmaking.SetLobbyJoinable(steamLobbyId, joinable);
+    }
+
+    public void SetLobbyMemberLimit(int nb) {
+        SteamMatchmaking.SetLobbyMemberLimit(steamLobbyId, nb);
+    }
+
     public void InviteFriendsToLobby()
     {
         if (lobbyConnectionState == SessionConnectionState.CONNECTING)
@@ -318,7 +332,7 @@ public class SteamNetworkManager : MonoBehaviour
 
         UNETServerController.inviteFriendOnStart = true;
         lobbyConnectionState = SessionConnectionState.CONNECTING;
-        SteamMatchmaking.CreateLobby(ELobbyType.k_ELobbyTypePrivate, MAX_USERS);
+        SteamMatchmaking.CreateLobby(lobbyAccess, MAX_USERS);
         // ...continued in OnLobbyEntered callback
     }
 
@@ -327,7 +341,7 @@ public class SteamNetworkManager : MonoBehaviour
         Debug.Log("Creating lobby"); 
 
         UNETServerController.inviteFriendOnStart = false;
-        SteamMatchmaking.CreateLobby(ELobbyType.k_ELobbyTypePublic, MAX_USERS);
+        SteamMatchmaking.CreateLobby(lobbyAccess, MAX_USERS);
         // ...continued in OnLobbyEntered callback
     }
 
@@ -352,6 +366,7 @@ public class SteamNetworkManager : MonoBehaviour
 
         if (numLobbies <= 0)
         {
+            Debug.Log("Creating lobby");            
             CreateLobby();
         }
         else
@@ -362,8 +377,6 @@ public class SteamNetworkManager : MonoBehaviour
             var lobby = SteamMatchmaking.GetLobbyByIndex(0);
             JoinLobby(lobby);
         }
-
-
     }
 
     void OnLobbyEntered(LobbyEnter_t pCallback)
@@ -375,6 +388,8 @@ public class SteamNetworkManager : MonoBehaviour
 
         steamLobbyId = new CSteamID(pCallback.m_ulSteamIDLobby);
 
+        SetLobbyJoinable(false);
+
         Debug.Log("Connected to Steam lobby");
         lobbyConnectionState = SessionConnectionState.CONNECTED;
 
@@ -383,7 +398,9 @@ public class SteamNetworkManager : MonoBehaviour
         if (hostUserId.m_SteamID == me.m_SteamID)
         {
             SteamMatchmaking.SetLobbyData(steamLobbyId, "game", GAME_ID);
-            UNETServerController.StartUNETServer();
+            if (!UNETServerController.StartUNETServer()) {
+                SceneManager.LoadScene(0);
+            }
         }
         else
         {

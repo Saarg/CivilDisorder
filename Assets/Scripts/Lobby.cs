@@ -58,7 +58,7 @@ public class Lobby : NetworkBehaviour {
         }
 
         steamId = SteamNetworkManager.Instance.GetSteamIDForConnection(id.clientAuthorityOwner).m_SteamID;
-    }
+	}
 
 	public override void OnStartClient() {
 		readyButton.gameObject.SetActive(false);

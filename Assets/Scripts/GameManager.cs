@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Steamworks;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
@@ -64,6 +65,9 @@ public class GameManager : NetworkBehaviour {
 	[SerializeField] Lobby lobbyPlayer;
 	List<Lobby> lobbyPlayers = new List<Lobby>();
 
+	public enum LobbyAccess { Private, Friends, Public }
+	public LobbyAccess lobbyAccess = LobbyAccess.Friends;
+
 	[SyncVar]
 	[SerializeField] int minPlayers = 2;
 	public int MinPlayers { get { return minPlayers; } }
@@ -88,6 +92,7 @@ public class GameManager : NetworkBehaviour {
 	[Header("UI")]
 	[SerializeField] Canvas countDownCanvas;
 	[SerializeField] Text countDownText;
+	[SerializeField] Dropdown lobbyAccessDropDown;
 	[SerializeField] Text playerCountText;
 	[SerializeField] Slider maxPlayerSlider;
 	[SerializeField] Text maxPlayerText;	
@@ -119,8 +124,20 @@ public class GameManager : NetworkBehaviour {
 		gameTimeText.text = v.ToString() + " minutes game";
 	}
 
+	public void OnChangeLobbyAccess(int access) {
+		lobbyAccess = (LobbyAccess) access;
+
+		if (SteamNetworkManager.Instance != null)
+			SteamNetworkManager.Instance.lobbyAccess = (ELobbyType) access;
+	}
+
 	void Start() {
 		WaitingEnter();
+
+		if (SteamNetworkManager.Instance != null)
+        	lobbyAccessDropDown.gameObject.SetActive(true);
+		else
+        	lobbyAccessDropDown.gameObject.SetActive(false);
 	}
 
 	public override void OnStartServer() {
@@ -208,6 +225,11 @@ public class GameManager : NetworkBehaviour {
 	// Waiting state
 	void WaitingEnter() {
 		lobbyHolder.SetActive(true);
+
+		if (SteamNetworkManager.Instance != null) {
+			SteamNetworkManager.Instance.SetLobbyJoinable(true);
+			SteamNetworkManager.Instance.SetLobbyMemberLimit(maxPlayers);
+		}
 	}
 
 	void WaitingUpdate() {
@@ -226,7 +248,11 @@ public class GameManager : NetworkBehaviour {
 		}
 	}
 	void WaitingExit() {
-		lobbyHolder.SetActive(false);			
+		lobbyHolder.SetActive(false);
+
+		if (SteamNetworkManager.Instance != null) {
+			SteamNetworkManager.Instance.SetLobbyJoinable(false);	
+		}	
 	}
 
 	// CountDown state

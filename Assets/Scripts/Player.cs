@@ -47,12 +47,12 @@ public class Player : NetworkBehaviour {
 	[SyncVar]
     [SerializeField] ulong steamId;
 
-    public override void OnStartServer()
+    public override void OnStartClient()
     {
-        base.OnStartServer();
-
-		if (SteamNetworkManager.Instance != null)
+        if (SteamNetworkManager.Instance != null)
         	StartCoroutine(SetNameWhenReady());
+		else
+			name = "Player " + playerControllerId;
     }
 
     IEnumerator SetNameWhenReady()
@@ -65,7 +65,8 @@ public class Player : NetworkBehaviour {
         }
 
         steamId = SteamNetworkManager.Instance.GetSteamIDForConnection(id.clientAuthorityOwner).m_SteamID;
-    }
+		name = SteamFriends.GetFriendPersonaName(new CSteamID(steamId));
+	}
 
 	void Start () {
 		rigidbody = GetComponent<Rigidbody>();
