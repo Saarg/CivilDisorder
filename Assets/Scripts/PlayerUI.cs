@@ -12,11 +12,12 @@ public class PlayerUI : MonoBehaviour {
 	
 	public void SetPlayer(Player p) { 
 		player = p;
-		if (p != null)
-			vehicle = p.GetComponent<WheelVehicle>(); 
-		
+		if (p != null) {
+			vehicle = p.GetComponent<WheelVehicle>();		
+		}
+
 		if (player != null && vehicle != null) playerUI.gameObject.SetActive(true);
-		else playerUI.gameObject.SetActive(true);
+		else playerUI.gameObject.SetActive(false);
 	}
 	public Player GetPlayer() { return player; }
 	public WheelVehicle GetPlayerVehicle() { return vehicle; }
@@ -33,8 +34,11 @@ public class PlayerUI : MonoBehaviour {
 	GameManager gameManager;	
 	
 	void Update () {
-		if (player == null || vehicle == null)
+		if (player == null || vehicle == null) {
+			playerUI.gameObject.SetActive(false);
 			return;
+		}
+		playerUI.gameObject.SetActive(true);
 
 		scoreText.text = "Score: " + Mathf.FloorToInt(player.Score);
 		scoreText.fontSize = Mathf.FloorToInt(Mathf.Clamp(40 + 20 * (player.Score / 200000), 40, 60));

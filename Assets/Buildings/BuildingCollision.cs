@@ -11,11 +11,42 @@ namespace Buildings {
 		List<Rigidbody> rigidbodies;
 		List<Collider> colliders;
 
+		List<Vector3> childPositions;
+		List<Quaternion> childRotations;
+
 		// Use this for initialization
 		void Start () {
 			rigidbodies = new List<Rigidbody>(GetComponentsInChildren<Rigidbody>());
 
 			colliders = new List<Collider>(GetComponents<Collider>());
+
+			childPositions = new List<Vector3>(transform.childCount);
+			childRotations = new List<Quaternion>(transform.childCount);
+
+			foreach (Transform child in transform) {
+				childPositions.Add(child.localPosition);
+				childRotations.Add(child.localRotation);
+			}
+
+			GameManager.onStartCountDown += Reset;
+		}
+
+		void Reset () {
+			StartCoroutine(CReset());
+		}
+
+		IEnumerator CReset() {
+			foreach(Collider c in colliders) {
+				c.enabled = true;
+			}
+
+			for (int i = 0; i < transform.childCount; i++) {
+				rigidbodies[i].isKinematic = true;
+				
+				transform.GetChild(i).localPosition = childPositions[i];
+				transform.GetChild(i).localRotation = childRotations[i];
+				yield return null;
+			}
 		}
 
 		void OnTriggerEnter(Collider col) {

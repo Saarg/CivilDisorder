@@ -44,7 +44,7 @@ public class NetworkSelector : MonoBehaviour {
 			unetmanager.StopHost();
 		}
 
-		SceneManager.LoadScene(0);
+		// SceneManager.LoadScene(0);
 		return;
 	}
 }

@@ -86,7 +86,7 @@ public class Player : NetworkBehaviour {
 
 	void OnDestroy() {
 		if (onPlayerDestroy != null)
-			onPlayerDestroy.Invoke(this);		
+			onPlayerDestroy.Invoke(this);	
 	}
 
 	public void AddScore(float s) {

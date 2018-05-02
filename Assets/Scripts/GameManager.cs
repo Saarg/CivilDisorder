@@ -131,17 +131,17 @@ public class GameManager : NetworkBehaviour {
 			SteamNetworkManager.Instance.lobbyAccess = (ELobbyType) access;
 	}
 
-	void Start() {
+	public override void OnStartServer() {
+		NetworkServer.RegisterHandler(MsgType.Connect, OnPlayerConnect);
+
+		GameFinishExit();
+		gameState = GameStates.Waiting;
 		WaitingEnter();
 
 		if (SteamNetworkManager.Instance != null)
         	lobbyAccessDropDown.gameObject.SetActive(true);
 		else
         	lobbyAccessDropDown.gameObject.SetActive(false);
-	}
-
-	public override void OnStartServer() {
-		NetworkServer.RegisterHandler(MsgType.Connect, OnPlayerConnect);
 	}
 
 	public override void OnStartClient() {
@@ -253,6 +253,8 @@ public class GameManager : NetworkBehaviour {
 		if (SteamNetworkManager.Instance != null) {
 			SteamNetworkManager.Instance.SetLobbyJoinable(false);	
 		}	
+
+		lobbyPlayers.Clear();
 	}
 
 	// CountDown state
@@ -332,7 +334,7 @@ public class GameManager : NetworkBehaviour {
 	}
 	
 	void GameFinishExit() {
-		endOfGameUI.SetActive(false);		
+		endOfGameUI.SetActive(false);
 	}
 
 	public void Quit() {

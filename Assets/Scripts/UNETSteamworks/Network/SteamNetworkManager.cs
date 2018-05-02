@@ -73,7 +73,7 @@ public class SteamNetworkManager : MonoBehaviour
     {
 		// init
         Instance = this;
-        // DontDestroyOnLoad(this);
+        DontDestroyOnLoad(this);
 
         LogFilter.currentLogLevel = LogFilter.Info;
 
