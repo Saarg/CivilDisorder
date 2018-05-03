@@ -9,6 +9,11 @@ using VehicleBehaviour;
 
 public class Lobby : NetworkBehaviour {
 
+	[Header("Inputs")]
+	[SerializeField] PlayerNumber playerNumber = PlayerNumber.Player1;
+	[SerializeField] string readyInput = "Jump";
+
+	[Header("UI")]
 	[SerializeField] Text pseudoText;
 	[SerializeField] Button nextCarButton;
 	[SerializeField] Button previousCarButton;
@@ -20,6 +25,7 @@ public class Lobby : NetworkBehaviour {
 	[SerializeField] Button readyButton;
 	[SerializeField] Button notReadyButton;
 
+	[Header("Cars")]	
 	[SerializeField] List<WheelVehicle> vehicles;
 	[SyncVar(hook="HookCurVehicle")]
 	[SerializeField] int curVehicle;
@@ -85,6 +91,10 @@ public class Lobby : NetworkBehaviour {
 		} else {
             name = "Player " + playerControllerId;
             pseudoText.text = name;
+		}
+
+		if (MultiOSControls.GetValue(readyInput, playerNumber) > 0 && isLocalPlayer) {
+			Ready();
 		}
 	}
 
