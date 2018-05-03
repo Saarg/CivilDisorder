@@ -4,9 +4,10 @@ using UnityEngine;
 using UnityEngine.Networking;
 using Steamworks;
 using UnityEngine.Networking.NetworkSystem;
+using VehicleBehaviour;
 
 
-[RequireComponent(typeof(VehicleBehaviour.WheelVehicle))]
+[RequireComponent(typeof(WheelVehicle))]
 
 public class Player : NetworkBehaviour {
 
@@ -19,6 +20,7 @@ public class Player : NetworkBehaviour {
 	[Header("Inputs")]
 	[SerializeField] PlayerNumber playerNumber = PlayerNumber.Player1;
 	[SerializeField] string boostInput = "Boost";
+	[SerializeField] string resetInput = "Reset";
 
 	[Header("Stats")]
 	[SyncVar]
@@ -39,6 +41,7 @@ public class Player : NetworkBehaviour {
 	[SerializeField] float boostForce = 5000;
 	public float BoostForce { get { return boostForce; } }
 
+	WheelVehicle vehicle;
 	new Rigidbody rigidbody;
 
 	GameManager gameManager;
@@ -53,6 +56,8 @@ public class Player : NetworkBehaviour {
         	StartCoroutine(SetNameWhenReady());
 		else
 			name = "Player " + playerControllerId;
+		
+		vehicle = GetComponent<WheelVehicle>();
     }
 
     IEnumerator SetNameWhenReady()
@@ -111,6 +116,17 @@ public class Player : NetworkBehaviour {
 	void Update() {
 		boost += Time.deltaTime * boostRegen;
 		if (boost > maxBoost) { boost = maxBoost; }
+
+		if (MultiOSControls.GetValue(resetInput, playerNumber) > .5f && isLocalPlayer)
+		{
+			CmdReset();
+		}
+
+		if (isServer) {
+			if (life <= 0 && !handlingdeath) {
+				StartCoroutine(HandleDeath(50000f));
+			}
+		}
 	}
 
 	void FixedUpdate () {
@@ -141,6 +157,71 @@ public class Player : NetworkBehaviour {
 				AddScore(col.relativeVelocity.sqrMagnitude);
 			} else {
 				life -= col.relativeVelocity.sqrMagnitude / 30f * col.rigidbody.mass / rigidbody.mass;
+			}
+		}
+	}
+
+	[Command]
+	void CmdReset() {
+		StartCoroutine(HandleDeath(10000f));
+	}
+
+	bool handlingdeath = false;
+	IEnumerator HandleDeath(float malus) {
+		if (isServer && !handlingdeath) {
+			handlingdeath = true;
+
+			RpcDisassemble();
+			score = score > malus ? score - malus : 0;
+
+			yield return new WaitForSeconds(3f);
+			vehicle.ResetPos();
+			RpcAssemble();
+			life = maxLife;
+
+			handlingdeath = false;
+		}
+	}
+
+	[ClientRpc]
+	void RpcDisassemble() {
+		vehicle.toogleHandbrake(true);
+
+		rigidbody.velocity = Vector3.zero;
+		rigidbody.angularVelocity = Vector3.zero;
+
+		Transform body = transform.Find("Body");
+
+		foreach (Transform child in body)
+		{
+			Rigidbody r = child.gameObject.AddComponent<Rigidbody>();
+			r.mass = rigidbody.mass / body.childCount;
+		}
+
+		foreach (WheelCollider wc in GetComponentsInChildren<WheelCollider>()) {
+			foreach (Transform child in wc.transform)
+			{
+				child.gameObject.SetActive(false);
+			}
+		}
+	}
+
+	[ClientRpc]
+	void RpcAssemble() {
+		vehicle.toogleHandbrake(false);
+
+		Transform body = transform.Find("Body");
+		foreach (Transform child in body)
+		{
+			Destroy(child.GetComponent<Rigidbody>());
+			child.localPosition = Vector3.zero;
+			child.localRotation = Quaternion.identity;
+		}
+
+		foreach (WheelCollider wc in GetComponentsInChildren<WheelCollider>()) {
+			foreach (Transform child in wc.transform)
+			{
+				child.gameObject.SetActive(true);
 			}
 		}
 	}

@@ -14,7 +14,6 @@ namespace VehicleBehaviour {
         public string throttleInput = "Throttle";
         public string brakeInput = "Brake";
         public string turnInput = "Horizontal";
-        public string resetInput = "Reset";
 
         [SerializeField] AnimationCurve turnInputCurve;
 
@@ -78,17 +77,6 @@ namespace VehicleBehaviour {
                 wheel.steerAngle = Mathf.Lerp(wheel.steerAngle, turnInputCurve.Evaluate(MultiOSControls.GetValue(turnInput, playerNumber)) * steerAngle, steerSpeed);
             }
 
-            // Reset
-            if (MultiOSControls.GetValue(resetInput, playerNumber) > .5f)
-            {
-                transform.position = spawnPosition;
-                transform.rotation = spawnRotation;
-
-                _rb.velocity = Vector3.zero;
-                _rb.angularVelocity = Vector3.zero;
-            }
-
-
             foreach (WheelCollider wheel in GetComponentsInChildren<WheelCollider>())
             {
                 wheel.brakeTorque = 0;
@@ -124,6 +112,14 @@ namespace VehicleBehaviour {
                 ParticleSystem.EmissionModule em = gasParticle.emission;
                 em.rateOverTime = handbreak ? 0 : Mathf.Lerp(em.rateOverTime.constant, Mathf.Clamp(10.0f * throttle, 5.0f, 10.0f), 0.1f);
             }
+        }
+
+        public void ResetPos() {
+            transform.position = spawnPosition;
+            transform.rotation = spawnRotation;
+
+            _rb.velocity = Vector3.zero;
+            _rb.angularVelocity = Vector3.zero;
         }
 
         public void toogleHandbrake(bool h)
