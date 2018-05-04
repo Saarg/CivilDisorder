@@ -47,6 +47,7 @@ public class Player : NetworkBehaviour {
 	GameManager gameManager;
 	PlayerUI ui;
 
+	WheelCollider[] wheels;
 	
     [SerializeField] ulong steamId;
 
@@ -87,6 +88,8 @@ public class Player : NetworkBehaviour {
 			onPlayerSpawn.Invoke(this);
 		
 		gameManager = GameManager.Instance;
+
+		wheels = GetComponentsInChildren<WheelCollider>();
 	}
 
 	void OnDestroy() {
@@ -201,7 +204,7 @@ public class Player : NetworkBehaviour {
 			r.velocity = velocity;
 		}
 
-		foreach (WheelCollider wc in GetComponentsInChildren<WheelCollider>()) {
+		foreach (WheelCollider wc in wheels) {
 			foreach (Transform child in wc.transform)
 			{
 				child.gameObject.SetActive(false);
@@ -221,7 +224,7 @@ public class Player : NetworkBehaviour {
 			child.localRotation = Quaternion.identity;
 		}
 
-		foreach (WheelCollider wc in GetComponentsInChildren<WheelCollider>()) {
+		foreach (WheelCollider wc in wheels) {
 			foreach (Transform child in wc.transform)
 			{
 				child.gameObject.SetActive(true);

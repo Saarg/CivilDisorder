@@ -51,6 +51,7 @@ namespace VehicleBehaviour {
 
         private Rigidbody _rb;
 
+        WheelCollider[] wheels;
 
         void Start ()
         {
@@ -62,6 +63,8 @@ namespace VehicleBehaviour {
             {
                 _rb.centerOfMass = centerOfMass.localPosition;
             }
+
+            wheels = GetComponentsInChildren<WheelCollider>();
         }
         
         void FixedUpdate () {
@@ -80,14 +83,14 @@ namespace VehicleBehaviour {
                 wheel.steerAngle = Mathf.Lerp(wheel.steerAngle, turnInputCurve.Evaluate(MultiOSControls.GetValue(turnInput, playerNumber)) * steerAngle, steerSpeed);
             }
 
-            foreach (WheelCollider wheel in GetComponentsInChildren<WheelCollider>())
+            foreach (WheelCollider wheel in wheels)
             {
                 wheel.brakeTorque = 0;
             }
 
             if (handbreak)
             {
-                foreach (WheelCollider wheel in GetComponentsInChildren<WheelCollider>())
+                foreach (WheelCollider wheel in wheels)
                 {
                     wheel.motorTorque = 0;
                     wheel.brakeTorque = brakeForce;
@@ -103,7 +106,7 @@ namespace VehicleBehaviour {
             }
             else
             {
-                foreach (WheelCollider wheel in GetComponentsInChildren<WheelCollider>())
+                foreach (WheelCollider wheel in wheels)
                 {
                     wheel.motorTorque = 0;
                     wheel.brakeTorque = Mathf.Abs(throttle) * brakeForce;
@@ -113,7 +116,7 @@ namespace VehicleBehaviour {
             // Jump
             if (MultiOSControls.GetValue(jumpInput, playerNumber) > 0) {
                 bool isGrounded = true;
-                foreach (WheelCollider wheel in GetComponentsInChildren<WheelCollider>())
+                foreach (WheelCollider wheel in wheels)
                 {
                     if (!wheel.isGrounded)
                         isGrounded = false;
