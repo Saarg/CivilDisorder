@@ -17,7 +17,7 @@ PhysicsManager:
   m_ClothInterCollisionDistance: 0
   m_ClothInterCollisionStiffness: 0
   m_ContactsGeneration: 1
-  m_LayerCollisionMatrix: c9feffffc8e0ffffc8e0ffffffffffffc8e0ffffe8e0ffffffffffffffffffffc8e0ffffc9faffffc9fcffffc9feffffc9feffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+  m_LayerCollisionMatrix: c9feffffc8c0ffffc8c0ffffffffffffc8c0ffffe8c0ffffffffffffffffffffc8c0ffffc9faffffc9fcffffc9feffffc9feffffc9deffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
   m_AutoSimulation: 1
   m_AutoSyncTransforms: 1
   m_ClothInterCollisionSettingsToggle: 0
@@ -25,5 +25,5 @@ PhysicsManager:
   m_BroadphaseType: 0
   m_WorldBounds:
     m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 250, y: 250, z: 250}
-  m_WorldSubdivisions: 8
+    m_Extent: {x: 100, y: 100, z: 100}
+  m_WorldSubdivisions: 4

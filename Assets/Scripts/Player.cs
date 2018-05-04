@@ -126,7 +126,7 @@ public class Player : NetworkBehaviour {
 		}
 
 		if (isServer) {
-			if (life <= 0 && !handlingdeath) {
+			if ((life <= 0 || transform.position.y < -10) && !handlingdeath) {
 				StartCoroutine(HandleDeath(50000f));
 			}
 		}

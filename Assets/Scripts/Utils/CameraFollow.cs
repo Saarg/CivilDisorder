@@ -12,11 +12,19 @@ namespace Utils {
 		[Range(0, 10)]		
 		[SerializeField] float lerpRotationMultiplier = 1f;
 
+		Vector3 startPos;
+		Quaternion startRot;
+
+		List<Vector3> closePoints = new List<Vector3>();
+
 		void Start () {
 			Player.onPlayerSpawn += OnPlayerSpawn;
 
 			GameManager.onStartGame += OnStartGame;
 			GameManager.onEndGame += OnEndGame;
+
+			startPos = transform.position;
+			startRot = transform.rotation;
 		}
 
 		void OnDestroy() {
@@ -35,10 +43,13 @@ namespace Utils {
 		}
 
 		void OnEndGame() {
-			follow = false;			
+			follow = false;
+
+			transform.position = startPos;	
+			transform.rotation = startRot;	
 		}
 
-		void LateUpdate() {
+		void FixedUpdate() {
 			if (!follow) return;
 
 			Quaternion curRot = transform.rotation;

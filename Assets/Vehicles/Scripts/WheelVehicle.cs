@@ -118,7 +118,7 @@ namespace VehicleBehaviour {
                 bool isGrounded = true;
                 foreach (WheelCollider wheel in wheels)
                 {
-                    if (!wheel.isGrounded)
+                    if (!wheel.gameObject.activeSelf || !wheel.isGrounded)
                         isGrounded = false;
                 }
 
