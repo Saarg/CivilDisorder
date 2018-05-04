@@ -100,6 +100,7 @@ public class GameManager : NetworkBehaviour {
 	[SerializeField] Text gameTimeText;
 	[SerializeField] GameObject endOfGameUI;
 	[SerializeField] Text mainText;
+	[SerializeField] Button forceStartButton;
 
 	void Awake () {
 		if (instance != null) {
@@ -225,6 +226,7 @@ public class GameManager : NetworkBehaviour {
 	// Waiting state
 	void WaitingEnter() {
 		lobbyHolder.SetActive(true);
+		forceStartButton.gameObject.SetActive(false);			
 
 		if (SteamNetworkManager.Instance != null) {
 			SteamNetworkManager.Instance.SetLobbyJoinable(true);
@@ -236,6 +238,10 @@ public class GameManager : NetworkBehaviour {
 		UpdatePositionPlayerUI();
 
 		playerCountText.text = lobbyPlayers.Count.ToString() + "/" + maxPlayers.ToString();
+
+		if (lobbyPlayers.Count >= minPlayers && isServer) {
+			forceStartButton.gameObject.SetActive(true);
+		}
 
 		bool allReady = true;
 		lobbyPlayers.ForEach((Lobby l) => {
@@ -249,6 +255,7 @@ public class GameManager : NetworkBehaviour {
 	}
 	void WaitingExit() {
 		lobbyHolder.SetActive(false);
+		forceStartButton.gameObject.SetActive(false);	
 
 		if (SteamNetworkManager.Instance != null) {
 			SteamNetworkManager.Instance.SetLobbyJoinable(false);	

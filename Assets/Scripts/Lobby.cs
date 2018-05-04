@@ -11,6 +11,7 @@ public class Lobby : NetworkBehaviour {
 
 	[Header("Inputs")]
 	[SerializeField] PlayerNumber playerNumber = PlayerNumber.Player1;
+	[SerializeField] string carNavInput = "Horizontal";
 	[SerializeField] string readyInput = "Jump";
 
 	[Header("UI")]
@@ -84,6 +85,7 @@ public class Lobby : NetworkBehaviour {
 		notReadyButton.gameObject.SetActive(false);
 	}
 
+	float lastNavInput;
 	void Update() {
 		if (SteamNetworkManager.Instance != null) {
 			name = SteamFriends.GetFriendPersonaName(new CSteamID(steamId));
@@ -95,6 +97,12 @@ public class Lobby : NetworkBehaviour {
 
 		if (MultiOSControls.GetValue(readyInput, playerNumber) > 0 && isLocalPlayer) {
 			Ready();
+		} else if (MultiOSControls.GetValue(carNavInput, playerNumber) > 0 && isLocalPlayer && Time.realtimeSinceStartup - lastNavInput > 0.3f) {
+			lastNavInput = Time.realtimeSinceStartup;
+			CmdNextCar();
+		} else if (MultiOSControls.GetValue(carNavInput, playerNumber) < 0 && isLocalPlayer && Time.realtimeSinceStartup - lastNavInput > 0.3f) {
+			lastNavInput = Time.realtimeSinceStartup;			
+			CmdPreviousCar();
 		}
 	}
 
