@@ -95,13 +95,13 @@ public class Player : NetworkBehaviour {
 	}
 
 	public void AddScore(float s) {
-		if (gameManager.gameState != GameManager.GameStates.Game && isLocalPlayer) return;
+		if (gameManager.gameState != GameManager.GameStates.Game || !isLocalPlayer) return;
 
 		CmdAddScore(s);
 	}
 
 	public void AddScore(Collision c) {
-		if (gameManager.gameState != GameManager.GameStates.Game && isLocalPlayer) return;		
+		if (gameManager.gameState != GameManager.GameStates.Game || !isLocalPlayer) return;		
 
 		CmdAddScore(c.relativeVelocity.sqrMagnitude);
 	}

@@ -784,6 +784,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 360bdffa5b4284ac2b9bdaa368846af3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerNumber: 0
+  readyInput: Jump
   pseudoText: {fileID: 114727151900480486}
   nextCarButton: {fileID: 114794150343558752}
   previousCarButton: {fileID: 114029695295561936}
@@ -798,6 +800,7 @@ MonoBehaviour:
   - {fileID: 114466540805545632, guid: cd5e7f64f2260438cb7830953c384a5e, type: 2}
   - {fileID: 114415631047791334, guid: af384ca59b0f24483b0163f2ae19fe10, type: 2}
   - {fileID: 114795984414369434, guid: 0e395c70fae214776ac9f3f8cb609d69, type: 2}
+  - {fileID: 114838093267706504, guid: d336129092c294dbc9e704e522469cbe, type: 2}
   curVehicle: 0
   steamId: 0
 --- !u!114 &114407411851399270
