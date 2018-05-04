@@ -1791,7 +1791,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!64 &64002088435620338
@@ -2284,6 +2284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerNumber: 0
   boostInput: Boost
+  resetInput: Reset
   score: 0
   maxLife: 200
   life: 200
@@ -2591,7 +2592,7 @@ MonoBehaviour:
   throttleInput: Throttle
   brakeInput: Brake
   turnInput: Horizontal
-  resetInput: Reset
+  jumpInput: Jump
   turnInputCurve:
     serializedVersion: 2
     m_Curve:
@@ -2667,6 +2668,7 @@ MonoBehaviour:
   brakeForce: 4000
   steerAngle: 30
   steerSpeed: 0.2
+  jumpVel: 1.2
   centerOfMass: {fileID: 4010622460238532}
   steering: 0
   handbreak: 0

@@ -14,6 +14,7 @@ namespace VehicleBehaviour {
         public string throttleInput = "Throttle";
         public string brakeInput = "Brake";
         public string turnInput = "Horizontal";
+        public string jumpInput = "Jump";
 
         [SerializeField] AnimationCurve turnInputCurve;
 
@@ -29,6 +30,8 @@ namespace VehicleBehaviour {
         public float steerAngle = 30.0f;
         [Range(0.001f, 10.0f)]
         public float steerSpeed = 0.2f;
+        [Range(1f, 1.5f)]
+        public float jumpVel = 1.3f;
         //Reset
         private Vector3 spawnPosition;
         private Quaternion spawnRotation;
@@ -105,6 +108,21 @@ namespace VehicleBehaviour {
                     wheel.motorTorque = 0;
                     wheel.brakeTorque = Mathf.Abs(throttle) * brakeForce;
                 }
+            }
+
+            // Jump
+            if (MultiOSControls.GetValue(jumpInput, playerNumber) > 0) {
+                bool isGrounded = true;
+                foreach (WheelCollider wheel in GetComponentsInChildren<WheelCollider>())
+                {
+                    if (!wheel.isGrounded)
+                        isGrounded = false;
+                }
+
+                if (!isGrounded)
+                    return;
+                
+                _rb.velocity += transform.up * jumpVel;
             }
 
             if(gasParticle)

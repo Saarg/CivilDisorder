@@ -47,7 +47,7 @@ public class Player : NetworkBehaviour {
 	GameManager gameManager;
 	PlayerUI ui;
 
-	[SyncVar]
+	
     [SerializeField] ulong steamId;
 
     public override void OnStartClient()
@@ -187,6 +187,8 @@ public class Player : NetworkBehaviour {
 	void RpcDisassemble() {
 		vehicle.toogleHandbrake(true);
 
+		Vector3 velocity = rigidbody.velocity;
+
 		rigidbody.velocity = Vector3.zero;
 		rigidbody.angularVelocity = Vector3.zero;
 
@@ -196,6 +198,7 @@ public class Player : NetworkBehaviour {
 		{
 			Rigidbody r = child.gameObject.AddComponent<Rigidbody>();
 			r.mass = rigidbody.mass / body.childCount;
+			r.velocity = velocity;
 		}
 
 		foreach (WheelCollider wc in GetComponentsInChildren<WheelCollider>()) {

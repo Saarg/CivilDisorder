@@ -36835,6 +36835,7 @@ MonoBehaviour:
   - {fileID: 1366243911189104, guid: cd5e7f64f2260438cb7830953c384a5e, type: 2}
   - {fileID: 1637335803908784, guid: af384ca59b0f24483b0163f2ae19fe10, type: 2}
   - {fileID: 1257478006224870, guid: 0e395c70fae214776ac9f3f8cb609d69, type: 2}
+  - {fileID: 1623981022024096, guid: d336129092c294dbc9e704e522469cbe, type: 2}
   m_CustomConfig: 0
   m_MaxConnections: 6
   m_ConnectionConfig:
@@ -38984,10 +38985,11 @@ MonoBehaviour:
   UNETServerController:
     inviteFriendOnStart: 0
   networkPrefabs:
+  - {fileID: 1805317872799104, guid: e9422efc17cd64f2d9d5142a08b48fa1, type: 2}
   - {fileID: 1366243911189104, guid: cd5e7f64f2260438cb7830953c384a5e, type: 2}
   - {fileID: 1637335803908784, guid: af384ca59b0f24483b0163f2ae19fe10, type: 2}
-  - {fileID: 1805317872799104, guid: e9422efc17cd64f2d9d5142a08b48fa1, type: 2}
   - {fileID: 1257478006224870, guid: 0e395c70fae214776ac9f3f8cb609d69, type: 2}
+  - {fileID: 1623981022024096, guid: d336129092c294dbc9e704e522469cbe, type: 2}
   lobbyAccess: 1
   steamLobbyId:
     m_SteamID: 0
