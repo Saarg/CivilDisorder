@@ -3063,7 +3063,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d699a03369d44e0e8e865ef6b2eba4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dummy: 0
   playerNumber: 0
   boostInput: Boost
   resetInput: Reset
@@ -3074,6 +3073,8 @@ MonoBehaviour:
   boost: 13
   boostRegen: 0.15
   boostForce: 5000
+  scorePopupPrefab: {fileID: 114753518416407848, guid: fb6ace0d1c12e4c9786922ac62031c57,
+    type: 2}
   steamId: 0
 --- !u!114 &114592457183060474
 MonoBehaviour:

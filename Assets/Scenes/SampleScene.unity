@@ -5790,19 +5790,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22424132, guid: 0abab5bb77339e4428787a870eb31bd3, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.20006102
+      value: -0.20007324
       objectReference: {fileID: 0}
     - target: {fileID: 22439978, guid: 0abab5bb77339e4428787a870eb31bd3, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.20006102
+      value: -0.20007324
       objectReference: {fileID: 0}
     - target: {fileID: 22450346, guid: 0abab5bb77339e4428787a870eb31bd3, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.20006102
+      value: -0.20007324
       objectReference: {fileID: 0}
     - target: {fileID: 22445198, guid: 0abab5bb77339e4428787a870eb31bd3, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.20006102
+      value: -0.20007324
       objectReference: {fileID: 0}
     - target: {fileID: 224000012511936842, guid: 0abab5bb77339e4428787a870eb31bd3,
         type: 2}
@@ -5811,7 +5811,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22474564, guid: 0abab5bb77339e4428787a870eb31bd3, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.20006102
+      value: -0.20007324
       objectReference: {fileID: 0}
     - target: {fileID: 22474564, guid: 0abab5bb77339e4428787a870eb31bd3, type: 2}
       propertyPath: m_AnchoredPosition.y
@@ -5819,15 +5819,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22465754, guid: 0abab5bb77339e4428787a870eb31bd3, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.20006102
+      value: -0.20007324
       objectReference: {fileID: 0}
     - target: {fileID: 22460488, guid: 0abab5bb77339e4428787a870eb31bd3, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.20006102
+      value: -0.20007324
       objectReference: {fileID: 0}
     - target: {fileID: 22477518, guid: 0abab5bb77339e4428787a870eb31bd3, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.20006102
+      value: -0.20007324
       objectReference: {fileID: 0}
     - target: {fileID: 22451668, guid: 0abab5bb77339e4428787a870eb31bd3, type: 2}
       propertyPath: m_LocalScale.x
@@ -5876,6 +5876,35 @@ Prefab:
     - target: {fileID: 11496292, guid: 0abab5bb77339e4428787a870eb31bd3, type: 2}
       propertyPath: m_background
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000010628903916, guid: 0abab5bb77339e4428787a870eb31bd3,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.12501526
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000010628903916, guid: 0abab5bb77339e4428787a870eb31bd3,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.42485046
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000010565031288, guid: 0abab5bb77339e4428787a870eb31bd3,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.024932861
+      objectReference: {fileID: 0}
+    - target: {fileID: 22492974, guid: 0abab5bb77339e4428787a870eb31bd3, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000061035156
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000011886223928, guid: 0abab5bb77339e4428787a870eb31bd3,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.024978638
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000011886223928, guid: 0abab5bb77339e4428787a870eb31bd3,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.0000038146973
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11439282, guid: 0abab5bb77339e4428787a870eb31bd3, type: 2}
@@ -8164,7 +8193,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 2
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -18591,13 +18620,10 @@ GameObject:
   - component: {fileID: 652949254}
   - component: {fileID: 652949253}
   - component: {fileID: 652949252}
-  - component: {fileID: 652949251}
   - component: {fileID: 652949250}
   - component: {fileID: 652949249}
   - component: {fileID: 652949248}
   - component: {fileID: 652949247}
-  - component: {fileID: 652949246}
-  - component: {fileID: 652949245}
   m_Layer: 11
   m_Name: House03 (3)
   m_TagString: Untagged
@@ -18605,38 +18631,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &652949245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114530025353405434, guid: 76dd19817b41346a79aee37e75f3865a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 652949244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canBetriggered: 0
-  triggetLager:
-    serializedVersion: 2
-    m_Bits: 512
---- !u!114 &652949246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114644840385801138, guid: 76dd19817b41346a79aee37e75f3865a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 652949244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canBetriggered: 0
-  triggetLager:
-    serializedVersion: 2
-    m_Bits: 512
 --- !u!65 &652949247
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18724,22 +18718,6 @@ MonoBehaviour:
     - {fileID: 834539957}
     - {fileID: 1226816997}
   _assetGuid: 870313d1ee016487c900169b06aec1c0
---- !u!114 &652949251
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114822038423902038, guid: 76dd19817b41346a79aee37e75f3865a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 652949244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canBetriggered: 0
-  triggetLager:
-    serializedVersion: 2
-    m_Bits: 512
 --- !u!114 &652949252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36874,7 +36852,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1206431160
 Transform:
   m_ObjectHideFlags: 0
@@ -39069,7 +39047,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1273866415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44241,13 +44219,10 @@ GameObject:
   - component: {fileID: 1469594955}
   - component: {fileID: 1469594954}
   - component: {fileID: 1469594953}
-  - component: {fileID: 1469594952}
   - component: {fileID: 1469594951}
   - component: {fileID: 1469594950}
   - component: {fileID: 1469594949}
   - component: {fileID: 1469594948}
-  - component: {fileID: 1469594947}
-  - component: {fileID: 1469594946}
   m_Layer: 11
   m_Name: House03
   m_TagString: Untagged
@@ -44255,38 +44230,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1469594946
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114422949298557066, guid: 76dd19817b41346a79aee37e75f3865a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1469594945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canBetriggered: 0
-  triggetLager:
-    serializedVersion: 2
-    m_Bits: 512
---- !u!114 &1469594947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114537081624901612, guid: 76dd19817b41346a79aee37e75f3865a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1469594945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canBetriggered: 0
-  triggetLager:
-    serializedVersion: 2
-    m_Bits: 512
 --- !u!65 &1469594948
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44374,22 +44317,6 @@ MonoBehaviour:
     - {fileID: 1792504868}
     - {fileID: 388005505}
   _assetGuid: 870313d1ee016487c900169b06aec1c0
---- !u!114 &1469594952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114174935416704462, guid: 76dd19817b41346a79aee37e75f3865a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1469594945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canBetriggered: 0
-  triggetLager:
-    serializedVersion: 2
-    m_Bits: 512
 --- !u!114 &1469594953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52967,13 +52894,10 @@ GameObject:
   - component: {fileID: 1707863697}
   - component: {fileID: 1707863696}
   - component: {fileID: 1707863695}
-  - component: {fileID: 1707863694}
   - component: {fileID: 1707863693}
   - component: {fileID: 1707863692}
   - component: {fileID: 1707863691}
   - component: {fileID: 1707863690}
-  - component: {fileID: 1707863689}
-  - component: {fileID: 1707863688}
   m_Layer: 11
   m_Name: House03 (2)
   m_TagString: Untagged
@@ -52981,38 +52905,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1707863688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114850715045911142, guid: 76dd19817b41346a79aee37e75f3865a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1707863687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canBetriggered: 0
-  triggetLager:
-    serializedVersion: 2
-    m_Bits: 512
---- !u!114 &1707863689
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114225408842340982, guid: 76dd19817b41346a79aee37e75f3865a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1707863687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canBetriggered: 0
-  triggetLager:
-    serializedVersion: 2
-    m_Bits: 512
 --- !u!65 &1707863690
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -53100,22 +52992,6 @@ MonoBehaviour:
     - {fileID: 1696232384}
     - {fileID: 1584716146}
   _assetGuid: 870313d1ee016487c900169b06aec1c0
---- !u!114 &1707863694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114853186245775378, guid: 76dd19817b41346a79aee37e75f3865a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1707863687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canBetriggered: 0
-  triggetLager:
-    serializedVersion: 2
-    m_Bits: 512
 --- !u!114 &1707863695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61307,7 +61183,7 @@ RectTransform:
   - {fileID: 1958647284}
   - {fileID: 47297686}
   m_Father: {fileID: 2091506118}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -63975,13 +63851,10 @@ GameObject:
   - component: {fileID: 2038116700}
   - component: {fileID: 2038116699}
   - component: {fileID: 2038116698}
-  - component: {fileID: 2038116697}
   - component: {fileID: 2038116696}
   - component: {fileID: 2038116695}
   - component: {fileID: 2038116694}
   - component: {fileID: 2038116693}
-  - component: {fileID: 2038116692}
-  - component: {fileID: 2038116691}
   m_Layer: 11
   m_Name: House03 (1)
   m_TagString: Untagged
@@ -63989,38 +63862,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2038116691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114804751945161544, guid: 76dd19817b41346a79aee37e75f3865a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2038116690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canBetriggered: 0
-  triggetLager:
-    serializedVersion: 2
-    m_Bits: 512
---- !u!114 &2038116692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114778818622116886, guid: 76dd19817b41346a79aee37e75f3865a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2038116690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canBetriggered: 0
-  triggetLager:
-    serializedVersion: 2
-    m_Bits: 512
 --- !u!65 &2038116693
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -64108,22 +63949,6 @@ MonoBehaviour:
     - {fileID: 43417080}
     - {fileID: 1189948416}
   _assetGuid: 870313d1ee016487c900169b06aec1c0
---- !u!114 &2038116697
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114766318595194364, guid: 76dd19817b41346a79aee37e75f3865a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2038116690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canBetriggered: 0
-  triggetLager:
-    serializedVersion: 2
-    m_Bits: 512
 --- !u!114 &2038116698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65261,8 +65086,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 940874124}
   - {fileID: 1961226686}
+  - {fileID: 940874124}
   - {fileID: 1191777103}
   - {fileID: 1078949910}
   - {fileID: 1522366412}

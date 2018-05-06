@@ -11,7 +11,7 @@ using Steamworks;
 public class SteamNetworkManager : MonoBehaviour
 {
     public const int MAX_USERS = 6;
-    public const string GAME_ID = "CivilDisorder_FFA"; // Unique identifier for matchmaking so we don't match up with other Spacewar games
+    public const string GAME_ID = "CivilDisorder_FFA";
 
     public enum SessionConnectionState
     {
@@ -73,7 +73,7 @@ public class SteamNetworkManager : MonoBehaviour
     {
 		// init
         Instance = this;
-        // DontDestroyOnLoad(this);
+        DontDestroyOnLoad(this);
 
         LogFilter.currentLogLevel = LogFilter.Info;
 
@@ -82,6 +82,8 @@ public class SteamNetworkManager : MonoBehaviour
             m_GameLobbyJoinRequested = Callback<GameLobbyJoinRequested_t>.Create (OnGameLobbyJoinRequested);
             m_LobbyChatUpdate = Callback<LobbyChatUpdate_t>.Create (OnLobbyChatUpdate);
             m_LobbyMatchList = CallResult<LobbyMatchList_t>.Create(OnLobbyMatchList);
+        } else {
+            Debug.LogWarning("SteamManager not initialized !");
         }
 
         UNETServerController.Init();
@@ -365,8 +367,7 @@ public class SteamNetworkManager : MonoBehaviour
         uint numLobbies = pCallback.m_nLobbiesMatching;
 
         if (numLobbies <= 0)
-        {
-            Debug.Log("Creating lobby");            
+        {       
             CreateLobby();
         }
         else

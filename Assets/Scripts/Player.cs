@@ -41,6 +41,9 @@ public class Player : NetworkBehaviour {
 	[SerializeField] float boostForce = 5000;
 	public float BoostForce { get { return boostForce; } }
 
+	[Header("Prefabs")]
+	[SerializeField] ScorePopup scorePopupPrefab;
+
 	WheelVehicle vehicle;
 	new Rigidbody rigidbody;
 
@@ -101,12 +104,26 @@ public class Player : NetworkBehaviour {
 		if (gameManager.gameState != GameManager.GameStates.Game || !isLocalPlayer) return;
 
 		CmdAddScore(s);
+
+		if (s < 100f)
+			return;
+		
+		GameObject popup = Instantiate(scorePopupPrefab.gameObject, transform);
+		ScorePopup scorePopup = popup.GetComponent<ScorePopup>();
+		scorePopup.SetScore(s);
 	}
 
 	public void AddScore(Collision c) {
 		if (gameManager.gameState != GameManager.GameStates.Game || !isLocalPlayer) return;		
 
 		CmdAddScore(c.relativeVelocity.sqrMagnitude);
+
+		if (c.relativeVelocity.sqrMagnitude < 100f)
+			return;
+
+		GameObject popup = Instantiate(scorePopupPrefab.gameObject, transform);
+		ScorePopup scorePopup = popup.GetComponent<ScorePopup>();
+		scorePopup.SetScore(c.relativeVelocity.sqrMagnitude);
 	}
 
 	[Command]
@@ -120,14 +137,20 @@ public class Player : NetworkBehaviour {
 		boost += Time.deltaTime * boostRegen;
 		if (boost > maxBoost) { boost = maxBoost; }
 
-		if (MultiOSControls.GetValue(resetInput, playerNumber) > .5f && isLocalPlayer)
+		if (MultiOSControls.GetValue(resetInput, playerNumber) > .5f && isLocalPlayer && !handlingdeath)
 		{
 			CmdReset();
+			GameObject popup = Instantiate(scorePopupPrefab.gameObject, transform);
+			ScorePopup scorePopup = popup.GetComponent<ScorePopup>();
+			scorePopup.SetScore(-10000f);
 		}
 
 		if (isServer) {
 			if ((life <= 0 || transform.position.y < -10) && !handlingdeath) {
 				StartCoroutine(HandleDeath(50000f));
+				GameObject popup = Instantiate(scorePopupPrefab.gameObject, transform);
+				ScorePopup scorePopup = popup.GetComponent<ScorePopup>();
+				scorePopup.SetScore(-50000f);
 			}
 		}
 	}
@@ -169,7 +192,7 @@ public class Player : NetworkBehaviour {
 		StartCoroutine(HandleDeath(10000f));
 	}
 
-	bool handlingdeath = false;
+	[SyncVar] bool handlingdeath = false;
 	IEnumerator HandleDeath(float malus) {
 		if (isServer && !handlingdeath) {
 			handlingdeath = true;
