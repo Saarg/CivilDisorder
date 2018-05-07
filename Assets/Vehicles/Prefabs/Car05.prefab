@@ -2632,7 +2632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 0.1
-  decayTime: 1
+  decayTime: 60
   material: {fileID: 2100000, guid: 57d23153e8a364f379241122438b5cc2, type: 3}
   roughness: 0
   softSourceEnd: 1
@@ -2934,7 +2934,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 0.1
-  decayTime: 1
+  decayTime: 60
   material: {fileID: 2100000, guid: 57d23153e8a364f379241122438b5cc2, type: 3}
   roughness: 0
   softSourceEnd: 1
@@ -3160,7 +3160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 0.1
-  decayTime: 1
+  decayTime: 60
   material: {fileID: 2100000, guid: 57d23153e8a364f379241122438b5cc2, type: 3}
   roughness: 0
   softSourceEnd: 1
@@ -3191,7 +3191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 0.1
-  decayTime: 1
+  decayTime: 60
   material: {fileID: 2100000, guid: 57d23153e8a364f379241122438b5cc2, type: 3}
   roughness: 0
   softSourceEnd: 1
@@ -3379,7 +3379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 0.1
-  decayTime: 1
+  decayTime: 60
   material: {fileID: 2100000, guid: 57d23153e8a364f379241122438b5cc2, type: 3}
   roughness: 0
   softSourceEnd: 1
@@ -3488,7 +3488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 0.1
-  decayTime: 1
+  decayTime: 60
   material: {fileID: 2100000, guid: 57d23153e8a364f379241122438b5cc2, type: 3}
   roughness: 0
   softSourceEnd: 1

@@ -60,8 +60,13 @@ namespace Utils {
 			else {
 				transform.LookAt(target.position + target.forward * rb.velocity.sqrMagnitude);				
 			}
+			
+			Vector3 tPos = target.position + target.TransformDirection(offset);
+			if (tPos.y < target.position.y) {
+				tPos.y = target.position.y;
+			}
 
-			transform.position = Vector3.Lerp(transform.position, target.position + target.TransformDirection(offset), Time.deltaTime * lerpPositionMultiplier);
+			transform.position = Vector3.Lerp(transform.position, tPos, Time.deltaTime * lerpPositionMultiplier);
 			transform.rotation = Quaternion.Lerp(curRot, transform.rotation, Time.deltaTime * lerpRotationMultiplier);
 		}
 	}
