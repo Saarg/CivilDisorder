@@ -39,7 +39,7 @@ public class ScorePopup : MonoBehaviour {
 		if (score == 0)
 			Destroy(gameObject);
 
-		scoreText.text = (score > 0 ? "+" : "-") + score.ToString();
+		scoreText.text = (score > 0 ? "+" : "") + score.ToString();
 		scoreText.color = score > 0 ? posColor : negColor;
 
 		transform.localScale = Vector3.one * Mathf.Clamp(0.5f + (Mathf.Abs(s) / 5000f), 0.5f, 1.5f);

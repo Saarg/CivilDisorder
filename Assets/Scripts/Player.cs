@@ -44,6 +44,8 @@ public class Player : NetworkBehaviour {
 	[Header("Prefabs")]
 	[SerializeField] ScorePopup scorePopupPrefab;
 
+	public ParticleSystem[] boostParticles;
+
 	WheelVehicle vehicle;
 	new Rigidbody rigidbody;
 
@@ -161,6 +163,16 @@ public class Player : NetworkBehaviour {
 
 			boost -= Time.fixedDeltaTime;
 			if (boost < 0f) { boost = 0f; }
+
+			if (!boostParticles[0].isPlaying) {
+				foreach (ParticleSystem boostParticle in boostParticles) {
+					boostParticle.Play();
+				}
+			}
+		} else if (boostParticles[0].isPlaying) {
+			foreach (ParticleSystem boostParticle in boostParticles) {
+				boostParticle.Stop();
+			}
 		}
 	}
 

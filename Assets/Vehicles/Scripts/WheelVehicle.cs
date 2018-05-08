@@ -47,7 +47,7 @@ namespace VehicleBehaviour {
         public float speed = 0.0f;
 
         [Header("Particles")]
-        public ParticleSystem gasParticle;
+        public ParticleSystem[] gasParticles;
 
         private Rigidbody _rb;
 
@@ -128,7 +128,7 @@ namespace VehicleBehaviour {
                 _rb.velocity += transform.up * jumpVel;
             }
 
-            if(gasParticle)
+            foreach (ParticleSystem gasParticle in gasParticles)
             {
                 ParticleSystem.EmissionModule em = gasParticle.emission;
                 em.rateOverTime = handbreak ? 0 : Mathf.Lerp(em.rateOverTime.constant, Mathf.Clamp(10.0f * throttle, 5.0f, 10.0f), 0.1f);
