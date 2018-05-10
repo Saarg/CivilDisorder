@@ -27,7 +27,7 @@ public class ScorePopup : MonoBehaviour {
 
 		startTime = Time.realtimeSinceStartup;
 
-		startPos = transform.localPosition;
+		startPos = transform.position;
 
 		xmult = Random.Range(-1.5f, 1.5f);
 		ymult = Random.Range(0.5f, 1.5f);
@@ -48,7 +48,11 @@ public class ScorePopup : MonoBehaviour {
 	void Update () {
 		float life = Time.realtimeSinceStartup - startTime;
 
-		transform.localPosition = startPos + new Vector3(xCurve.Evaluate(life / lifetime) * xmult, yCurve.Evaluate(life / lifetime) * ymult, 0);
+		Vector3 right = transform.right;
+		right.y = 0;
+		right.Normalize();
+		transform.position = startPos + right * (xCurve.Evaluate(life / lifetime) * xmult) + Vector3.up * (yCurve.Evaluate(life / lifetime) * ymult);
+
 		transform.LookAt(camera.transform.position);
 
 		if (life > lifetime)
