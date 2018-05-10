@@ -44,7 +44,10 @@ public class Player : NetworkBehaviour {
 	[Header("Prefabs")]
 	[SerializeField] ScorePopup scorePopupPrefab;
 
-	public ParticleSystem[] boostParticles;
+	[Header("Boost")]	
+	[SerializeField] ParticleSystem[] boostParticles;
+	[SerializeField] AudioClip boostClip;
+	[SerializeField] AudioSource boostSource;
 
 	WheelVehicle vehicle;
 	new Rigidbody rigidbody;
@@ -64,6 +67,10 @@ public class Player : NetworkBehaviour {
 			name = "Player " + playerControllerId;
 		
 		vehicle = GetComponent<WheelVehicle>();
+
+		if (boostClip != null) {
+			boostSource.clip = boostClip;
+		}
     }
 
     IEnumerator SetNameWhenReady()
@@ -169,9 +176,19 @@ public class Player : NetworkBehaviour {
 					boostParticle.Play();
 				}
 			}
-		} else if (boostParticles[0].isPlaying) {
-			foreach (ParticleSystem boostParticle in boostParticles) {
-				boostParticle.Stop();
+
+			if (!boostSource.isPlaying) {
+				boostSource.Play();
+			}
+		} else {
+			if (boostParticles[0].isPlaying) {
+				foreach (ParticleSystem boostParticle in boostParticles) {
+					boostParticle.Stop();
+				}
+			}
+
+			if (boostSource.isPlaying) {
+				boostSource.Stop();
 			}
 		}
 	}
