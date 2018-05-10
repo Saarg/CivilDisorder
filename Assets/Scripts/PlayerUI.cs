@@ -31,7 +31,10 @@ public class PlayerUI : MonoBehaviour {
 
 	[SerializeField] Text timeText;
 
-	GameManager gameManager;	
+	[SerializeField] Text[] playersScoreText;
+
+	GameManager gameManager;
+	List<Player> players = new List<Player>();	
 	
 	void Update () {
 		if (player == null || vehicle == null) {
@@ -50,7 +53,7 @@ public class PlayerUI : MonoBehaviour {
 		speedoAngle = Mathf.Clamp(speedoAngle, -80, 90);
 
 		speedoAngle = Mathf.Lerp(speedo.rotation.eulerAngles.z, speedoAngle, Time.deltaTime * 2f);
-		speedo.rotation = Quaternion.Euler(0, 0, speedoAngle);
+		speedo.localRotation = Quaternion.Euler(0, 0, speedoAngle);
 
 		if (gameManager == null && GameManager.Instance != null) {
 			gameManager = GameManager.Instance;
@@ -66,8 +69,28 @@ public class PlayerUI : MonoBehaviour {
 
 			timeText.text = sb.ToString();
 			timeText.fontSize = Mathf.FloorToInt(Mathf.Clamp(60 + 20 * ((gameManager.GameTime - gameManager.GameTimeLeft) / gameManager.GameTime), 60, 80));
+
+			int i;
+			for (i = 0; i < players.Count; i++)
+			{
+				playersScoreText[i].gameObject.SetActive(true);
+				playersScoreText[i].text = players[i].name + ": " + players[i].Score;
+			}
+
+			for (; i < playersScoreText.Length; i++)
+			{
+				playersScoreText[i].gameObject.SetActive(false);
+			}
 		} else {
 			timeText.text = "";
 		}
+	}
+
+	void OnSpawnPlayer(Player p) {
+		players.Add(p);
+	}
+
+	void OnDestroyPlayer(Player p) {
+		players.Remove(p);
 	}
 }

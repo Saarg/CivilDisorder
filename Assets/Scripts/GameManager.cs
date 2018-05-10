@@ -201,8 +201,9 @@ public class GameManager : NetworkBehaviour {
 			RectTransform t = lobbyPlayers[i].transform as RectTransform;
 
 			t.SetParent(lobbyHolder.transform);
-			t.anchoredPosition = new Vector2(-(lobbyPlayers.Count * 300)/2 + (i * 300) + 150, 0);
+			t.anchoredPosition3D = new Vector3(-(lobbyPlayers.Count * 300)/2 + (i * 300) + 150, 0, 0);
 			t.localScale = Vector3.one;
+			t.localRotation = Quaternion.identity;
 		}
 	}
 
@@ -229,7 +230,6 @@ public class GameManager : NetworkBehaviour {
 		forceStartButton.gameObject.SetActive(false);			
 
 		if (SteamNetworkManager.Instance != null) {
-			SteamNetworkManager.Instance.SetLobbyJoinable(true);
 			SteamNetworkManager.Instance.SetLobbyMemberLimit(maxPlayers);
 		}
 	}
@@ -249,7 +249,7 @@ public class GameManager : NetworkBehaviour {
 				allReady = false;
 		});
 
-		if (allReady && lobbyPlayers.Count >= minPlayers) {
+		if (allReady && lobbyPlayers.Count >= maxPlayers) {
 			NextState();
 		}
 	}
@@ -258,7 +258,7 @@ public class GameManager : NetworkBehaviour {
 		forceStartButton.gameObject.SetActive(false);	
 
 		if (SteamNetworkManager.Instance != null) {
-			SteamNetworkManager.Instance.SetLobbyJoinable(false);	
+			SteamNetworkManager.Instance.LeaveLobby();	
 		}	
 
 		lobbyPlayers.Clear();

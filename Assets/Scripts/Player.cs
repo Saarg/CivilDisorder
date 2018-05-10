@@ -157,9 +157,8 @@ public class Player : NetworkBehaviour {
 		if (isServer) {
 			if ((life <= 0 || transform.position.y < -10) && !handlingdeath) {
 				StartCoroutine(HandleDeath(50000f));
-				GameObject popup = Instantiate(scorePopupPrefab.gameObject, transform);
-				ScorePopup scorePopup = popup.GetComponent<ScorePopup>();
-				scorePopup.SetScore(-50000f);
+
+				TargetPopup(connectionToClient, -50000f);
 			}
 		}
 	}
@@ -211,7 +210,7 @@ public class Player : NetworkBehaviour {
 			if (angle > 150f) {
 				AddScore(col.relativeVelocity.sqrMagnitude);
 			} else {
-				life -= col.relativeVelocity.sqrMagnitude / 30f * col.rigidbody.mass / rigidbody.mass;
+				life -= col.relativeVelocity.sqrMagnitude / 10f * col.rigidbody.mass / rigidbody.mass;
 			}
 		}
 	}
@@ -225,12 +224,11 @@ public class Player : NetworkBehaviour {
 	IEnumerator HandleDeath(float malus) {
 		if (isServer && !handlingdeath) {
 			handlingdeath = true;
-
 			RpcDisassemble();
 			score = score > malus ? score - malus : 0;
 
 			yield return new WaitForSeconds(3f);
-			vehicle.ResetPos();
+			vehicle.ResetPos();			
 			RpcAssemble();
 			life = maxLife;
 
@@ -261,6 +259,15 @@ public class Player : NetworkBehaviour {
 			{
 				child.gameObject.SetActive(false);
 			}
+		}
+	}
+
+	[TargetRpc]
+	void TargetPopup(NetworkConnection target, float s) {
+		if (isLocalPlayer) {
+			GameObject popup = Instantiate(scorePopupPrefab.gameObject, transform);
+			ScorePopup scorePopup = popup.GetComponent<ScorePopup>();
+			scorePopup.SetScore(s);
 		}
 	}
 

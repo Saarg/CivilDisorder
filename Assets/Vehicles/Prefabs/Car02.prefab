@@ -2076,7 +2076,7 @@ MonoBehaviour:
   softSourceEnd: 1
   trailing: 0
   parent: {fileID: 4616151917948992}
-  offset: {x: 0, y: -0.15, z: 0}
+  offset: {x: 0, y: -0.29, z: 0}
 --- !u!114 &114324531732377096
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2332,7 +2332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 3
-  m_SendInterval: 0.05
+  m_SendInterval: 0.033333335
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_SyncSpin: 0
@@ -2485,7 +2485,7 @@ MonoBehaviour:
   softSourceEnd: 1
   trailing: 0
   parent: {fileID: 4079527284605248}
-  offset: {x: 0, y: -0.15, z: 0}
+  offset: {x: 0, y: -0.29, z: 0}
 --- !u!114 &114656977063327466
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2590,7 +2590,7 @@ MonoBehaviour:
   softSourceEnd: 1
   trailing: 0
   parent: {fileID: 4799495039464946}
-  offset: {x: 0, y: -0.15, z: 0}
+  offset: {x: 0, y: -0.29, z: 0}
 --- !u!114 &114784223585173672
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2644,7 +2644,7 @@ MonoBehaviour:
   softSourceEnd: 1
   trailing: 0
   parent: {fileID: 4978630911698712}
-  offset: {x: 0, y: -0.15, z: 0}
+  offset: {x: 0, y: -0.29, z: 0}
 --- !u!114 &114840261040018634
 MonoBehaviour:
   m_ObjectHideFlags: 1

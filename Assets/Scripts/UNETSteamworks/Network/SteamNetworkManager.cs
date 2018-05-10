@@ -297,8 +297,8 @@ public class SteamNetworkManager : MonoBehaviour
         // ...continued in OnLobbyEntered callback
     }
 
-    public void SetLobbyJoinable(bool joinable) {
-        SteamMatchmaking.SetLobbyJoinable(steamLobbyId, joinable);
+    public void LeaveLobby() {
+		SteamMatchmaking.LeaveLobby(steamLobbyId);
     }
 
     public void SetLobbyMemberLimit(int nb) {
@@ -388,8 +388,6 @@ public class SteamNetworkManager : MonoBehaviour
         }
 
         steamLobbyId = new CSteamID(pCallback.m_ulSteamIDLobby);
-
-        SetLobbyJoinable(false);
 
         Debug.Log("Connected to Steam lobby");
         lobbyConnectionState = SessionConnectionState.CONNECTED;

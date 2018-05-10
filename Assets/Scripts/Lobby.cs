@@ -186,6 +186,7 @@ public class Lobby : NetworkBehaviour {
 		Vector3 startPos = Vector3.zero;
 		startPos.x = -(GameManager.Instance.MaxPlayers * 2f / 2f) + (playerControllerId * 2f);
 		startPos.y = 2;
+		startPos.z = 0;
 
 		GameObject player = GameObject.Instantiate(vehicles[curVehicle].gameObject, startPos, Quaternion.identity);
 
