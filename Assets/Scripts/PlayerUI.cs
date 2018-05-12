@@ -34,7 +34,13 @@ public class PlayerUI : MonoBehaviour {
 	[SerializeField] Text[] playersScoreText;
 
 	GameManager gameManager;
-	List<Player> players = new List<Player>();	
+	List<Player> players = new List<Player>();
+
+	void Start()
+	{
+		Player.onPlayerSpawn += OnSpawnPlayer;
+		Player.onPlayerDestroy += OnDestroyPlayer;
+	}
 	
 	void Update () {
 		if (player == null || vehicle == null) {
@@ -73,8 +79,14 @@ public class PlayerUI : MonoBehaviour {
 			int i;
 			for (i = 0; i < players.Count; i++)
 			{
+				if (i < players.Count-1 && players[i].Score > players[i+1].Score) {
+					Player p = players[i];
+					players[i] = players[i+1];
+					players[i+1] = p;
+				}
+
 				playersScoreText[i].gameObject.SetActive(true);
-				playersScoreText[i].text = players[i].name + ": " + players[i].Score;
+				playersScoreText[i].text = players[i].name + ": " + Mathf.FloorToInt(players[i].Score);
 			}
 
 			for (; i < playersScoreText.Length; i++)
