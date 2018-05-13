@@ -14,7 +14,13 @@ AudioMixerController:
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 0
-  m_ExposedParameters: []
+  m_ExposedParameters:
+  - guid: e8d96ddd130fa49e38e1090dc0c935e8
+    name: CarVolume
+  - guid: 46f87e484be62456ca413d99472e8c31
+    name: EnvVolume
+  - guid: 308a8b038e71f48219266ba4977d4ac2
+    name: MusicVolume
   m_AudioMixerGroupViews:
   - guids:
     - cb2ede50c602449459ceeea3215df3ca

@@ -15,7 +15,7 @@ namespace Utils {
 		Vector3 startPos;
 		Quaternion startRot;
 
-		List<Vector3> closePoints = new List<Vector3>();
+		Rigidbody rb;
 
 		void Start () {
 			Player.onPlayerSpawn += OnPlayerSpawn;
@@ -25,6 +25,8 @@ namespace Utils {
 
 			startPos = transform.position;
 			startRot = transform.rotation;
+
+			rb = GetComponent<Rigidbody>();
 		}
 
 		void OnDestroy() {
@@ -40,13 +42,17 @@ namespace Utils {
 
 		void OnStartGame() {
 			follow = true;
+
+			rb.isKinematic = false;
 		}
 
 		void OnEndGame() {
 			follow = false;
 
 			transform.position = startPos;	
-			transform.rotation = startRot;	
+			transform.rotation = startRot;
+
+			rb.isKinematic = true;
 		}
 
 		void FixedUpdate() {
