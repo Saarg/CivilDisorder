@@ -51,7 +51,7 @@ namespace Utils {
 
 			if (MultiOSControls.GetValue("HideCursor", PlayerNumber.FreeCamera) != 0)
 			{
-				Screen.lockCursor = (Screen.lockCursor == false) ? true : false;
+				Cursor.lockState = (Cursor.lockState == CursorLockMode.None) ? CursorLockMode.Locked : CursorLockMode.None;
 			}
 		}
 	}

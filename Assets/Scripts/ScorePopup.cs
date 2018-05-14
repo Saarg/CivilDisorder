@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ScorePopup : MonoBehaviour {
 
-	static Camera camera;
+	static new Camera camera;
 	[SerializeField] TextMesh scoreText;
 
 	float startTime;

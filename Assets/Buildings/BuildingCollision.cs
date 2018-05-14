@@ -6,7 +6,6 @@ namespace Buildings {
 	[RequireComponent(typeof(Collider))]
 	public class BuildingCollision : MonoBehaviour {
 
-		[SerializeField] bool canBetriggered = false;
 		[SerializeField] LayerMask triggetLager;
 		List<Rigidbody> rigidbodies;
 		List<Collider> colliders;

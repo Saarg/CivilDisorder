@@ -11,9 +11,6 @@ public class UNETServerController {
     // UNET vars
     private List<NetworkConnection> connectedClients = new List<NetworkConnection>();
 
-    // Steamworks callbacks
-    private Callback<P2PSessionRequest_t> m_P2PSessionRequested;
-
     // state vars
     [HideInInspector]
     public bool inviteFriendOnStart = false;
@@ -42,8 +39,7 @@ public class UNETServerController {
     public void Init()
     {
         if (SteamManager.Initialized) {
-            m_P2PSessionRequested = Callback<P2PSessionRequest_t>.Create (OnP2PSessionRequested);
-
+            Callback<P2PSessionRequest_t>.Create (OnP2PSessionRequested);
         }
     }
 

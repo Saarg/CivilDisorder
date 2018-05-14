@@ -534,7 +534,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBetriggered: 0
   triggetLager:
     serializedVersion: 2
     m_Bits: 512
@@ -7691,7 +7690,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBetriggered: 0
   triggetLager:
     serializedVersion: 2
     m_Bits: 512
@@ -27635,6 +27633,11 @@ Prefab:
       propertyPath: players.Array.data[0].controller
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114352322540268694, guid: 99b54f74e19854814a0a88d18b252de2,
+        type: 2}
+      propertyPath: locked
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 99b54f74e19854814a0a88d18b252de2, type: 2}
   m_IsPrefabParent: 0
@@ -29281,7 +29284,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBetriggered: 0
   triggetLager:
     serializedVersion: 2
     m_Bits: 512
@@ -34842,7 +34844,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBetriggered: 0
   triggetLager:
     serializedVersion: 2
     m_Bits: 512
@@ -38849,7 +38850,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBetriggered: 0
   triggetLager:
     serializedVersion: 2
     m_Bits: 512
@@ -50278,7 +50278,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBetriggered: 0
   triggetLager:
     serializedVersion: 2
     m_Bits: 512
@@ -63950,7 +63949,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBetriggered: 0
   triggetLager:
     serializedVersion: 2
     m_Bits: 512
@@ -67276,7 +67274,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBetriggered: 0
   triggetLager:
     serializedVersion: 2
     m_Bits: 512
@@ -67653,7 +67650,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBetriggered: 0
   triggetLager:
     serializedVersion: 2
     m_Bits: 512
@@ -70281,7 +70277,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBetriggered: 0
   triggetLager:
     serializedVersion: 2
     m_Bits: 512
@@ -72412,7 +72407,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBetriggered: 0
   triggetLager:
     serializedVersion: 2
     m_Bits: 512
@@ -79476,7 +79470,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBetriggered: 0
   triggetLager:
     serializedVersion: 2
     m_Bits: 512
@@ -83685,7 +83678,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBetriggered: 0
   triggetLager:
     serializedVersion: 2
     m_Bits: 512
@@ -100614,7 +100606,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBetriggered: 0
   triggetLager:
     serializedVersion: 2
     m_Bits: 512
