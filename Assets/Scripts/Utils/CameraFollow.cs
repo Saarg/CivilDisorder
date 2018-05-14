@@ -58,6 +58,8 @@ namespace Utils {
 		void FixedUpdate() {
 			if (!follow) return;
 
+			this.rb.velocity.Normalize();
+
 			Quaternion curRot = transform.rotation;
 
 			Rigidbody rb = target.GetComponent<Rigidbody>();
