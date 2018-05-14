@@ -333,7 +333,7 @@ public class GameManager : NetworkBehaviour {
 				bestIndex = i;
 		}
 
-		mainText.text = players[bestIndex].name + " is the best\n" + Mathf.FloorToInt(players[bestIndex].Score) + " points";		
+		mainText.text = (players[bestIndex].name + " is the best\n" + Mathf.FloorToInt(players[bestIndex].Score) + " points").ToUpper();		
 	}
 
 	void GameFinishUpdate() {

@@ -43,7 +43,9 @@ public class PlayerUI : MonoBehaviour {
 	}
 	
 	void Update () {
-		if (player == null || vehicle == null) {
+		if (player == null || vehicle == null || 
+			(GameManager.Instance.gameState != GameManager.GameStates.Game && GameManager.Instance.gameState != GameManager.GameStates.CountDown)
+		) {
 			playerUI.gameObject.SetActive(false);
 			return;
 		}
@@ -86,7 +88,7 @@ public class PlayerUI : MonoBehaviour {
 				}
 
 				playersScoreText[i].gameObject.SetActive(true);
-				playersScoreText[i].text = players[i].name + ": " + Mathf.FloorToInt(players[i].Score);
+				playersScoreText[i].text = (players[i].name + ": " + Mathf.FloorToInt(players[i].Score)).ToUpper();
 			}
 
 			for (; i < playersScoreText.Length; i++)
