@@ -41,8 +41,12 @@ public class Player : NetworkBehaviour {
 	[SerializeField] float boostForce = 5000;
 	public float BoostForce { get { return boostForce; } }
 
-	[SyncVar]
+	[SyncVar(hook="UpdateUsername")]
 	string username;
+	void UpdateUsername(string u) {
+		username = u;
+		name = username;
+	}
 
 	[Header("Prefabs")]
 	[SerializeField] ScorePopup scorePopupPrefab;
@@ -98,8 +102,6 @@ public class Player : NetworkBehaviour {
 		gameManager = GameManager.Instance;
 
 		wheels = GetComponentsInChildren<WheelCollider>();
-
-		name = username;
 		
 		vehicle = GetComponent<WheelVehicle>();
 

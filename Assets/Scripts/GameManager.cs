@@ -345,7 +345,21 @@ public class GameManager : NetworkBehaviour {
 	}
 
 	public void ResetState() {
-		GameFinishExit();
+		switch (this.gameState) {
+			case GameStates.Waiting:
+				WaitingExit();				
+				break;
+			case GameStates.CountDown:
+				CountDownExit();			
+				break;
+			case GameStates.Game:
+				GameExit();
+				break;
+			case GameStates.Finished:
+				GameFinishExit();
+				break;
+		}
+
 		gameState = GameStates.Waiting;
 		WaitingEnter();
 	}

@@ -184,7 +184,7 @@ public class Lobby : NetworkBehaviour {
 			return;
 		
 		Vector3 startPos = Vector3.zero;
-		startPos.x = -(GameManager.Instance.MaxPlayers * 2f / 2f) + (playerControllerId * 2f);
+		startPos.x = -(GameManager.Instance.MaxPlayers * 4f / 2f) + (playerControllerId * 4f);
 		startPos.y = 2;
 		startPos.z = 0;
 

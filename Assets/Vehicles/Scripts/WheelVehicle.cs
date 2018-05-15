@@ -136,8 +136,13 @@ namespace VehicleBehaviour {
         }
 
         public void ResetPos() {
-            transform.position = spawnPosition;
-            transform.rotation = spawnRotation;
+            Vector3 startPos = Vector3.zero;
+            startPos.x = -(GameManager.Instance.MaxPlayers * 4f / 2f) + (GetComponent<Player>().playerControllerId * 4f);
+            startPos.y = 2;
+            startPos.z = 0;
+
+            transform.position = startPos;
+            transform.rotation = Quaternion.identity;
 
             _rb.velocity = Vector3.zero;
             _rb.angularVelocity = Vector3.zero;
