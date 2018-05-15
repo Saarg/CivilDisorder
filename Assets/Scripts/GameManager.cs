@@ -344,6 +344,12 @@ public class GameManager : NetworkBehaviour {
 		endOfGameUI.SetActive(false);
 	}
 
+	public void ResetState() {
+		GameFinishExit();
+		gameState = GameStates.Waiting;
+		WaitingEnter();
+	}
+
 	public void Quit() {
 		Application.Quit();
 	}

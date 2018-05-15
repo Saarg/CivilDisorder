@@ -98,6 +98,9 @@ public class SettingsHolder : ScriptableObject {
             resolution = Screen.resolutions.Length - 1;
         }
         
+        if (Screen.resolutions.Length > 0 || resolution < 0)
+            return;
+
         Resolution r = Screen.resolutions[resolution];
         if (fullscreen)
             Screen.SetResolution(r.width, r.height, fullscreen);

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 using UnityEngine.Networking.NetworkSystem;
@@ -45,6 +46,8 @@ public class SteamNetworkManager : MonoBehaviour
     private Callback<GameLobbyJoinRequested_t> m_GameLobbyJoinRequested;
     private Callback<LobbyChatUpdate_t> m_LobbyChatUpdate;
     private CallResult<LobbyMatchList_t> m_LobbyMatchList;
+
+	public UnityEvent onJoinLobby;
 
     private static HostTopology m_hostTopology = null;
     public static HostTopology hostTopology
@@ -172,12 +175,6 @@ public class SteamNetworkManager : MonoBehaviour
                 }
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Disconnect();
-        }
-
     }
 
     public void RegisterNetworkPrefabs()
@@ -479,6 +476,8 @@ public class SteamNetworkManager : MonoBehaviour
         var conn = myClient.connection;
         if (conn != null)
         {
+            onJoinLobby.Invoke();
+
             ClientScene.Ready(conn);
             Debug.Log("Requesting spawn");
             myClient.Send(NetworkMessages.SpawnRequestMsg, new StringMessage(SteamUser.GetSteamID().m_SteamID.ToString()));

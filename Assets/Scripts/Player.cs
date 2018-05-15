@@ -41,6 +41,9 @@ public class Player : NetworkBehaviour {
 	[SerializeField] float boostForce = 5000;
 	public float BoostForce { get { return boostForce; } }
 
+	[SyncVar]
+	string username;
+
 	[Header("Prefabs")]
 	[SerializeField] ScorePopup scorePopupPrefab;
 
@@ -59,20 +62,6 @@ public class Player : NetworkBehaviour {
 	
     [SerializeField] ulong steamId;
 
-    public override void OnStartClient()
-    {
-        if (SteamNetworkManager.Instance != null)
-        	StartCoroutine(SetNameWhenReady());
-		else
-			name = "Player " + playerControllerId;
-		
-		vehicle = GetComponent<WheelVehicle>();
-
-		if (boostClip != null) {
-			boostSource.clip = boostClip;
-		}
-    }
-
     IEnumerator SetNameWhenReady()
     {
         // Wait for client to get authority, then retrieve the player's Steam ID
@@ -83,8 +72,15 @@ public class Player : NetworkBehaviour {
         }
 
         steamId = SteamNetworkManager.Instance.GetSteamIDForConnection(id.clientAuthorityOwner).m_SteamID;
-		name = SteamFriends.GetFriendPersonaName(new CSteamID(steamId));
+		username = SteamFriends.GetFriendPersonaName(new CSteamID(steamId));
 	}
+
+	public override void OnStartServer() {
+		if (SteamNetworkManager.Instance != null)
+        	StartCoroutine(SetNameWhenReady());
+		else
+			username = "Player " + playerControllerId;
+	} 
 
 	void Start () {
 		rigidbody = GetComponent<Rigidbody>();
@@ -102,6 +98,14 @@ public class Player : NetworkBehaviour {
 		gameManager = GameManager.Instance;
 
 		wheels = GetComponentsInChildren<WheelCollider>();
+
+		name = username;
+		
+		vehicle = GetComponent<WheelVehicle>();
+
+		if (boostClip != null) {
+			boostSource.clip = boostClip;
+		}
 	}
 
 	void OnDestroy() {

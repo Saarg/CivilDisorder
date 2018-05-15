@@ -160,7 +160,7 @@ public class UNETServerController {
             }
         }
 
-        Debug.LogError("Failed to spawn player");
+        // Debug.LogError("Failed to spawn player");
     }
 
 

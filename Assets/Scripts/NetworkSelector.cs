@@ -44,6 +44,7 @@ public class NetworkSelector : MonoBehaviour {
 			unetmanager.StopHost();
 		}
 
+		gameManager.ResetState();
 		// SceneManager.LoadScene(0);
 		return;
 	}
