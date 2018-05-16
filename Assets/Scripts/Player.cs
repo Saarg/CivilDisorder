@@ -104,6 +104,8 @@ public class Player : NetworkBehaviour {
 		wheels = GetComponentsInChildren<WheelCollider>();
 		
 		vehicle = GetComponent<WheelVehicle>();
+		if (!isLocalPlayer)
+			vehicle.enabled = false;
 
 		if (boostClip != null) {
 			boostSource.clip = boostClip;
@@ -149,15 +151,17 @@ public class Player : NetworkBehaviour {
 	}
 	
 	void Update() {
-		boost += Time.deltaTime * boostRegen;
-		if (boost > maxBoost) { boost = maxBoost; }
+		if (isLocalPlayer) {
+			boost += Time.deltaTime * boostRegen;
+			if (boost > maxBoost) { boost = maxBoost; }
 
-		if (MultiOSControls.GetValue(resetInput, playerNumber) > .5f && isLocalPlayer && !handlingdeath)
-		{
-			CmdReset();
-			GameObject popup = Instantiate(scorePopupPrefab.gameObject, transform);
-			ScorePopup scorePopup = popup.GetComponent<ScorePopup>();
-			scorePopup.SetScore(-10000f);
+			if (MultiOSControls.GetValue(resetInput, playerNumber) > .5f && isLocalPlayer && !handlingdeath)
+			{
+				CmdReset();
+				GameObject popup = Instantiate(scorePopupPrefab.gameObject, transform);
+				ScorePopup scorePopup = popup.GetComponent<ScorePopup>();
+				scorePopup.SetScore(-10000f);
+			}
 		}
 
 		if (isServer) {
@@ -170,6 +174,9 @@ public class Player : NetworkBehaviour {
 	}
 
 	void FixedUpdate () {
+		if (!isLocalPlayer)
+			return;
+
 		if (MultiOSControls.GetValue(boostInput, playerNumber) > 0.5f && boost > 0.1f) {
 			rigidbody.AddForce(transform.forward * boostForce);
 
@@ -245,6 +252,7 @@ public class Player : NetworkBehaviour {
 	[ClientRpc]
 	void RpcDisassemble() {
 		vehicle.toogleHandbrake(true);
+		rigidbody.isKinematic = true;
 
 		Vector3 velocity = rigidbody.velocity;
 
@@ -280,6 +288,7 @@ public class Player : NetworkBehaviour {
 	[ClientRpc]
 	void RpcAssemble() {
 		vehicle.toogleHandbrake(false);
+		rigidbody.isKinematic = false;		
 
 		Transform body = transform.Find("Body");
 		foreach (Transform child in body)
