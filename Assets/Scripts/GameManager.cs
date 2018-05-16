@@ -52,9 +52,9 @@ public class GameManager : NetworkBehaviour {
 				GameFinishEnter();
 				break;
 			case GameStates.Finished:
-				GameFinishExit();
-				gameState = GameStates.Waiting;
-				WaitingEnter();
+				// GameFinishExit();
+				// gameState = GameStates.Waiting;
+				// WaitingEnter();
 				break;
 		}
 	}
@@ -62,8 +62,13 @@ public class GameManager : NetworkBehaviour {
 	// Settings
 	[Header("Lobby settings")]
 	[SerializeField] GameObject lobbyHolder;
+	public GameObject LobbyHolder { get { return lobbyHolder; } }
 	[SerializeField] Lobby lobbyPlayer;
 	List<Lobby> lobbyPlayers = new List<Lobby>();
+	public void AddLobbyPlayer(Lobby l) {
+		if (!lobbyPlayers.Contains(l))
+			lobbyPlayers.Add(l);
+	}
 
 	public enum LobbyAccess { Private, Friends, Public }
 	public LobbyAccess lobbyAccess = LobbyAccess.Friends;
@@ -192,8 +197,8 @@ public class GameManager : NetworkBehaviour {
 	}
 
 	[ClientRpc]
-	void RpcAddLobbyPlayer(GameObject l) {	
-		lobbyPlayers.Add(l.GetComponent<Lobby>());
+	void RpcAddLobbyPlayer(GameObject l) {
+		AddLobbyPlayer(l.GetComponent<Lobby>());
 	}
 	
 	void UpdatePositionPlayerUI() {
@@ -227,7 +232,7 @@ public class GameManager : NetworkBehaviour {
 	// Waiting state
 	void WaitingEnter() {
 		lobbyHolder.SetActive(true);
-		forceStartButton.gameObject.SetActive(false);			
+		forceStartButton.gameObject.SetActive(false);
 
 		if (SteamNetworkManager.Instance != null) {
 			SteamNetworkManager.Instance.SetLobbyMemberLimit(maxPlayers);
@@ -329,7 +334,7 @@ public class GameManager : NetworkBehaviour {
 
 		for (int i = 1; i < players.Length; i++)
 		{
-			if (players[bestIndex].Score > players[i].Score)
+			if (players[bestIndex].Score < players[i].Score)
 				bestIndex = i;
 		}
 

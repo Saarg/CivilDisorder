@@ -72,6 +72,9 @@ public class Lobby : NetworkBehaviour {
 		notReadyButton.gameObject.SetActive(false);
 
 		UpdateCarStat();
+		
+		transform.SetParent(GameManager.Instance.LobbyHolder.transform);
+		GameManager.Instance.AddLobbyPlayer(this);
 	}
 
 	public override void OnStartAuthority() {
