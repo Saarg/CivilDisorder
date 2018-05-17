@@ -66,7 +66,7 @@ namespace Utils {
 			if (rb == null)
 				transform.LookAt(target);
 			else {
-				transform.LookAt(target.position + target.forward * rb.velocity.sqrMagnitude);				
+				transform.LookAt(target.position/* + target.forward * rb.velocity.sqrMagnitude*/);				
 			}
 			
 			Vector3 tPos = target.position + target.TransformDirection(offset);

@@ -30,6 +30,10 @@ namespace Buildings {
 			GameManager.onStartCountDown += Reset;
 		}
 
+		void OnDestroy() {
+			GameManager.onStartCountDown -= Reset;			
+		}
+
 		void Reset () {
 			StartCoroutine(CReset());
 		}

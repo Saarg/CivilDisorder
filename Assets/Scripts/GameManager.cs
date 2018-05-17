@@ -4,6 +4,7 @@ using Steamworks;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 
 public class GameManager : NetworkBehaviour {
 
@@ -72,6 +73,9 @@ public class GameManager : NetworkBehaviour {
 
 	public enum LobbyAccess { Private, Friends, Public }
 	public LobbyAccess lobbyAccess = LobbyAccess.Friends;
+
+	public int curTrack = 1;
+	[SyncVar] public int track;
 
 	[SyncVar]
 	[SerializeField] int minPlayers = 2;
@@ -220,6 +224,25 @@ public class GameManager : NetworkBehaviour {
 		players.Remove(p);		
 	}
 
+	IEnumerator LoadAsyncScene(int scene)
+    {
+		AsyncOperation asyncLoad = SceneManager.UnloadSceneAsync(curTrack);
+
+		while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+
+		curTrack = scene;
+        asyncLoad = SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
+
+        // Wait until the asynchronous scene fully loads
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }	
+    }
+
 	// STATES
 	public enum GameStates
 	{
@@ -247,6 +270,9 @@ public class GameManager : NetworkBehaviour {
 		if (lobbyPlayers.Count >= minPlayers && isServer) {
 			forceStartButton.gameObject.SetActive(true);
 		}
+
+		if (curTrack != track)
+			StartCoroutine(LoadAsyncScene(track));
 
 		bool allReady = true;
 		lobbyPlayers.ForEach((Lobby l) => {
