@@ -365,6 +365,11 @@ public class GameManager : NetworkBehaviour {
 		}
 
 		mainText.text = (players[bestIndex].name + " is the best\n" + Mathf.FloorToInt(players[bestIndex].Score) + " points").ToUpper();		
+		if (players[bestIndex].isLocalPlayer) {
+			SteamUserStats.SetAchievement("WIN_A_GAME");                
+			SteamUserStats.SetStat("WIN_A_GAME", 1);
+			SteamUserStats.StoreStats();
+		}
 	}
 
 	void GameFinishUpdate() {

@@ -115,6 +115,29 @@ public class Player : NetworkBehaviour {
 	void OnDestroy() {
 		if (onPlayerDestroy != null)
 			onPlayerDestroy.Invoke(this);	
+
+		if (isLocalPlayer) {
+			if (score > 50000f) {
+				SteamUserStats.SetAchievement("50K");                
+				SteamUserStats.SetStat("50K", 1);
+				SteamUserStats.StoreStats();
+			}
+			if (score > 100000f) {
+				SteamUserStats.SetAchievement("100K");                
+				SteamUserStats.SetStat("100K", 1);
+				SteamUserStats.StoreStats();
+			}
+			if (score > 200000f) {
+				SteamUserStats.SetAchievement("200K");                
+				SteamUserStats.SetStat("200K", 1);
+				SteamUserStats.StoreStats();
+			}
+			if (score > 500000f) {
+				SteamUserStats.SetAchievement("500K");                
+				SteamUserStats.SetStat("500K", 1);
+				SteamUserStats.StoreStats();
+			}
+		}
 	}
 
 	public void AddScore(float s) {
@@ -224,6 +247,18 @@ public class Player : NetworkBehaviour {
 				AddScore(col.relativeVelocity.sqrMagnitude);
 			} else {
 				life -= col.relativeVelocity.sqrMagnitude / 10f * col.rigidbody.mass / rigidbody.mass;
+				
+				Player otherP = col.gameObject.GetComponentInParent<Player>();
+
+				if (isLocalPlayer && life <= 0) {
+					SteamUserStats.SetAchievement("REKT");                
+					SteamUserStats.SetStat("REKT", 1);
+					SteamUserStats.StoreStats();
+				} else if (otherP != null && otherP.isLocalPlayer && life <= 0) {
+					SteamUserStats.SetAchievement("KILL");                
+					SteamUserStats.SetStat("KILL", 1);
+					SteamUserStats.StoreStats();
+				}
 			}
 		}
 	}

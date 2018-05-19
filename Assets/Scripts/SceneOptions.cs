@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Steamworks;
 
 public class SceneOptions : MonoBehaviour {
 
@@ -12,6 +13,10 @@ public class SceneOptions : MonoBehaviour {
 	int curTrack = 1;
 	public void OnChangeWold(int scene) {
 		StartCoroutine(LoadAsyncScene(scene + 1));
+
+        SteamUserStats.SetAchievement("START_THE_GAME");                
+        SteamUserStats.SetStat("START_THE_GAME", 1);
+        SteamUserStats.StoreStats();
 	}
 
 	IEnumerator LoadAsyncScene(int scene)
