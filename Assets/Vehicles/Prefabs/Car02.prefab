@@ -2323,7 +2323,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  brakeForce: 500
+  brakeForce: 1000
   steerAngle: 25
   steerSpeed: 0.2
   jumpVel: 1.5
@@ -2726,7 +2726,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0.1, z: 0}
   m_Radius: 0.3
   m_SuspensionSpring:
-    spring: 40000
+    spring: 50000
     damper: 6000
     targetPosition: 0.65
   m_SuspensionDistance: 0.15
@@ -2744,7 +2744,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1.7
+    m_Stiffness: 2
   m_Enabled: 1
 --- !u!146 &146504509095465980
 WheelCollider:
@@ -2755,7 +2755,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0.1, z: 0}
   m_Radius: 0.3
   m_SuspensionSpring:
-    spring: 40000
+    spring: 50000
     damper: 6000
     targetPosition: 0.65
   m_SuspensionDistance: 0.15
@@ -2773,7 +2773,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1.7
+    m_Stiffness: 2
   m_Enabled: 1
 --- !u!146 &146793865263719070
 WheelCollider:
@@ -2784,7 +2784,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0.1, z: 0}
   m_Radius: 0.3
   m_SuspensionSpring:
-    spring: 40000
+    spring: 50000
     damper: 6000
     targetPosition: 0.65
   m_SuspensionDistance: 0.15
@@ -2802,7 +2802,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1.7
+    m_Stiffness: 2
   m_Enabled: 1
 --- !u!146 &146802126822764044
 WheelCollider:
@@ -2813,7 +2813,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0.1, z: 0}
   m_Radius: 0.3
   m_SuspensionSpring:
-    spring: 40000
+    spring: 50000
     damper: 6000
     targetPosition: 0.65
   m_SuspensionDistance: 0.15
@@ -2831,7 +2831,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1.7
+    m_Stiffness: 2
   m_Enabled: 1
 --- !u!198 &198120220505843178
 ParticleSystem:

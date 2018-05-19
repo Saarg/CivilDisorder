@@ -59,9 +59,11 @@ public class LapTimer : MonoBehaviour {
 		// If it's the endpoint
 		if (i == checkPoints.Count - 1) {
 			float time = Time.realtimeSinceStartup - pl.startTime;
-			Debug.Log(other.gameObject.name + " lapped a " + time + "s");
-			pl.player.AddScore(50000f / time);
+			Player p = pl.player;
 			playersLap.Remove(pl);
+
+			Debug.Log(other.gameObject.name + " lapped a " + time + "s");
+			p.AddScore(50000f / time);
 			return;
 		}
 
