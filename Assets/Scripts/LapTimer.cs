@@ -62,8 +62,7 @@ public class LapTimer : MonoBehaviour {
 			Player p = pl.player;
 			playersLap.Remove(pl);
 
-			Debug.Log(other.gameObject.name + " lapped a " + time + "s");
-			p.AddScore(50000f / time);
+			p.AddScore(100000f / time);
 			return;
 		}
 
