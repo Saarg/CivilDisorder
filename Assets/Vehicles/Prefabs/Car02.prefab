@@ -331,7 +331,7 @@ GameObject:
   - component: {fileID: 82875422344952318}
   - component: {fileID: 82884678253985140}
   - component: {fileID: 114405640822027916}
-  - component: {fileID: 114424393643937346}
+  - component: {fileID: 114021369756015660}
   m_Layer: 9
   m_Name: Car02
   m_TagString: Untagged
@@ -1877,6 +1877,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &114021369756015660
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1637335803908784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb2e7b2f0e94e43be9322789b8915494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  updateRate: 10
+  posLerp: 0.005
+  rotLerp: 0.005
 --- !u!114 &114064628577781280
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2334,27 +2348,6 @@ MonoBehaviour:
   gasParticles:
   - {fileID: 198120220505843178}
   - {fileID: 198543391918994702}
---- !u!114 &114424393643937346
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1637335803908784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 3
-  m_SendInterval: 0.033333335
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 500
-  m_InterpolateMovement: 1
 --- !u!114 &114507247422366396
 MonoBehaviour:
   m_ObjectHideFlags: 1

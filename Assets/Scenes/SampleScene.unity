@@ -945,7 +945,7 @@ MonoBehaviour:
     type: 2}
   lobbyAccess: 1
   curTrack: 1
-  track: 0
+  track: 1
   minPlayers: 2
   maxPlayers: 4
   countDownTime: 3
@@ -6419,7 +6419,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1206431160
 Transform:
   m_ObjectHideFlags: 0
@@ -6524,9 +6524,9 @@ MonoBehaviour:
     m_MaxNetSimulatorTimeout: 12000
   m_Channels: 0500000000000000
   m_UseWebSockets: 0
-  m_UseSimulator: 0
-  m_SimulatedLatency: 1
-  m_PacketLossPercentage: 0
+  m_UseSimulator: 1
+  m_SimulatedLatency: 100
+  m_PacketLossPercentage: 1
   m_MaxBufferedPackets: 16
   m_AllowFragmentation: 1
   m_MatchHost: mm.unet.unity3d.com
@@ -6721,7 +6721,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1273866415
 MonoBehaviour:
   m_ObjectHideFlags: 0

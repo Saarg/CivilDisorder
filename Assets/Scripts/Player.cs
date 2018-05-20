@@ -104,8 +104,6 @@ public class Player : NetworkBehaviour {
 		wheels = GetComponentsInChildren<WheelCollider>();
 		
 		vehicle = GetComponent<WheelVehicle>();
-		if (!isLocalPlayer)
-			vehicle.enabled = false;
 
 		if (boostClip != null) {
 			boostSource.clip = boostClip;

@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 82546033131596690}
   - component: {fileID: 82207881457301472}
   - component: {fileID: 114704326713349534}
-  - component: {fileID: 114270385828144558}
+  - component: {fileID: 114265750731175292}
   m_Layer: 9
   m_Name: Car01
   m_TagString: Untagged
@@ -1955,7 +1955,7 @@ MonoBehaviour:
     - {fileID: 1740689809567536}
     - {fileID: 1043648440425546}
   _assetGuid: ee0bb8960b2b94c55ad6df393c84a17c
---- !u!114 &114270385828144558
+--- !u!114 &114265750731175292
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1963,19 +1963,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1366243911189104}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Script: {fileID: 11500000, guid: bb2e7b2f0e94e43be9322789b8915494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TransformSyncMode: 3
-  m_SendInterval: 0.033333335
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 500
-  m_InterpolateMovement: 1
+  updateRate: 10
+  posLerp: 0.005
+  rotLerp: 0.005
 --- !u!114 &114293484777299700
 MonoBehaviour:
   m_ObjectHideFlags: 1

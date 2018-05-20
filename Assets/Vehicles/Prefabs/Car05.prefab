@@ -485,7 +485,7 @@ GameObject:
   - component: {fileID: 82540805195564522}
   - component: {fileID: 82239840650180068}
   - component: {fileID: 114042412474236538}
-  - component: {fileID: 114365496676618560}
+  - component: {fileID: 114958367186796062}
   m_Layer: 9
   m_Name: Car05
   m_TagString: Untagged
@@ -3159,27 +3159,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _guid: c2841165-c011-4392-8f1f-73d68b4549ba
---- !u!114 &114365496676618560
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1623981022024096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 3
-  m_SendInterval: 0.033333335
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 500
-  m_InterpolateMovement: 1
 --- !u!114 &114374845443793986
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3780,6 +3759,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wheelModel: {fileID: 1091580514459638}
+--- !u!114 &114958367186796062
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1623981022024096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb2e7b2f0e94e43be9322789b8915494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  updateRate: 10
+  posLerp: 0.005
+  rotLerp: 0.005
 --- !u!114 &114964946946673678
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -2,10 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 namespace VehicleBehaviour {
     [RequireComponent(typeof(Rigidbody))]
-    public class WheelVehicle : MonoBehaviour {
+    public class WheelVehicle : NetworkBehaviour {
 
         [SerializeField] public Sprite preview;
         
@@ -66,21 +67,33 @@ namespace VehicleBehaviour {
 
             wheels = GetComponentsInChildren<WheelCollider>();
         }
+
+        void Update()
+        {
+            foreach (ParticleSystem gasParticle in gasParticles)
+            {
+                ParticleSystem.EmissionModule em = gasParticle.emission;
+                em.rateOverTime = handbreak ? 0 : Mathf.Lerp(em.rateOverTime.constant, Mathf.Clamp(10.0f * throttle, 5.0f, 10.0f), 0.1f);
+            }
+        }
         
         void FixedUpdate () {
             speed = transform.InverseTransformDirection(_rb.velocity).z * 3.6f;
 
-            // Accelerate & brake
-            if (throttleInput != "" && throttleInput != null)
-            {
-                // throttle = Input.GetAxis(throttleInput) != 0 ? Input.GetAxis(throttleInput) : Mathf.Clamp(throttle, -1, 1);
-                throttle = MultiOSControls.GetValue(throttleInput, playerNumber) - MultiOSControls.GetValue(brakeInput, playerNumber); 
+            if (isLocalPlayer) {
+                // Accelerate & brake
+                if (throttleInput != "" && throttleInput != null)
+                {
+                    // throttle = Input.GetAxis(throttleInput) != 0 ? Input.GetAxis(throttleInput) : Mathf.Clamp(throttle, -1, 1);
+                    throttle = MultiOSControls.GetValue(throttleInput, playerNumber) - MultiOSControls.GetValue(brakeInput, playerNumber); 
+                }
+                
+                // Turn
+                steering = turnInputCurve.Evaluate(MultiOSControls.GetValue(turnInput, playerNumber)) * steerAngle;
             }
-            
-            // Turn
             foreach (WheelCollider wheel in turnWheel)
             {
-                wheel.steerAngle = Mathf.Lerp(wheel.steerAngle, turnInputCurve.Evaluate(MultiOSControls.GetValue(turnInput, playerNumber)) * steerAngle, steerSpeed);
+                wheel.steerAngle = Mathf.Lerp(wheel.steerAngle, steering, steerSpeed);
             }
 
             foreach (WheelCollider wheel in wheels)
@@ -126,12 +139,6 @@ namespace VehicleBehaviour {
                     return;
                 
                 _rb.velocity += transform.up * jumpVel;
-            }
-
-            foreach (ParticleSystem gasParticle in gasParticles)
-            {
-                ParticleSystem.EmissionModule em = gasParticle.emission;
-                em.rateOverTime = handbreak ? 0 : Mathf.Lerp(em.rateOverTime.constant, Mathf.Clamp(10.0f * throttle, 5.0f, 10.0f), 0.1f);
             }
         }
 

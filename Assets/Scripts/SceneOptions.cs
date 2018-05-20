@@ -14,9 +14,11 @@ public class SceneOptions : MonoBehaviour {
 	public void OnChangeWold(int scene) {
 		StartCoroutine(LoadAsyncScene(scene + 1));
 
-        SteamUserStats.SetAchievement("START_THE_GAME");                
-        SteamUserStats.SetStat("START_THE_GAME", 1);
-        SteamUserStats.StoreStats();
+        if (SteamManager.Initialized) {
+            SteamUserStats.SetAchievement("START_THE_GAME");                
+            SteamUserStats.SetStat("START_THE_GAME", 1);
+            SteamUserStats.StoreStats();
+        }
 	}
 
 	IEnumerator LoadAsyncScene(int scene)
