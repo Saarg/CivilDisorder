@@ -350,7 +350,7 @@ public class GameManager : NetworkBehaviour {
 			gameTimeLeft = gameTime - (Time.realtimeSinceStartup - gameStartTime);
 
 			if (Time.realtimeSinceStartup - lastSync > syncRate) {
-				SendBuildingsState();
+				// SendBuildingsState();
 				lastSync = Time.realtimeSinceStartup;
 			}
 
@@ -380,8 +380,9 @@ public class GameManager : NetworkBehaviour {
 		foreach(BuildingUpdateMessage_RB_DATA data in msg.rigidbodys) {
 			Rigidbody rb = BuildingCollision.Buildings[data.buildingIndex].Rigidbodies[data.rigidbodyIndex];
 			
-			rb.transform.position = data.position;
-			rb.transform.rotation = data.rotation;
+			BuildingCollision.Buildings[data.buildingIndex].targetPos[data.rigidbodyIndex] = data.position;
+			BuildingCollision.Buildings[data.buildingIndex].targetRot[data.rigidbodyIndex] = data.rotation;
+
 			rb.velocity = data.velocity;
 		}
 	}
@@ -393,7 +394,7 @@ public class GameManager : NetworkBehaviour {
 		for (int i = 0; i < BuildingCollision.Buildings.Count; i++) {
 			int j = -1;
 
-			if (BuildingCollision.Buildings[i].enabled)
+			if (BuildingCollision.Buildings[i].Triggered)
 				continue;
 
 			foreach (Rigidbody rigidbody in BuildingCollision.Buildings[i].Rigidbodies) {
@@ -445,7 +446,7 @@ public class GameManager : NetworkBehaviour {
 	void GameFinishUpdate() {
 		if (isServer) {
 			if (Time.realtimeSinceStartup - lastSync > syncRate) {
-				SendBuildingsState();
+				// SendBuildingsState();
 				lastSync = Time.realtimeSinceStartup;
 			}
 		}

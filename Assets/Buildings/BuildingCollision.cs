@@ -11,10 +11,16 @@ namespace Buildings {
 		[SerializeField] LayerMask triggerLayer;
 		List<Rigidbody> rigidbodies;
 		public List<Rigidbody> Rigidbodies { get { return rigidbodies; }}
+		public List<Vector3> targetPos;
+		public List<Quaternion> targetRot;
+		
 		List<Collider> colliders;
 
 		List<Vector3> childPositions;
 		List<Quaternion> childRotations;
+
+		bool triggered = false;
+		public bool Triggered { get { return triggered; } }
 
 		// Use this for initialization
 		void Start () {
@@ -28,6 +34,8 @@ namespace Buildings {
 			foreach (Transform child in transform) {
 				childPositions.Add(child.localPosition);
 				childRotations.Add(child.localRotation);
+				targetPos.Add(child.position);
+				targetRot.Add(child.rotation);
 			}
 
 			GameManager.onStartCountDown += Reset;
@@ -41,9 +49,26 @@ namespace Buildings {
 		}
 
 		void Reset () {
-			enabled = true;
+			triggered = false;
 			StartCoroutine(CReset());
 		}
+
+		// void FixedUpdate()
+		// {
+		// 	if (!triggered)
+		// 		return;
+
+		// 	int i = 0;
+		// 	foreach (Transform child in transform) {
+		// 		if (GameManager.Instance.isServer || targetPos[i] == Vector3.zero)
+		// 			continue;
+				
+		// 		child.position = Vector3.Lerp(child.position, targetPos[i], 0.01f);
+		// 		child.rotation = Quaternion.Lerp(child.rotation, targetRot[i], 0.01f);
+
+		// 		i++;
+		// 	}
+		// }
 
 		IEnumerator CReset() {
 			foreach(Collider c in colliders) {
@@ -61,8 +86,7 @@ namespace Buildings {
 
 		void OnTriggerEnter(Collider col) {
 			if (GameManager.Instance != null && GameManager.Instance.gameState == GameManager.GameStates.Game && triggerLayer == (triggerLayer | (1 << col.gameObject.layer))) {
-				enabled = false;
-
+				triggered = true;
 				foreach(Collider c in colliders) {
 					c.enabled = false;
 				}
