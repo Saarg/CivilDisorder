@@ -5,9 +5,12 @@ using UnityEngine;
 namespace Buildings {
 	[RequireComponent(typeof(Collider))]
 	public class BuildingCollision : MonoBehaviour {
+		static List<BuildingCollision> buildings = new List<BuildingCollision>();
+		public static List<BuildingCollision> Buildings { get { return buildings; }}
 
-		[SerializeField] LayerMask triggetLager;
+		[SerializeField] LayerMask triggerLayer;
 		List<Rigidbody> rigidbodies;
+		public List<Rigidbody> Rigidbodies { get { return rigidbodies; }}
 		List<Collider> colliders;
 
 		List<Vector3> childPositions;
@@ -28,13 +31,17 @@ namespace Buildings {
 			}
 
 			GameManager.onStartCountDown += Reset;
+
+			buildings.Add(this);
 		}
 
 		void OnDestroy() {
-			GameManager.onStartCountDown -= Reset;			
+			GameManager.onStartCountDown -= Reset;
+			buildings.Remove(this);			
 		}
 
 		void Reset () {
+			enabled = true;
 			StartCoroutine(CReset());
 		}
 
@@ -53,7 +60,9 @@ namespace Buildings {
 		}
 
 		void OnTriggerEnter(Collider col) {
-			if (GameManager.Instance != null && GameManager.Instance.gameState == GameManager.GameStates.Game && triggetLager == (triggetLager | (1 << col.gameObject.layer))) {
+			if (GameManager.Instance != null && GameManager.Instance.gameState == GameManager.GameStates.Game && triggerLayer == (triggerLayer | (1 << col.gameObject.layer))) {
+				enabled = false;
+
 				foreach(Collider c in colliders) {
 					c.enabled = false;
 				}

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Networking;
 
- public class VehiclePosMessage : MessageBase
+public class VehiclePosMessage : MessageBase
 {
     public Vector3 pos;
     public Quaternion rot;

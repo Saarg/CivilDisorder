@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
+using Buildings;
 
 public class GameManager : NetworkBehaviour {
 
@@ -156,6 +157,11 @@ public class GameManager : NetworkBehaviour {
 
 	public override void OnStartClient() {
 		lobbyPlayers.AddRange(GameObject.FindObjectsOfType<Lobby>());
+
+		foreach (NetworkClient client in NetworkClient.allClients)
+        {
+            client.RegisterHandler(NetworkMessages.BuildingUpdate, ReadBuildingsState);
+        }
 	}
 	
 	void Update () {
@@ -326,18 +332,27 @@ public class GameManager : NetworkBehaviour {
 	}
 
 	// Game state
+	float lastSync;
+	float syncRate = 0.2f;
 	void GameEnter() {
 		if (onStartGame != null)
 			onStartGame.Invoke();
 
 		if (isServer) {
 			gameStartTime = Time.realtimeSinceStartup;
+
+			lastSync = Time.realtimeSinceStartup;
 		}
 	}
 
 	void GameUpdate() {
 		if (isServer) {		
 			gameTimeLeft = gameTime - (Time.realtimeSinceStartup - gameStartTime);
+
+			if (Time.realtimeSinceStartup - lastSync > syncRate) {
+				SendBuildingsState();
+				lastSync = Time.realtimeSinceStartup;
+			}
 
 			if (gameTimeLeft < 0) {
 				NextState();
@@ -348,6 +363,61 @@ public class GameManager : NetworkBehaviour {
 	void GameExit() {
 		if (onEndGame != null)
 			onEndGame.Invoke();
+	}
+
+	int lastReadBuildingsState = -1;
+	void ReadBuildingsState(NetworkMessage message)  {
+		if (isServer)
+			return;
+
+		BuildingUpdateMessage msg = message.ReadMessage<BuildingUpdateMessage>();
+
+		if (lastReadBuildingsState > msg.number)
+			return;
+		else
+			lastReadBuildingsState = msg.number;
+
+		foreach(BuildingUpdateMessage_RB_DATA data in msg.rigidbodys) {
+			Rigidbody rb = BuildingCollision.Buildings[data.buildingIndex].Rigidbodies[data.rigidbodyIndex];
+			
+			rb.transform.position = data.position;
+			rb.transform.rotation = data.rotation;
+			rb.velocity = data.velocity;
+		}
+	}
+
+	void SendBuildingsState() {
+
+		BuildingUpdateMessage msg = new BuildingUpdateMessage();
+
+		for (int i = 0; i < BuildingCollision.Buildings.Count; i++) {
+			int j = -1;
+
+			if (BuildingCollision.Buildings[i].enabled)
+				continue;
+
+			foreach (Rigidbody rigidbody in BuildingCollision.Buildings[i].Rigidbodies) {
+				j++;
+
+				if (rigidbody.IsSleeping())
+					continue;						
+
+				BuildingUpdateMessage_RB_DATA data = new BuildingUpdateMessage_RB_DATA();
+
+				data.buildingIndex = i;
+				data.rigidbodyIndex = j;
+				data.position = rigidbody.transform.position;
+				data.rotation = rigidbody.transform.rotation;
+				data.velocity = rigidbody.velocity;
+				msg.rigidbodys.Add(data);
+
+				if (msg.rigidbodys.Count > 20) {
+					NetworkServer.SendUnreliableToAll(NetworkMessages.BuildingUpdate, msg);
+					msg = new BuildingUpdateMessage();
+				}
+			}
+		}
+		NetworkServer.SendUnreliableToAll(NetworkMessages.BuildingUpdate, msg);
 	}
 
 	// GameFinish state
@@ -373,7 +443,12 @@ public class GameManager : NetworkBehaviour {
 	}
 
 	void GameFinishUpdate() {
-
+		if (isServer) {
+			if (Time.realtimeSinceStartup - lastSync > syncRate) {
+				SendBuildingsState();
+				lastSync = Time.realtimeSinceStartup;
+			}
+		}
 	}
 	
 	void GameFinishExit() {

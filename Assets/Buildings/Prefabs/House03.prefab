@@ -3188,6 +3188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad77438d5f756481fa77ac047610a46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactClip: {fileID: 0}
   scoreMakerLayer:
     serializedVersion: 2
     m_Bits: 520
@@ -3214,6 +3215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad77438d5f756481fa77ac047610a46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactClip: {fileID: 0}
   scoreMakerLayer:
     serializedVersion: 2
     m_Bits: 520
@@ -3240,6 +3242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad77438d5f756481fa77ac047610a46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactClip: {fileID: 0}
   scoreMakerLayer:
     serializedVersion: 2
     m_Bits: 520
@@ -3278,6 +3281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad77438d5f756481fa77ac047610a46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactClip: {fileID: 0}
   scoreMakerLayer:
     serializedVersion: 2
     m_Bits: 520
@@ -3292,6 +3296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad77438d5f756481fa77ac047610a46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactClip: {fileID: 0}
   scoreMakerLayer:
     serializedVersion: 2
     m_Bits: 520
@@ -3306,6 +3311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad77438d5f756481fa77ac047610a46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactClip: {fileID: 0}
   scoreMakerLayer:
     serializedVersion: 2
     m_Bits: 520
@@ -3332,6 +3338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad77438d5f756481fa77ac047610a46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactClip: {fileID: 0}
   scoreMakerLayer:
     serializedVersion: 2
     m_Bits: 520
@@ -3346,6 +3353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad77438d5f756481fa77ac047610a46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactClip: {fileID: 0}
   scoreMakerLayer:
     serializedVersion: 2
     m_Bits: 520
@@ -3432,6 +3440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad77438d5f756481fa77ac047610a46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactClip: {fileID: 0}
   scoreMakerLayer:
     serializedVersion: 2
     m_Bits: 520
@@ -3517,6 +3526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad77438d5f756481fa77ac047610a46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactClip: {fileID: 0}
   scoreMakerLayer:
     serializedVersion: 2
     m_Bits: 520
@@ -3531,6 +3541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad77438d5f756481fa77ac047610a46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactClip: {fileID: 0}
   scoreMakerLayer:
     serializedVersion: 2
     m_Bits: 520
@@ -3545,6 +3556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad77438d5f756481fa77ac047610a46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactClip: {fileID: 0}
   scoreMakerLayer:
     serializedVersion: 2
     m_Bits: 520
@@ -3559,6 +3571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad77438d5f756481fa77ac047610a46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactClip: {fileID: 0}
   scoreMakerLayer:
     serializedVersion: 2
     m_Bits: 520
@@ -3585,6 +3598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad77438d5f756481fa77ac047610a46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactClip: {fileID: 0}
   scoreMakerLayer:
     serializedVersion: 2
     m_Bits: 520
@@ -3611,6 +3625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad77438d5f756481fa77ac047610a46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactClip: {fileID: 0}
   scoreMakerLayer:
     serializedVersion: 2
     m_Bits: 520
@@ -3625,6 +3640,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad77438d5f756481fa77ac047610a46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactClip: {fileID: 0}
   scoreMakerLayer:
     serializedVersion: 2
     m_Bits: 520
@@ -3651,10 +3667,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBetriggered: 0
-  triggetLager:
+  triggerLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 0
 --- !u!114 &114573171428918202
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3666,6 +3681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad77438d5f756481fa77ac047610a46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactClip: {fileID: 0}
   scoreMakerLayer:
     serializedVersion: 2
     m_Bits: 520
@@ -3692,8 +3708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBetriggered: 0
-  triggetLager:
+  triggerLayer:
     serializedVersion: 2
     m_Bits: 512
 --- !u!114 &114590390196830090
@@ -3719,6 +3734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad77438d5f756481fa77ac047610a46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactClip: {fileID: 0}
   scoreMakerLayer:
     serializedVersion: 2
     m_Bits: 520
@@ -3733,6 +3749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad77438d5f756481fa77ac047610a46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactClip: {fileID: 0}
   scoreMakerLayer:
     serializedVersion: 2
     m_Bits: 520
@@ -3747,6 +3764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad77438d5f756481fa77ac047610a46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactClip: {fileID: 0}
   scoreMakerLayer:
     serializedVersion: 2
     m_Bits: 520
@@ -3761,6 +3779,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad77438d5f756481fa77ac047610a46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactClip: {fileID: 0}
   scoreMakerLayer:
     serializedVersion: 2
     m_Bits: 520
@@ -3823,6 +3842,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad77438d5f756481fa77ac047610a46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactClip: {fileID: 0}
   scoreMakerLayer:
     serializedVersion: 2
     m_Bits: 520
@@ -3837,10 +3857,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBetriggered: 0
-  triggetLager:
+  triggerLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 0
 --- !u!114 &114735603781603990
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3852,6 +3871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad77438d5f756481fa77ac047610a46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactClip: {fileID: 0}
   scoreMakerLayer:
     serializedVersion: 2
     m_Bits: 520
@@ -3878,6 +3898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad77438d5f756481fa77ac047610a46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactClip: {fileID: 0}
   scoreMakerLayer:
     serializedVersion: 2
     m_Bits: 520
@@ -3904,10 +3925,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBetriggered: 0
-  triggetLager:
+  triggerLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 0
 --- !u!114 &114833574519554228
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3919,6 +3939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad77438d5f756481fa77ac047610a46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactClip: {fileID: 0}
   scoreMakerLayer:
     serializedVersion: 2
     m_Bits: 520
@@ -3933,6 +3954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad77438d5f756481fa77ac047610a46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactClip: {fileID: 0}
   scoreMakerLayer:
     serializedVersion: 2
     m_Bits: 520
@@ -3971,6 +3993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad77438d5f756481fa77ac047610a46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactClip: {fileID: 0}
   scoreMakerLayer:
     serializedVersion: 2
     m_Bits: 520
@@ -4009,6 +4032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad77438d5f756481fa77ac047610a46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactClip: {fileID: 0}
   scoreMakerLayer:
     serializedVersion: 2
     m_Bits: 520
@@ -4023,6 +4047,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad77438d5f756481fa77ac047610a46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactClip: {fileID: 0}
   scoreMakerLayer:
     serializedVersion: 2
     m_Bits: 520
@@ -4049,6 +4074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad77438d5f756481fa77ac047610a46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactClip: {fileID: 0}
   scoreMakerLayer:
     serializedVersion: 2
     m_Bits: 520

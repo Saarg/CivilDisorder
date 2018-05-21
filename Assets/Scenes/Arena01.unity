@@ -466,7 +466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggetLager:
+  triggerLayer:
     serializedVersion: 2
     m_Bits: 512
 --- !u!65 &22893838
@@ -6516,7 +6516,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggetLager:
+  triggerLayer:
     serializedVersion: 2
     m_Bits: 512
 --- !u!65 &209856684
@@ -25528,7 +25528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggetLager:
+  triggerLayer:
     serializedVersion: 2
     m_Bits: 512
 --- !u!114 &652949253
@@ -31088,7 +31088,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggetLager:
+  triggerLayer:
     serializedVersion: 2
     m_Bits: 512
 --- !u!65 &730244582
@@ -34731,7 +34731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggetLager:
+  triggerLayer:
     serializedVersion: 2
     m_Bits: 512
 --- !u!65 &819718901
@@ -45526,7 +45526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggetLager:
+  triggerLayer:
     serializedVersion: 2
     m_Bits: 512
 --- !u!65 &1068463153
@@ -58219,7 +58219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggetLager:
+  triggerLayer:
     serializedVersion: 2
     m_Bits: 512
 --- !u!65 &1322959496
@@ -61408,7 +61408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggetLager:
+  triggerLayer:
     serializedVersion: 2
     m_Bits: 512
 --- !u!65 &1406103600
@@ -61552,7 +61552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggetLager:
+  triggerLayer:
     serializedVersion: 2
     m_Bits: 512
 --- !u!65 &1440254715
@@ -64001,7 +64001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggetLager:
+  triggerLayer:
     serializedVersion: 2
     m_Bits: 512
 --- !u!114 &1469594954
@@ -65884,7 +65884,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggetLager:
+  triggerLayer:
     serializedVersion: 2
     m_Bits: 512
 --- !u!65 &1506039594
@@ -72220,7 +72220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggetLager:
+  triggerLayer:
     serializedVersion: 2
     m_Bits: 512
 --- !u!65 &1644693545
@@ -75942,7 +75942,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggetLager:
+  triggerLayer:
     serializedVersion: 2
     m_Bits: 512
 --- !u!114 &1707863696
@@ -91420,7 +91420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ccc7992b3641b3a7b8154371b1d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggetLager:
+  triggerLayer:
     serializedVersion: 2
     m_Bits: 512
 --- !u!114 &2038116699

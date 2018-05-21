@@ -26,6 +26,10 @@ public class PlayerMessager : NetworkBehaviour {
     WheelVehicle vehicle;
 	new Rigidbody rigidbody;
 
+    public override void OnStartServer() {
+        NetworkServer.RegisterHandler(NetworkMessages.PlayerUpdatePos, OnServerVehiclePosMsg);
+    }
+
     public override void OnStartClient()
     {
         messagers.Add(this);
@@ -36,13 +40,9 @@ public class PlayerMessager : NetworkBehaviour {
         vehicle = GetComponent<WheelVehicle>();
         rigidbody = GetComponent<Rigidbody>();
 
-        if (isServer) {
-            NetworkServer.RegisterHandler(NetworkMessages.PlayerUpdatePos, OnVehiclePosMsg);
-        } else {
-            foreach (NetworkClient client in NetworkClient.allClients)
-            {
-                client.RegisterHandler(NetworkMessages.PlayerUpdatePos, OnVehiclePosMsg);
-            }
+        foreach (NetworkClient client in NetworkClient.allClients)
+        {
+            client.RegisterHandler(NetworkMessages.PlayerUpdatePos, OnClientVehiclePosMsg);
         }
     }
 
@@ -51,16 +51,20 @@ public class PlayerMessager : NetworkBehaviour {
         messagers.Remove(this);
     }
 
-    static void OnVehiclePosMsg(NetworkMessage message) {
+    static void OnServerVehiclePosMsg(NetworkMessage message) {
+        VehiclePosMessage msg = message.ReadMessage<VehiclePosMessage>();
+        if (msg == null)
+            return;
+        
+        NetworkServer.SendUnreliableToAll(NetworkMessages.PlayerUpdatePos, msg);
+    }
+
+    static void OnClientVehiclePosMsg(NetworkMessage message) {
         VehiclePosMessage msg = message.ReadMessage<VehiclePosMessage>();
         if (msg == null)
             return;
 
         PlayerMessager messager = messagers.Find((m) => { return m.netId == msg.netId; });
-
-        if (messager.isServer) {
-            NetworkServer.SendUnreliableToAll(NetworkMessages.PlayerUpdatePos, msg);
-        }
 
         if (messager != null && !messager.isLocalPlayer && msg.number >  messager.lastNumber) { 
             messager.lastNumber = msg.number;           
