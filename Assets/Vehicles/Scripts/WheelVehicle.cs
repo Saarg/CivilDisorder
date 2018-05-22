@@ -38,6 +38,8 @@ namespace VehicleBehaviour {
         private Quaternion spawnRotation;
 
         public Transform centerOfMass;
+        [Range(0.5f, 3f)]
+        public float downforce = 1.0f;        
 
         [Header("External inputs")]
         public float steering = 0.0f;
@@ -140,6 +142,8 @@ namespace VehicleBehaviour {
                 
                 _rb.velocity += transform.up * jumpVel;
             }
+
+            _rb.AddForce(transform.up * speed * downforce);
         }
 
         public void ResetPos() {

@@ -1966,9 +1966,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb2e7b2f0e94e43be9322789b8915494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updateRate: 10
-  posLerp: 0.005
-  rotLerp: 0.005
+  updateRate: 20
+  posLerp: 0.006
+  rotLerp: 0.006
 --- !u!114 &114293484777299700
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2242,6 +2242,7 @@ MonoBehaviour:
   steerSpeed: 0.2
   jumpVel: 1.3
   centerOfMass: {fileID: 4317052608050062}
+  downforce: 1
   steering: 0
   handbreak: 0
   speed: 0

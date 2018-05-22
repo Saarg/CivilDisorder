@@ -62,7 +62,7 @@ public class LapTimer : MonoBehaviour {
 			Player p = pl.player;
 			playersLap.Remove(pl);
 
-			p.AddScore(100000f / time);
+			p.AddScore(1000000f / time);
 			return;
 		}
 
