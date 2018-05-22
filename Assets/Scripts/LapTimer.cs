@@ -29,7 +29,7 @@ public class LapTimer : MonoBehaviour {
 			if (other.transform.parent == null || other.transform.parent.parent == null)
 				return false;
 				
-			return playerLap.player.gameObject == other.transform.parent.parent.gameObject;
+			return playerLap.player != null && playerLap.player.gameObject == other.transform.parent.parent.gameObject;
 		});
 
 		// If it's the startPoint

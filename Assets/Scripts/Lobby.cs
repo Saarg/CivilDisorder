@@ -186,12 +186,11 @@ public class Lobby : NetworkBehaviour {
 		if (!isServer)
 			return;
 		
-		Vector3 startPos = Vector3.zero;
-		startPos.x = -(GameManager.Instance.MaxPlayers * 4f / 2f) + (playerControllerId * 4f);
-		startPos.y = 2;
-		startPos.z = 0;
+		;
+		Vector3 startPos = GameObject.FindGameObjectsWithTag("StartPos")[playerControllerId].transform.position;
+		Quaternion startRot = GameObject.FindGameObjectsWithTag("StartPos")[playerControllerId].transform.rotation;
 
-		GameObject player = GameObject.Instantiate(vehicles[curVehicle].gameObject, startPos, Quaternion.identity);
+		GameObject player = GameObject.Instantiate(vehicles[curVehicle].gameObject, startPos, startRot);
 
 		NetworkServer.ReplacePlayerForConnection(connectionToClient, player, playerControllerId);
 	}

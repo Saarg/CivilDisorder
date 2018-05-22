@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Buildings {
-	[RequireComponent(typeof(Collider))]
 	public class BuildingCollision : MonoBehaviour {
 		static List<BuildingCollision> buildings = new List<BuildingCollision>();
 		public static List<BuildingCollision> Buildings { get { return buildings; }}
@@ -27,6 +26,9 @@ namespace Buildings {
 			rigidbodies = new List<Rigidbody>(GetComponentsInChildren<Rigidbody>());
 
 			colliders = new List<Collider>(GetComponents<Collider>());
+			if (colliders.Count == 0) {
+				triggered = true;
+			}
 
 			childPositions = new List<Vector3>(transform.childCount);
 			childRotations = new List<Quaternion>(transform.childCount);
@@ -49,7 +51,11 @@ namespace Buildings {
 		}
 
 		void Reset () {
-			triggered = false;
+			if (colliders.Count == 0) {
+				triggered = true;
+			} else {
+				triggered = false;
+			}
 			StartCoroutine(CReset());
 		}
 
@@ -76,7 +82,11 @@ namespace Buildings {
 			}
 
 			for (int i = 0; i < transform.childCount; i++) {
-				rigidbodies[i].isKinematic = true;
+				if (colliders.Count == 0) {
+					rigidbodies[i].isKinematic = false;
+				} else {
+					rigidbodies[i].isKinematic = true;
+				}
 				
 				transform.GetChild(i).localPosition = childPositions[i];
 				transform.GetChild(i).localRotation = childRotations[i];

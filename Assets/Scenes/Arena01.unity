@@ -469,6 +469,8 @@ MonoBehaviour:
   triggerLayer:
     serializedVersion: 2
     m_Bits: 512
+  targetPos: []
+  targetRot: []
 --- !u!65 &22893838
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6519,6 +6521,8 @@ MonoBehaviour:
   triggerLayer:
     serializedVersion: 2
     m_Bits: 512
+  targetPos: []
+  targetRot: []
 --- !u!65 &209856684
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7353,6 +7357,34 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &232300599
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 232300600}
+  m_Layer: 0
+  m_Name: StartPos 4
+  m_TagString: StartPos
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &232300600
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 232300599}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -4, y: 2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &238498653
 GameObject:
   m_ObjectHideFlags: 0
@@ -25531,6 +25563,8 @@ MonoBehaviour:
   triggerLayer:
     serializedVersion: 2
     m_Bits: 512
+  targetPos: []
+  targetRot: []
 --- !u!114 &652949253
 MonoBehaviour:
   m_ObjectHideFlags: 10
@@ -31091,6 +31125,8 @@ MonoBehaviour:
   triggerLayer:
     serializedVersion: 2
     m_Bits: 512
+  targetPos: []
+  targetRot: []
 --- !u!65 &730244582
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34734,6 +34770,8 @@ MonoBehaviour:
   triggerLayer:
     serializedVersion: 2
     m_Bits: 512
+  targetPos: []
+  targetRot: []
 --- !u!65 &819718901
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45529,6 +45567,8 @@ MonoBehaviour:
   triggerLayer:
     serializedVersion: 2
     m_Bits: 512
+  targetPos: []
+  targetRot: []
 --- !u!65 &1068463153
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -56748,6 +56788,34 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 11.86392, z: 10.2}
   m_Center: {x: 5, y: 5.93196, z: 4.9}
+--- !u!1 &1304177355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1304177356}
+  m_Layer: 0
+  m_Name: StartPos 2
+  m_TagString: StartPos
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1304177356
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1304177355}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 4, y: 2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1307769837
 GameObject:
   m_ObjectHideFlags: 0
@@ -58222,6 +58290,8 @@ MonoBehaviour:
   triggerLayer:
     serializedVersion: 2
     m_Bits: 512
+  targetPos: []
+  targetRot: []
 --- !u!65 &1322959496
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -61411,6 +61481,8 @@ MonoBehaviour:
   triggerLayer:
     serializedVersion: 2
     m_Bits: 512
+  targetPos: []
+  targetRot: []
 --- !u!65 &1406103600
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -61555,6 +61627,8 @@ MonoBehaviour:
   triggerLayer:
     serializedVersion: 2
     m_Bits: 512
+  targetPos: []
+  targetRot: []
 --- !u!65 &1440254715
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -61915,6 +61989,34 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1440861066
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1440861067}
+  m_Layer: 0
+  m_Name: StartPos 1
+  m_TagString: StartPos
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1440861067
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1440861066}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1441009132
 GameObject:
   m_ObjectHideFlags: 0
@@ -64004,6 +64106,8 @@ MonoBehaviour:
   triggerLayer:
     serializedVersion: 2
     m_Bits: 512
+  targetPos: []
+  targetRot: []
 --- !u!114 &1469594954
 MonoBehaviour:
   m_ObjectHideFlags: 10
@@ -65887,6 +65991,8 @@ MonoBehaviour:
   triggerLayer:
     serializedVersion: 2
     m_Bits: 512
+  targetPos: []
+  targetRot: []
 --- !u!65 &1506039594
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -72223,6 +72329,8 @@ MonoBehaviour:
   triggerLayer:
     serializedVersion: 2
     m_Bits: 512
+  targetPos: []
+  targetRot: []
 --- !u!65 &1644693545
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -74091,6 +74199,34 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 11.86392, z: 10.2}
   m_Center: {x: 5, y: 5.93196, z: 4.9}
+--- !u!1 &1676637531
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1676637532}
+  m_Layer: 0
+  m_Name: StartPos 5
+  m_TagString: StartPos
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1676637532
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1676637531}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4, y: 2, z: 4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1676994664
 GameObject:
   m_ObjectHideFlags: 0
@@ -75945,6 +76081,8 @@ MonoBehaviour:
   triggerLayer:
     serializedVersion: 2
     m_Bits: 512
+  targetPos: []
+  targetRot: []
 --- !u!114 &1707863696
 MonoBehaviour:
   m_ObjectHideFlags: 10
@@ -83367,6 +83505,34 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1868374349
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1868374350}
+  m_Layer: 0
+  m_Name: StartPos 3
+  m_TagString: StartPos
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1868374350
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1868374349}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 2, z: -4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1873299301
 GameObject:
   m_ObjectHideFlags: 0
@@ -89446,6 +89612,34 @@ Transform:
   m_Father: {fileID: 1123085650}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1995085112
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1995085113}
+  m_Layer: 0
+  m_Name: StartPos 6
+  m_TagString: StartPos
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1995085113
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1995085112}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4, y: 2, z: 4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1997757137
 GameObject:
   m_ObjectHideFlags: 0
@@ -91423,6 +91617,8 @@ MonoBehaviour:
   triggerLayer:
     serializedVersion: 2
     m_Bits: 512
+  targetPos: []
+  targetRot: []
 --- !u!114 &2038116699
 MonoBehaviour:
   m_ObjectHideFlags: 10

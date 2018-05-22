@@ -54,7 +54,7 @@ namespace VehicleBehaviour {
 
         WheelCollider[] wheels;
 
-        void Start ()
+        public override void OnStartClient ()
         {
             _rb = GetComponent<Rigidbody>();
             spawnPosition = transform.position;
@@ -143,13 +143,8 @@ namespace VehicleBehaviour {
         }
 
         public void ResetPos() {
-            Vector3 startPos = Vector3.zero;
-            startPos.x = -(GameManager.Instance.MaxPlayers * 4f / 2f) + (GetComponent<Player>().playerControllerId * 4f);
-            startPos.y = 2;
-            startPos.z = 0;
-
-            transform.position = startPos;
-            transform.rotation = Quaternion.identity;
+            transform.position = spawnPosition;
+            transform.rotation = spawnRotation;
 
             _rb.velocity = Vector3.zero;
             _rb.angularVelocity = Vector3.zero;
