@@ -11,4 +11,5 @@ public class VehiclePosMessage : MessageBase
     public float throttle;
     public int number;
     public NetworkInstanceId netId; 
+    public bool boosting;
 }

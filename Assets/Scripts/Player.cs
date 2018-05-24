@@ -40,6 +40,7 @@ public class Player : NetworkBehaviour {
 	public float BoostRegen { get { return boostRegen; } }
 	[SerializeField] float boostForce = 5000;
 	public float BoostForce { get { return boostForce; } }
+	public bool boosting = false;
 
 	[SyncVar(hook="UpdateUsername")]
 	string username;
@@ -175,7 +176,7 @@ public class Player : NetworkBehaviour {
 		if (isLocalPlayer) {
 			boost += Time.deltaTime * boostRegen;
 			if (boost > maxBoost) { boost = maxBoost; }
-
+			
 			if (MultiOSControls.GetValue(resetInput, playerNumber) > .5f && isLocalPlayer && !handlingdeath)
 			{
 				CmdReset();
@@ -195,10 +196,10 @@ public class Player : NetworkBehaviour {
 	}
 
 	void FixedUpdate () {
-		if (!isLocalPlayer)
-			return;
+		if (isLocalPlayer)
+			boosting = (MultiOSControls.GetValue(boostInput, playerNumber) > 0.5f);
 
-		if (MultiOSControls.GetValue(boostInput, playerNumber) > 0.5f && boost > 0.1f) {
+		if (boosting && boost > 0.1f) {
 			rigidbody.AddForce(transform.forward * boostForce);
 
 			boost -= Time.fixedDeltaTime;
