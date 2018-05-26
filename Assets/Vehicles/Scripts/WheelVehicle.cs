@@ -129,7 +129,7 @@ namespace VehicleBehaviour {
             }
 
             // Jump
-            if (MultiOSControls.GetValue(jumpInput, playerNumber) > 0) {
+            if (MultiOSControls.GetValue(jumpInput, playerNumber) > 0 && isLocalPlayer) {
                 bool isGrounded = true;
                 foreach (WheelCollider wheel in wheels)
                 {

@@ -67,9 +67,15 @@ public class PlayerMessager : NetworkBehaviour {
         PlayerMessager messager = messagers.Find((m) => { return m.netId == msg.netId; });
 
         if (messager != null && !messager.isLocalPlayer && msg.number >  messager.lastNumber) { 
-            messager.lastNumber = msg.number;           
-            messager.transform.position = Vector3.Lerp(messager.transform.position, msg.pos, messager.posLerp);
-            messager.transform.rotation = Quaternion.Lerp(messager.transform.rotation, msg.rot, messager.rotLerp);
+            messager.lastNumber = msg.number;
+
+            if (!msg.collision) {
+                messager.transform.position = Vector3.Lerp(messager.transform.position, msg.pos, messager.posLerp);
+                messager.transform.rotation = Quaternion.Lerp(messager.transform.rotation, msg.rot, messager.rotLerp);
+            } else {
+                messager.transform.position = msg.pos;
+                messager.transform.rotation = msg.rot;                
+            }
 
             messager.rigidbody.velocity = msg.velocity;
             messager.rigidbody.angularVelocity = msg.angularVelocity;
@@ -81,9 +87,9 @@ public class PlayerMessager : NetworkBehaviour {
         }
     }
 
-    void LateUpdate()
+    void Update()
     {
-        if (isLocalPlayer && Time.realtimeSinceStartup - lastSync >= 1 / updateRate) {         
+        if (isLocalPlayer && (Time.realtimeSinceStartup - lastSync >= 1 / updateRate || player.collisionDetected)) { 
             lastSync = Time.realtimeSinceStartup;
 
             VehiclePosMessage msg = new VehiclePosMessage();
@@ -96,8 +102,11 @@ public class PlayerMessager : NetworkBehaviour {
             msg.steering = vehicle.steering;
             msg.throttle = vehicle.throttle;
             msg.boosting = player.boosting;
+            msg.collision = player.collisionDetected;
 
             connectionToServer.SendByChannel(NetworkMessages.PlayerUpdatePos, msg, 1);
+
+            player.collisionDetected = false;            
         }
     }
 }

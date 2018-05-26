@@ -12,4 +12,5 @@ public class VehiclePosMessage : MessageBase
     public int number;
     public NetworkInstanceId netId; 
     public bool boosting;
+    public bool collision;
 }

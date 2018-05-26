@@ -172,17 +172,16 @@ public class Player : NetworkBehaviour {
 		score += s;
 	}
 	
+	float lastReset;
 	void Update() {
 		if (isLocalPlayer) {
 			boost += Time.deltaTime * boostRegen;
 			if (boost > maxBoost) { boost = maxBoost; }
 			
-			if (MultiOSControls.GetValue(resetInput, playerNumber) > .5f && isLocalPlayer && !handlingdeath)
+			if (MultiOSControls.GetValue(resetInput, playerNumber) > .5f && isLocalPlayer && !handlingdeath && Time.realtimeSinceStartup - lastReset > 0.5f)
 			{
+				lastReset = Time.realtimeSinceStartup;
 				CmdReset();
-				GameObject popup = Instantiate(scorePopupPrefab.gameObject, transform);
-				ScorePopup scorePopup = popup.GetComponent<ScorePopup>();
-				scorePopup.SetScore(-10000f);
 			}
 		}
 
@@ -227,6 +226,7 @@ public class Player : NetworkBehaviour {
 		}
 	}
 
+	public bool collisionDetected = false;
 	void OnCollisionEnter(Collision col) {
 		if (gameObject.layer == col.gameObject.layer && isServer) {
 			Vector3 myDir = transform.forward;
@@ -241,6 +241,8 @@ public class Player : NetworkBehaviour {
 
 			// Debug.DrawLine(transform.position, transform.position + myDir, Color.red, 10f);
 			// Debug.DrawLine(transform.position, transform.position + normal, Color.green, 10f);
+
+			collisionDetected = true;
 
 			if (angle > 150f) {
 				AddScore(col.relativeVelocity.sqrMagnitude);
@@ -288,6 +290,12 @@ public class Player : NetworkBehaviour {
 		vehicle.toogleHandbrake(true);
 		rigidbody.isKinematic = true;
 
+		if (isLocalPlayer) {
+			GameObject popup = Instantiate(scorePopupPrefab.gameObject, transform);
+			ScorePopup scorePopup = popup.GetComponent<ScorePopup>();
+			scorePopup.SetScore(-10000f);
+		}
+
 		Vector3 velocity = rigidbody.velocity;
 
 		rigidbody.velocity = Vector3.zero;
@@ -322,6 +330,7 @@ public class Player : NetworkBehaviour {
 	[ClientRpc]
 	void RpcAssemble() {
 		vehicle.toogleHandbrake(false);
+		vehicle.ResetPos();
 		rigidbody.isKinematic = false;		
 
 		Transform body = transform.Find("Body");
