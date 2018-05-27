@@ -76,6 +76,10 @@ namespace Utils {
 
 			transform.position = Vector3.Lerp(transform.position, tPos, Time.fixedDeltaTime * lerpPositionMultiplier);
 			transform.rotation = Quaternion.Lerp(curRot, transform.rotation, Time.fixedDeltaTime * lerpRotationMultiplier);
+
+			if (transform.position.y < 0.5f) {
+				transform.position = new Vector3(transform.position.x , 0.5f, transform.position.z);
+			}
 		}
 	}
 }
