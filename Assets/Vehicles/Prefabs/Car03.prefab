@@ -2694,6 +2694,7 @@ MonoBehaviour:
   boost: 11
   boostRegen: 0.2
   boostForce: 13000
+  boosting: 0
   scorePopupPrefab: {fileID: 114753518416407848, guid: fb6ace0d1c12e4c9786922ac62031c57,
     type: 2}
   boostParticles:
@@ -2702,6 +2703,7 @@ MonoBehaviour:
   boostClip: {fileID: 8300000, guid: 7c29c309722a2444582a425e8e6aeb77, type: 3}
   boostSource: {fileID: 82718307755352484}
   steamId: 0
+  collisionDetected: 0
 --- !u!114 &114408427591539206
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3040,6 +3042,7 @@ MonoBehaviour:
   brakeInput: Brake
   turnInput: Horizontal
   jumpInput: Jump
+  driftInput: Drift
   turnInputCurve:
     serializedVersion: 2
     m_Curve:
@@ -3116,6 +3119,7 @@ MonoBehaviour:
   steerAngle: 30
   steerSpeed: 0.2
   jumpVel: 1.2
+  driftIntensity: 0.8
   centerOfMass: {fileID: 4010622460238532}
   downforce: 1
   steering: 0

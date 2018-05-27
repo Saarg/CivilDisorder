@@ -82,6 +82,7 @@ public class PlayerMessager : NetworkBehaviour {
             messager.vehicle.steering = msg.steering;
             messager.vehicle.throttle = msg.throttle;
             messager.player.boosting = msg.boosting;
+            messager.vehicle.drift = msg.drifting;
         } else if (messager == null) {
             Debug.LogWarning("Could not find target");
         }
@@ -102,6 +103,7 @@ public class PlayerMessager : NetworkBehaviour {
             msg.steering = vehicle.steering;
             msg.throttle = vehicle.throttle;
             msg.boosting = player.boosting;
+            msg.drifting = vehicle.drift;
             msg.collision = player.collisionDetected;
 
             connectionToServer.SendByChannel(NetworkMessages.PlayerUpdatePos, msg, 1);

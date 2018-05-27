@@ -4300,16 +4300,6 @@ Prefab:
       propertyPath: m_Name
       value: ControlManager
       objectReference: {fileID: 0}
-    - target: {fileID: 114352322540268694, guid: 99b54f74e19854814a0a88d18b252de2,
-        type: 2}
-      propertyPath: players.Array.data[0].controller
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114352322540268694, guid: 99b54f74e19854814a0a88d18b252de2,
-        type: 2}
-      propertyPath: locked
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 99b54f74e19854814a0a88d18b252de2, type: 2}
   m_IsPrefabParent: 0

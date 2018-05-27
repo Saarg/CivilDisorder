@@ -16,6 +16,7 @@ namespace VehicleBehaviour {
         public string brakeInput = "Brake";
         public string turnInput = "Horizontal";
         public string jumpInput = "Jump";
+        public string driftInput = "Drift";
 
         [SerializeField] AnimationCurve turnInputCurve;
 
@@ -33,6 +34,8 @@ namespace VehicleBehaviour {
         public float steerSpeed = 0.2f;
         [Range(1f, 1.5f)]
         public float jumpVel = 1.3f;
+        [Range(0.0f, 2f)]
+        public float driftIntensity = 1f;
         //Reset
         private Vector3 spawnPosition;
         private Quaternion spawnRotation;
@@ -46,6 +49,7 @@ namespace VehicleBehaviour {
         public float throttle { get; set; }
 
         public bool handbreak = false;
+        public bool drift = false;
 
         public float speed = 0.0f;
 
@@ -92,6 +96,7 @@ namespace VehicleBehaviour {
                 
                 // Turn
                 steering = turnInputCurve.Evaluate(MultiOSControls.GetValue(turnInput, playerNumber)) * steerAngle;
+                drift = MultiOSControls.GetValue(driftInput, playerNumber) > 0;
             }
             foreach (WheelCollider wheel in turnWheel)
             {
@@ -143,6 +148,23 @@ namespace VehicleBehaviour {
                 _rb.velocity += transform.up * jumpVel;
             }
 
+            // Drift
+            if (drift) {
+                Vector3 driftForce = -transform.right;
+                driftForce.y = 0.0f;
+                driftForce.Normalize();
+
+                driftForce *= _rb.mass * speed/5f * throttle * steering/steerAngle;
+                Vector3 driftTorque = transform.up * 0.1f  * steering/steerAngle;
+
+
+                _rb.AddForce(driftForce * driftIntensity, ForceMode.Force);
+                _rb.AddTorque(driftTorque * driftIntensity, ForceMode.VelocityChange);
+
+                Debug.DrawLine(transform.position, transform.position + driftForce, Color.red);              
+            }
+
+            // Downforce
             _rb.AddForce(transform.up * speed * downforce);
         }
 

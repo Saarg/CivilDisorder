@@ -85,7 +85,7 @@ MonoBehaviour:
   locked: 0
   players:
   - name: Player1
-    controller: 4
+    controller: 0
     keyboard: 1
     inputs:
     - name: Horizontal
@@ -147,12 +147,20 @@ MonoBehaviour:
       buttons: 01000000
       deadzone: 0
       value: 0
+    - name: Drift
+      posKeys:
+      - left ctrl
+      negKeys: []
+      axis: 
+      buttons: 04000000
+      deadzone: 0
+      value: 0
     - name: Reset
       posKeys:
       - backspace
       negKeys: []
       axis: 
-      buttons: 03000000
+      buttons: 02000000
       deadzone: 0
       value: 0
   - name: Player2
