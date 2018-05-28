@@ -160,7 +160,7 @@ MonoBehaviour:
       - backspace
       negKeys: []
       axis: 
-      buttons: 02000000
+      buttons: 03000000
       deadzone: 0
       value: 0
   - name: Player2
