@@ -2411,6 +2411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wheelModel: {fileID: 1792877280735588}
+  localRotOffset: {x: 0, y: 180, z: 0}
 --- !u!114 &114144501609291142
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2602,6 +2603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wheelModel: {fileID: 1791503338145838}
+  localRotOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &114329477447151424
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2716,6 +2718,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wheelModel: {fileID: 1570594216723372}
+  localRotOffset: {x: 0, y: 180, z: 0}
 --- !u!114 &114445585822905476
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2852,6 +2855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wheelModel: {fileID: 1784626225682296}
+  localRotOffset: {x: 0, y: 180, z: 0}
 --- !u!114 &114492193359647418
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3124,6 +3128,7 @@ MonoBehaviour:
   downforce: 1
   steering: 0
   handbreak: 0
+  drift: 0
   speed: 0
   gasParticles:
   - {fileID: 198476941348447798}
@@ -3230,6 +3235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wheelModel: {fileID: 1417775890670700}
+  localRotOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &114919170800484246
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3309,6 +3315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wheelModel: {fileID: 1521188042355572}
+  localRotOffset: {x: 0, y: 0, z: 0}
 --- !u!146 &146100163466239540
 WheelCollider:
   m_ObjectHideFlags: 1

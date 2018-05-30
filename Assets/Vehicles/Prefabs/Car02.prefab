@@ -37,12 +37,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4675730329192890}
-  - component: {fileID: 114575086449486782}
   - component: {fileID: 114576140179478912}
-  - component: {fileID: 114928061315572594}
   - component: {fileID: 146014540103652148}
   - component: {fileID: 114507247422366396}
-  - component: {fileID: 114660666600106808}
   - component: {fileID: 114822347051870414}
   m_Layer: 10
   m_Name: FLWheel
@@ -133,12 +130,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4126433034241270}
-  - component: {fileID: 114563057757767392}
   - component: {fileID: 114958535451094834}
-  - component: {fileID: 114784223585173672}
   - component: {fileID: 146802126822764044}
   - component: {fileID: 114526905319013540}
-  - component: {fileID: 114296079895394842}
   - component: {fileID: 114783648448176536}
   m_Layer: 10
   m_Name: FRWheel
@@ -228,12 +222,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4397846407113606}
-  - component: {fileID: 114356438414703964}
   - component: {fileID: 114128841592239678}
-  - component: {fileID: 114998999038588340}
   - component: {fileID: 146793865263719070}
   - component: {fileID: 114341878329182152}
-  - component: {fileID: 114326089816106746}
   - component: {fileID: 114303260965533220}
   m_Layer: 10
   m_Name: BLWheel
@@ -495,12 +486,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4516223278951556}
-  - component: {fileID: 114530648375235918}
   - component: {fileID: 114110254583066120}
-  - component: {fileID: 114712450736776696}
   - component: {fileID: 146504509095465980}
   - component: {fileID: 114800290297643028}
-  - component: {fileID: 114349392867792572}
   - component: {fileID: 114649827415014558}
   m_Layer: 10
   m_Name: BRWheel
@@ -1943,7 +1931,7 @@ MonoBehaviour:
   m_Script: {fileID: 112998890, guid: 325c5b2a7434372429c2ca9d61dba58e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _guid: 1737947302
+  _guid: 5a8a603c-d65c-4b97-9aec-6a080aecea4a
 --- !u!114 &114128841592239678
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1955,7 +1943,7 @@ MonoBehaviour:
   m_Script: {fileID: 112998890, guid: 325c5b2a7434372429c2ca9d61dba58e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _guid: 1737947302
+  _guid: 5b13933b-1ffd-441e-9f00-0de503dce7ca
 --- !u!114 &114143682204325436
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2029,6 +2017,10 @@ MonoBehaviour:
     - {fileID: 1249457045589676}
     - {fileID: 1833165821557742}
     - {fileID: 1003818438190776}
+    - {fileID: 1648354382459666}
+    - {fileID: 1708203627436964}
+    - {fileID: 1235973222140732}
+    - {fileID: 1489449676051666}
   _assetGuid: af384ca59b0f24483b0163f2ae19fe10
 --- !u!114 &114233247876622368
 MonoBehaviour:
@@ -2073,21 +2065,6 @@ MonoBehaviour:
   boostSource: {fileID: 82884678253985140}
   steamId: 0
   collisionDetected: 0
---- !u!114 &114296079895394842
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1268253799892292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 807371362, guid: 325c5b2a7434372429c2ca9d61dba58e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _components:
-  - {fileID: 146802126822764044}
-  - {fileID: 114526905319013540}
-  - {fileID: 114783648448176536}
 --- !u!114 &114303260965533220
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2119,21 +2096,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _guid: fd819ed2-859c-49da-be7f-1b7ef9793d3a
---- !u!114 &114326089816106746
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1398208134900576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 807371362, guid: 325c5b2a7434372429c2ca9d61dba58e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _components:
-  - {fileID: 146793865263719070}
-  - {fileID: 114341878329182152}
-  - {fileID: 114303260965533220}
 --- !u!114 &114341878329182152
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2146,39 +2108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wheelModel: {fileID: 1235973222140732}
---- !u!114 &114349392867792572
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1958784462827370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 807371362, guid: 325c5b2a7434372429c2ca9d61dba58e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _components:
-  - {fileID: 146504509095465980}
-  - {fileID: 114800290297643028}
-  - {fileID: 114649827415014558}
---- !u!114 &114356438414703964
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1398208134900576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -605777808, guid: 325c5b2a7434372429c2ca9d61dba58e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isConnected: 1
-  _guid: 353fe3c3-912f-497e-a71f-bd80999e665c
-  _referenceCollection:
-    _collection:
-    - {fileID: 1398208134900576}
-    - {fileID: 1235973222140732}
-  _assetGuid: f41f23c0bd8904f16962311e0064c059
+  localRotOffset: {x: 0, y: 180, z: 0}
 --- !u!114 &114372770147644810
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2202,7 +2132,7 @@ MonoBehaviour:
   m_Script: {fileID: 112998890, guid: 325c5b2a7434372429c2ca9d61dba58e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _guid: 1438180484
+  _guid: 225d2e4a-d2f3-466a-931c-ce2d6f0f8075
 --- !u!114 &114405640822027916
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2349,6 +2279,7 @@ MonoBehaviour:
   downforce: 2
   steering: 0
   handbreak: 0
+  drift: 0
   speed: 0
   gasParticles:
   - {fileID: 198120220505843178}
@@ -2365,6 +2296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wheelModel: {fileID: 1648354382459666}
+  localRotOffset: {x: 0, y: 180, z: 0}
 --- !u!114 &114526905319013540
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2377,24 +2309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wheelModel: {fileID: 1708203627436964}
---- !u!114 &114530648375235918
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1958784462827370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -605777808, guid: 325c5b2a7434372429c2ca9d61dba58e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isConnected: 1
-  _guid: 0cb6b0d9-35c5-479b-92ca-376b0407dc5b
-  _referenceCollection:
-    _collection:
-    - {fileID: 1958784462827370}
-    - {fileID: 1489449676051666}
-  _assetGuid: f41f23c0bd8904f16962311e0064c059
+  localRotOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &114542488284762458
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2419,42 +2334,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _guid: 83cd8318-754b-45e2-8260-ae275f3cbd79
---- !u!114 &114563057757767392
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1268253799892292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -605777808, guid: 325c5b2a7434372429c2ca9d61dba58e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isConnected: 1
-  _guid: f50b7735-bcea-445b-ba03-8a0253869240
-  _referenceCollection:
-    _collection:
-    - {fileID: 1268253799892292}
-    - {fileID: 1708203627436964}
-  _assetGuid: f41f23c0bd8904f16962311e0064c059
---- !u!114 &114575086449486782
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1019865406441478}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -605777808, guid: 325c5b2a7434372429c2ca9d61dba58e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isConnected: 1
-  _guid: 311ff5f8-b250-4133-ad19-47e42a023664
-  _referenceCollection:
-    _collection:
-    - {fileID: 1019865406441478}
-    - {fileID: 1648354382459666}
-  _assetGuid: f41f23c0bd8904f16962311e0064c059
 --- !u!114 &114576140179478912
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2466,7 +2345,7 @@ MonoBehaviour:
   m_Script: {fileID: 112998890, guid: 325c5b2a7434372429c2ca9d61dba58e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _guid: 1737947302
+  _guid: a8aca3ef-06d4-48bc-8498-3d3880356401
 --- !u!114 &114610363408513864
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2522,21 +2401,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _guid: 0de7bd13-7cc8-49fa-9574-f48af73ab8e6
---- !u!114 &114660666600106808
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1019865406441478}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 807371362, guid: 325c5b2a7434372429c2ca9d61dba58e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _components:
-  - {fileID: 146014540103652148}
-  - {fileID: 114507247422366396}
-  - {fileID: 114822347051870414}
 --- !u!114 &114663076428335586
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2548,7 +2412,7 @@ MonoBehaviour:
   m_Script: {fileID: 112998890, guid: 325c5b2a7434372429c2ca9d61dba58e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _guid: 1438180484
+  _guid: 6f99b4d3-c299-4f5d-9547-9b4db75d018d
 --- !u!114 &114709889349170902
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2561,17 +2425,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _guid: a1a839e3-29f7-4778-95df-328f867f4938
---- !u!114 &114712450736776696
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1958784462827370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1491221649, guid: 325c5b2a7434372429c2ca9d61dba58e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114744311080463750
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2603,17 +2456,6 @@ MonoBehaviour:
   trailing: 0
   parent: {fileID: 4799495039464946}
   offset: {x: 0, y: -0.29, z: 0}
---- !u!114 &114784223585173672
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1268253799892292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1491221649, guid: 325c5b2a7434372429c2ca9d61dba58e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114800290297643028
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2626,6 +2468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wheelModel: {fileID: 1489449676051666}
+  localRotOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &114805383210381884
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2637,7 +2480,7 @@ MonoBehaviour:
   m_Script: {fileID: 112998890, guid: 325c5b2a7434372429c2ca9d61dba58e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _guid: 1438180484
+  _guid: 071b4aea-7509-49f4-a6d0-446a59779b10
 --- !u!114 &114822347051870414
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2680,18 +2523,7 @@ MonoBehaviour:
   m_Script: {fileID: 112998890, guid: 325c5b2a7434372429c2ca9d61dba58e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _guid: 1438180484
---- !u!114 &114928061315572594
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1019865406441478}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1491221649, guid: 325c5b2a7434372429c2ca9d61dba58e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  _guid: 27f608a2-d1c0-4b12-a932-1786d966c132
 --- !u!114 &114958535451094834
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2703,18 +2535,7 @@ MonoBehaviour:
   m_Script: {fileID: 112998890, guid: 325c5b2a7434372429c2ca9d61dba58e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _guid: 1737947302
---- !u!114 &114998999038588340
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1398208134900576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1491221649, guid: 325c5b2a7434372429c2ca9d61dba58e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  _guid: bb208db9-6ea2-47f7-8d51-4511adfe5d7d
 --- !u!146 &146014540103652148
 WheelCollider:
   m_ObjectHideFlags: 1
