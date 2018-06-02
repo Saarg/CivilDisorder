@@ -22,7 +22,8 @@ namespace VehicleBehaviour.Trails
 
 		public Vector3 offset;
 
-		private WheelCollider wheel;
+		WheelCollider wheel;
+		WheelVehicle vehicle;
 
 		//Checks if the most recent trail is active or not
 		public bool Active
@@ -32,6 +33,11 @@ namespace VehicleBehaviour.Trails
 
 		void Start () {
 			wheel = GetComponent<WheelCollider> ();
+
+			vehicle = GetComponentInParent<WheelVehicle>();
+
+			if (vehicle == null)
+				Debug.LogWarning("Tire trail couldn't find parent vehicle");
 		}
 
 		// Update is called once per frame
@@ -40,10 +46,10 @@ namespace VehicleBehaviour.Trails
 			WheelHit hit;
 			wheel.GetGroundHit (out hit);
 
-			if (!trailing && wheel.isGrounded && (Mathf.Abs(hit.sidewaysSlip) > 0.7f || Mathf.Abs(hit.forwardSlip) > 0.98f)) {
+			if (!trailing && wheel.isGrounded && (Mathf.Abs(hit.sidewaysSlip) > 0.7f || Mathf.Abs(hit.forwardSlip) > 0.98f || vehicle.drift)) {
 				trailing = true;
 				NewTrail ();
-			} else if (trailing && (!wheel.isGrounded || (Mathf.Abs(hit.sidewaysSlip) < 0.5f && Mathf.Abs(hit.forwardSlip) < 0.98f))) {
+			} else if (trailing && (!wheel.isGrounded || (Mathf.Abs(hit.sidewaysSlip) < 0.5f && Mathf.Abs(hit.forwardSlip) < 0.98f) && !vehicle.drift)) {
 				trailing = false;
 				EndTrail ();
 			}

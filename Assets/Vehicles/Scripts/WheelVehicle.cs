@@ -96,7 +96,7 @@ namespace VehicleBehaviour {
                 
                 // Turn
                 steering = turnInputCurve.Evaluate(MultiOSControls.GetValue(turnInput, playerNumber)) * steerAngle;
-                drift = MultiOSControls.GetValue(driftInput, playerNumber) > 0;
+                drift = MultiOSControls.GetValue(driftInput, playerNumber) > 0 && _rb.velocity.sqrMagnitude > 100;
             }
             foreach (WheelCollider wheel in turnWheel)
             {
@@ -154,7 +154,8 @@ namespace VehicleBehaviour {
                 driftForce.y = 0.0f;
                 driftForce.Normalize();
 
-                driftForce *= _rb.mass * speed/5f * throttle * steering/steerAngle;
+                if (steering != 0)
+                    driftForce *= _rb.mass * speed/7f * throttle * Mathf.Sign(steering);
                 Vector3 driftTorque = transform.up * 0.1f  * steering/steerAngle;
 
 
