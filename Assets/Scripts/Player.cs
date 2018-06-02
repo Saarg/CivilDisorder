@@ -194,6 +194,8 @@ public class Player : NetworkBehaviour {
 		}
 	}
 
+	bool airTimecount = false; // Used to prevent the spawn from scoring
+	float airTimeScore = 0;
 	void FixedUpdate () {
 		if (isLocalPlayer)
 			boosting = (MultiOSControls.GetValue(boostInput, playerNumber) > 0.5f);
@@ -223,6 +225,27 @@ public class Player : NetworkBehaviour {
 			if (boostSource.isPlaying) {
 				boostSource.Stop();
 			}
+		}
+
+		if (!isLocalPlayer)
+			return;
+			
+		int groundedWheels = wheels.Length;
+		foreach (WheelCollider wheel in wheels) {
+			if (!wheel.isGrounded)
+				groundedWheels--;
+		}
+		if (groundedWheels <= wheels.Length/2 && rigidbody.velocity.sqrMagnitude > 10f)
+			airTimeScore += (wheels.Length - groundedWheels) * Time.fixedDeltaTime * 200f;
+
+		if (groundedWheels == wheels.Length) {
+			if (airTimeScore > 100f && airTimecount) {
+				AddScore(Mathf.Clamp(airTimeScore, 0f, 2000f));
+			}
+
+			airTimeScore = 0;
+
+			airTimecount = true;
 		}
 	}
 
