@@ -24,7 +24,7 @@ public class PlayerMessager : NetworkBehaviour {
 
     Player player;
     WheelVehicle vehicle;
-	new Rigidbody rigidbody;
+	Rigidbody rigidbody;
 
     public override void OnStartServer() {
         NetworkServer.RegisterHandler(NetworkMessages.PlayerUpdatePos, OnServerVehiclePosMsg);

@@ -94,7 +94,7 @@ public class Player : NetworkBehaviour {
 		if (onPlayerDestroy != null)
 			onPlayerDestroy.Invoke(this);	
 
-		if (isLocalPlayer) {
+		if (isLocalPlayer && SteamManager.Initialized) {
 			if (score > 50000f) {
 				SteamUserStats.SetAchievement("50K");                
 				SteamUserStats.SetStat("50K", 1);
@@ -246,14 +246,16 @@ public class Player : NetworkBehaviour {
 				
 				Player otherP = col.gameObject.GetComponentInParent<Player>();
 
-				if (isLocalPlayer && life <= 0) {
-					SteamUserStats.SetAchievement("REKT");                
-					SteamUserStats.SetStat("REKT", 1);
-					SteamUserStats.StoreStats();
-				} else if (otherP != null && otherP.isLocalPlayer && life <= 0) {
-					SteamUserStats.SetAchievement("KILL");                
-					SteamUserStats.SetStat("KILL", 1);
-					SteamUserStats.StoreStats();
+				if (SteamManager.Initialized){
+					if (isLocalPlayer && life <= 0) {
+						SteamUserStats.SetAchievement("REKT");                
+						SteamUserStats.SetStat("REKT", 1);
+						SteamUserStats.StoreStats();
+					} else if (otherP != null && otherP.isLocalPlayer && life <= 0) {
+						SteamUserStats.SetAchievement("KILL");                
+						SteamUserStats.SetStat("KILL", 1);
+						SteamUserStats.StoreStats();
+					}
 				}
 			}
 		}

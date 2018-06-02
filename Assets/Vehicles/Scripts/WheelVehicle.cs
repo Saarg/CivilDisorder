@@ -77,7 +77,7 @@ namespace VehicleBehaviour {
         [SerializeField] AudioClip boostClip;
         [SerializeField] AudioSource boostSource;
 
-        new Rigidbody _rb;
+        Rigidbody _rb;
 
         WheelCollider[] wheels;
 
@@ -223,7 +223,7 @@ namespace VehicleBehaviour {
                 driftForce.Normalize();
 
                 if (steering != 0)
-                    driftForce *= _rb.mass * speed/7f * throttle * Mathf.Sign(steering);
+                    driftForce *= _rb.mass * speed/7f * throttle * steering/steerAngle;
                 Vector3 driftTorque = transform.up * 0.1f  * steering/steerAngle;
 
 
