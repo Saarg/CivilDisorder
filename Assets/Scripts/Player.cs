@@ -196,6 +196,9 @@ public class Player : NetworkBehaviour {
 
 	bool airTimecount = false; // Used to prevent the spawn from scoring
 	float airTimeScore = 0;
+
+	float driftStart;
+	float driftScore;
 	void FixedUpdate () {
 		if (isLocalPlayer)
 			boosting = (MultiOSControls.GetValue(boostInput, playerNumber) > 0.5f);
@@ -229,7 +232,8 @@ public class Player : NetworkBehaviour {
 
 		if (!isLocalPlayer)
 			return;
-			
+		
+		// AirTime scoring
 		int groundedWheels = wheels.Length;
 		foreach (WheelCollider wheel in wheels) {
 			if (!wheel.isGrounded)
@@ -239,13 +243,35 @@ public class Player : NetworkBehaviour {
 			airTimeScore += (wheels.Length - groundedWheels) * Time.fixedDeltaTime * 200f;
 
 		if (groundedWheels == wheels.Length) {
-			if (airTimeScore > 100f && airTimecount) {
+			if (airTimeScore > 100f && airTimecount && rigidbody.velocity.sqrMagnitude > 10f) {
 				AddScore(Mathf.Clamp(airTimeScore, 0f, 2000f));
 			}
 
 			airTimeScore = 0;
 
 			airTimecount = true;
+		}
+
+		// Drift scoring
+		if (driftStart != 0) {
+			float angle = Vector3.Angle(transform.forward, rigidbody.velocity);
+			angle = angle < 0 ? -angle : angle;
+
+			driftScore += Time.fixedDeltaTime * angle * 10f;
+
+			if (angle < 10f && driftScore > 100f) {
+				AddScore(driftScore);
+			}
+
+			if (angle < 10f || angle > 90f || rigidbody.velocity.sqrMagnitude < 100) {
+				driftScore = 0;
+				driftStart = 0;
+			}
+		}
+
+		if (vehicle.drift) {
+			if (driftStart == 0)
+				driftStart = Time.realtimeSinceStartup;
 		}
 	}
 
