@@ -19,7 +19,6 @@ public class Player : NetworkBehaviour {
 
 	[Header("Inputs")]
 	[SerializeField] PlayerNumber playerNumber = PlayerNumber.Player1;
-	[SerializeField] string boostInput = "Boost";
 	[SerializeField] string resetInput = "Reset";
 
 	[Header("Stats")]
@@ -31,16 +30,6 @@ public class Player : NetworkBehaviour {
 	[SyncVar]
 	[SerializeField] float life = 100f;
 	public float Life { get { return life; } }
-	[SerializeField] float maxBoost = 10f;
-	public float MaxBoost { get { return maxBoost; } }
-	[SerializeField] float boost = 10f;
-	public float Boost { get { return boost; } }
-	[Range(0f, 1f)]
-	[SerializeField] float boostRegen = 0.2f;
-	public float BoostRegen { get { return boostRegen; } }
-	[SerializeField] float boostForce = 5000;
-	public float BoostForce { get { return boostForce; } }
-	public bool boosting = false;
 
 	[SyncVar(hook="UpdateUsername")]
 	string username;
@@ -51,11 +40,6 @@ public class Player : NetworkBehaviour {
 
 	[Header("Prefabs")]
 	[SerializeField] ScorePopup scorePopupPrefab;
-
-	[Header("Boost")]	
-	[SerializeField] ParticleSystem[] boostParticles;
-	[SerializeField] AudioClip boostClip;
-	[SerializeField] AudioSource boostSource;
 
 	WheelVehicle vehicle;
 	new Rigidbody rigidbody;
@@ -91,7 +75,6 @@ public class Player : NetworkBehaviour {
 		rigidbody = GetComponent<Rigidbody>();
 
 		life = maxLife;
-		boost = maxBoost;
 
 		ui = FindObjectOfType<PlayerUI>();
 		if (ui != null && isLocalPlayer)
@@ -105,10 +88,6 @@ public class Player : NetworkBehaviour {
 		wheels = GetComponentsInChildren<WheelCollider>();
 		
 		vehicle = GetComponent<WheelVehicle>();
-
-		if (boostClip != null) {
-			boostSource.clip = boostClip;
-		}
 	}
 
 	void OnDestroy() {
@@ -175,16 +154,13 @@ public class Player : NetworkBehaviour {
 	float lastReset;
 	void Update() {
 		if (isLocalPlayer) {
-			boost += Time.deltaTime * boostRegen;
-			if (boost > maxBoost) { boost = maxBoost; }
-			
 			if (MultiOSControls.GetValue(resetInput, playerNumber) > .5f && isLocalPlayer && !handlingdeath && Time.realtimeSinceStartup - lastReset > 0.5f)
 			{
 				lastReset = Time.realtimeSinceStartup;
 				CmdReset();
 			}
 		}
-
+		
 		if (isServer) {
 			if ((life <= 0 || transform.position.y < -10) && !handlingdeath) {
 				StartCoroutine(HandleDeath(50000f));
@@ -200,36 +176,6 @@ public class Player : NetworkBehaviour {
 	float driftStart;
 	float driftScore;
 	void FixedUpdate () {
-		if (isLocalPlayer)
-			boosting = (MultiOSControls.GetValue(boostInput, playerNumber) > 0.5f);
-
-		if (boosting && boost > 0.1f) {
-			rigidbody.AddForce(transform.forward * boostForce);
-
-			boost -= Time.fixedDeltaTime;
-			if (boost < 0f) { boost = 0f; }
-
-			if (!boostParticles[0].isPlaying) {
-				foreach (ParticleSystem boostParticle in boostParticles) {
-					boostParticle.Play();
-				}
-			}
-
-			if (!boostSource.isPlaying) {
-				boostSource.Play();
-			}
-		} else {
-			if (boostParticles[0].isPlaying) {
-				foreach (ParticleSystem boostParticle in boostParticles) {
-					boostParticle.Stop();
-				}
-			}
-
-			if (boostSource.isPlaying) {
-				boostSource.Stop();
-			}
-		}
-
 		if (!isLocalPlayer)
 			return;
 		

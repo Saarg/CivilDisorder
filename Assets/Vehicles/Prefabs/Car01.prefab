@@ -2081,6 +2081,7 @@ MonoBehaviour:
   turnInput: Horizontal
   jumpInput: Jump
   driftInput: Drift
+  boostInput: Boost
   turnInputCurve:
     serializedVersion: 2
     m_Curve:
@@ -2162,13 +2163,18 @@ MonoBehaviour:
   driftIntensity: 1
   centerOfMass: {fileID: 4317052608050062}
   downforce: 1
-  steering: 0
-  handbreak: 0
-  drift: 0
   speed: 0
   gasParticles:
   - {fileID: 198874559242224084}
   - {fileID: 198454710972707580}
+  maxBoost: 12
+  boost: 12
+  boostRegen: 0.2
+  boostForce: 10000
+  boosting: 0
+  boostParticles: []
+  boostClip: {fileID: 8300000, guid: 7c29c309722a2444582a425e8e6aeb77, type: 3}
+  boostSource: {fileID: 82207881457301472}
 --- !u!114 &114467416900889540
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2183,7 +2189,7 @@ MonoBehaviour:
   _guid: 6d9496b9-613d-44cd-acef-7b7039cc18be
 --- !u!114 &114480634463563898
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 11
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1366243911189104}
@@ -2413,23 +2419,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNumber: 0
-  boostInput: Boost
   resetInput: Reset
   score: 0
   maxLife: 120
   life: 120
-  maxBoost: 12
-  boost: 12
-  boostRegen: 0.2
-  boostForce: 10000
-  boosting: 0
   scorePopupPrefab: {fileID: 114753518416407848, guid: fb6ace0d1c12e4c9786922ac62031c57,
     type: 2}
-  boostParticles:
-  - {fileID: 198160606282136974}
-  - {fileID: 198735931042727880}
-  boostClip: {fileID: 8300000, guid: 7c29c309722a2444582a425e8e6aeb77, type: 3}
-  boostSource: {fileID: 82207881457301472}
   steamId: 0
   collisionDetected: 0
 --- !u!114 &114876208903839134
@@ -2507,7 +2502,7 @@ MonoBehaviour:
   localRotOffset: {x: 0, y: 180, z: 0}
 --- !u!114 &114930447989978500
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 11
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1366243911189104}

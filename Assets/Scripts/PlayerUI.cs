@@ -55,9 +55,9 @@ public class PlayerUI : MonoBehaviour {
 		scoreText.fontSize = Mathf.FloorToInt(Mathf.Clamp(40 + 20 * (player.Score / 200000), 40, 60));
 
 		lifeBar.fillAmount = Mathf.Lerp(lifeBar.fillAmount, player.Life / player.MaxLife, Time.deltaTime);
-		boostBar.fillAmount = Mathf.Lerp(boostBar.fillAmount, player.Boost / player.MaxBoost, Time.deltaTime);
+		boostBar.fillAmount = Mathf.Lerp(boostBar.fillAmount, vehicle.Boost / vehicle.MaxBoost, Time.deltaTime);
 
-		float speedoAngle = 90 - (Mathf.Abs(vehicle.speed) / 200f) * 160f;
+		float speedoAngle = 90 - (Mathf.Abs(vehicle.Speed) / 200f) * 160f;
 		speedoAngle = Mathf.Clamp(speedoAngle, -80, 90);
 
 		speedoAngle = Mathf.Lerp(speedo.rotation.eulerAngles.z, speedoAngle, Time.deltaTime * 2f);

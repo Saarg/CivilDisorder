@@ -136,7 +136,7 @@ public class Lobby : NetworkBehaviour {
 
 		lifeBar.fillAmount = p.MaxLife / 200f;
 		speedBar.fillAmount = 0.5f;
-		boostBar.fillAmount = p.MaxBoost / 20f;
+		boostBar.fillAmount = v.MaxBoost / 20f;
 		weightBar.fillAmount = rb.mass / 3000f;
 	}
 

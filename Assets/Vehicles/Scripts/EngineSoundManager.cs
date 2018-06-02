@@ -51,7 +51,7 @@ namespace VehicleBehaviour {
 
             if (_source.clip == rolling)
             {
-                _source.pitch = Mathf.Lerp(_source.pitch, minPitch + Mathf.Abs(_vehicle.speed) / flatoutSpeed, pitchSpeed);
+                _source.pitch = Mathf.Lerp(_source.pitch, minPitch + Mathf.Abs(_vehicle.Speed) / flatoutSpeed, pitchSpeed);
             }
         }
     }

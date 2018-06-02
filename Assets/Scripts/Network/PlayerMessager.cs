@@ -81,7 +81,7 @@ public class PlayerMessager : NetworkBehaviour {
             messager.rigidbody.angularVelocity = msg.angularVelocity;
             messager.vehicle.steering = msg.steering;
             messager.vehicle.throttle = msg.throttle;
-            messager.player.boosting = msg.boosting;
+            messager.vehicle.boosting = msg.boosting;
             messager.vehicle.drift = msg.drifting;
         } else if (messager == null) {
             Debug.LogWarning("Could not find target");
@@ -102,7 +102,7 @@ public class PlayerMessager : NetworkBehaviour {
             msg.angularVelocity = rigidbody.angularVelocity;
             msg.steering = vehicle.steering;
             msg.throttle = vehicle.throttle;
-            msg.boosting = player.boosting;
+            msg.boosting = vehicle.boosting;
             msg.drifting = vehicle.drift;
             msg.collision = player.collisionDetected;
 

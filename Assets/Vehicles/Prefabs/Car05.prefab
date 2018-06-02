@@ -3093,23 +3093,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNumber: 0
-  boostInput: Boost
   resetInput: Reset
   score: 0
   maxLife: 130
   life: 130
-  maxBoost: 13
-  boost: 13
-  boostRegen: 0.15
-  boostForce: 1000
-  boosting: 0
   scorePopupPrefab: {fileID: 114753518416407848, guid: fb6ace0d1c12e4c9786922ac62031c57,
     type: 2}
-  boostParticles:
-  - {fileID: 198267602301803818}
-  - {fileID: 198966078268215974}
-  boostClip: {fileID: 8300000, guid: 7c29c309722a2444582a425e8e6aeb77, type: 3}
-  boostSource: {fileID: 82239840650180068}
   steamId: 0
   collisionDetected: 0
 --- !u!114 &114592457183060474
@@ -3253,6 +3242,7 @@ MonoBehaviour:
   turnInput: Horizontal
   jumpInput: Jump
   driftInput: Drift
+  boostInput: Boost
   turnInputCurve:
     serializedVersion: 2
     m_Curve:
@@ -3341,13 +3331,18 @@ MonoBehaviour:
   driftIntensity: 1
   centerOfMass: {fileID: 4627273835438192}
   downforce: 2
-  steering: 0
-  handbreak: 0
-  drift: 0
   speed: 0
   gasParticles:
   - {fileID: 198314408249281136}
   - {fileID: 198325477490171056}
+  maxBoost: 13
+  boost: 13
+  boostRegen: 0.15
+  boostForce: 2000
+  boosting: 0
+  boostParticles: []
+  boostClip: {fileID: 8300000, guid: 7c29c309722a2444582a425e8e6aeb77, type: 3}
+  boostSource: {fileID: 82239840650180068}
 --- !u!114 &114844306475418488
 MonoBehaviour:
   m_ObjectHideFlags: 1

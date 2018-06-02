@@ -8,55 +8,76 @@ namespace VehicleBehaviour {
     [RequireComponent(typeof(Rigidbody))]
     public class WheelVehicle : NetworkBehaviour {
 
-        [SerializeField] public Sprite preview;
+        public Sprite preview;
         
         [Header("Inputs")]
-        public PlayerNumber playerNumber = PlayerNumber.Player1;
-        public string throttleInput = "Throttle";
-        public string brakeInput = "Brake";
-        public string turnInput = "Horizontal";
-        public string jumpInput = "Jump";
-        public string driftInput = "Drift";
+        [SerializeField] PlayerNumber playerNumber = PlayerNumber.Player1;
+        [SerializeField] string throttleInput = "Throttle";
+        [SerializeField] string brakeInput = "Brake";
+        [SerializeField] string turnInput = "Horizontal";
+        [SerializeField] string jumpInput = "Jump";
+        [SerializeField] string driftInput = "Drift";
+	    [SerializeField] string boostInput = "Boost";
 
         [SerializeField] AnimationCurve turnInputCurve;
 
         [Header("Wheels")]
-        public WheelCollider[] driveWheel;
-        public WheelCollider[] turnWheel;
+        [SerializeField] WheelCollider[] driveWheel;
+        [SerializeField] WheelCollider[] turnWheel;
 
         [Header("Behaviour")]
-        // Engine
-        public AnimationCurve motorTorque;
-        public float brakeForce = 1500.0f;
+        // Car
+        [SerializeField] AnimationCurve motorTorque;
+        [SerializeField] float brakeForce = 1500.0f;
         [Range(0f, 50.0f)]
-        public float steerAngle = 30.0f;
+        [SerializeField] float steerAngle = 30.0f;
         [Range(0.001f, 10.0f)]
-        public float steerSpeed = 0.2f;
+        [SerializeField] float steerSpeed = 0.2f;
+        // Jump
         [Range(1f, 1.5f)]
-        public float jumpVel = 1.3f;
+        [SerializeField] float jumpVel = 1.3f;
+        // Drift
         [Range(0.0f, 2f)]
-        public float driftIntensity = 1f;
+        [SerializeField] float driftIntensity = 1f;
+
         //Reset
-        private Vector3 spawnPosition;
-        private Quaternion spawnRotation;
+        Vector3 spawnPosition;
+        Quaternion spawnRotation;
 
-        public Transform centerOfMass;
+        [SerializeField] Transform centerOfMass;
         [Range(0.5f, 3f)]
-        public float downforce = 1.0f;        
+        [SerializeField] float downforce = 1.0f;        
 
-        [Header("External inputs")]
-        public float steering = 0.0f;
+        // External inputs
+        public float steering { get; set; }
         public float throttle { get; set; }
 
-        public bool handbreak = false;
-        public bool drift = false;
+        public bool handbreak { get; set; }
+        public bool drift { get; set; }
 
-        public float speed = 0.0f;
+        [SerializeField] float speed = 0.0f;
+        public float Speed { get{ return speed; } }
 
         [Header("Particles")]
-        public ParticleSystem[] gasParticles;
+        [SerializeField] ParticleSystem[] gasParticles;
 
-        private Rigidbody _rb;
+        [Header("Boost")]
+        [SerializeField] float maxBoost = 10f;
+        public float MaxBoost { get { return maxBoost; } }
+        [SerializeField] float boost = 10f;
+        public float Boost { get { return boost; } }
+        [Range(0f, 1f)]
+        [SerializeField] float boostRegen = 0.2f;
+        public float BoostRegen { get { return boostRegen; } }
+        [SerializeField] float boostForce = 5000;
+        public float BoostForce { get { return boostForce; } }
+        public bool boosting = false;
+
+        [SerializeField] ParticleSystem[] boostParticles;
+        [SerializeField] AudioClip boostClip;
+        [SerializeField] AudioSource boostSource;
+
+        new Rigidbody _rb;
 
         WheelCollider[] wheels;
 
@@ -74,12 +95,26 @@ namespace VehicleBehaviour {
             wheels = GetComponentsInChildren<WheelCollider>();
         }
 
+        void Start() {
+            if (boostClip != null) {
+                boostSource.clip = boostClip;
+            }
+
+		    boost = maxBoost;
+        }
+
         void Update()
         {
             foreach (ParticleSystem gasParticle in gasParticles)
             {
                 ParticleSystem.EmissionModule em = gasParticle.emission;
                 em.rateOverTime = handbreak ? 0 : Mathf.Lerp(em.rateOverTime.constant, Mathf.Clamp(10.0f * throttle, 5.0f, 10.0f), 0.1f);
+            }
+
+            
+            if (isLocalPlayer) {
+                boost += Time.deltaTime * boostRegen;
+                if (boost > maxBoost) { boost = maxBoost; }
             }
         }
         
@@ -93,11 +128,15 @@ namespace VehicleBehaviour {
                     // throttle = Input.GetAxis(throttleInput) != 0 ? Input.GetAxis(throttleInput) : Mathf.Clamp(throttle, -1, 1);
                     throttle = MultiOSControls.GetValue(throttleInput, playerNumber) - MultiOSControls.GetValue(brakeInput, playerNumber); 
                 }
-                
+                // Boost
+                boosting = (MultiOSControls.GetValue(boostInput, playerNumber) > 0.5f);
                 // Turn
                 steering = turnInputCurve.Evaluate(MultiOSControls.GetValue(turnInput, playerNumber)) * steerAngle;
+                // Dirft
                 drift = MultiOSControls.GetValue(driftInput, playerNumber) > 0 && _rb.velocity.sqrMagnitude > 100;
             }
+
+            // Direction
             foreach (WheelCollider wheel in turnWheel)
             {
                 wheel.steerAngle = Mathf.Lerp(wheel.steerAngle, steering, steerSpeed);
@@ -108,6 +147,7 @@ namespace VehicleBehaviour {
                 wheel.brakeTorque = 0;
             }
 
+            // Handbrake
             if (handbreak)
             {
                 foreach (WheelCollider wheel in wheels)
@@ -146,6 +186,34 @@ namespace VehicleBehaviour {
                     return;
                 
                 _rb.velocity += transform.up * jumpVel;
+            }
+
+            // Boost
+            if (boosting && boost > 0.1f) {
+                _rb.AddForce(transform.forward * boostForce);
+
+                boost -= Time.fixedDeltaTime;
+                if (boost < 0f) { boost = 0f; }
+
+                if (!boostParticles[0].isPlaying) {
+                    foreach (ParticleSystem boostParticle in boostParticles) {
+                        boostParticle.Play();
+                    }
+                }
+
+                if (!boostSource.isPlaying) {
+                    boostSource.Play();
+                }
+            } else {
+                if (boostParticles[0].isPlaying) {
+                    foreach (ParticleSystem boostParticle in boostParticles) {
+                        boostParticle.Stop();
+                    }
+                }
+
+                if (boostSource.isPlaying) {
+                    boostSource.Stop();
+                }
             }
 
             // Drift
