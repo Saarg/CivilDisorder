@@ -25,6 +25,7 @@ public class Lobby : NetworkBehaviour {
 	[SerializeField] Image weightBar;
 	[SerializeField] Button readyButton;
 	[SerializeField] Button notReadyButton;
+	[SerializeField] Image readyIcon;
 
 	[Header("Cars")]	
 	[SerializeField] List<WheelVehicle> vehicles;
@@ -157,7 +158,7 @@ public class Lobby : NetworkBehaviour {
 			readyButton.gameObject.SetActive(false);
 			notReadyButton.gameObject.SetActive(true);
 		} else {
-			// feedback other player is ready
+			readyIcon.gameObject.SetActive(true);
 		}
 	}
 
@@ -178,7 +179,7 @@ public class Lobby : NetworkBehaviour {
 			readyButton.gameObject.SetActive(true);
 			notReadyButton.gameObject.SetActive(false);
 		} else {
-			// feedback other player is not ready
+			readyIcon.gameObject.SetActive(false);
 		}
 	}
 
