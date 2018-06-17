@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:66aff7c8c4f39b238893ec407be135e3fbf6c060d4087193a192d27a9b85991e
-size 276
+# Made using Asset Forge (www.assetforge.io) version 1.3 
+
+newmtl _defaultMat (Instance)
+Ka 0.000000 0.000000 0.000000 
+Kd 1 1 1 
+Ks 0.330000 0.330000 0.330000 
+
+newmtl _defaultMat (Instance) (Instance)
+Ka 0.000000 0.000000 0.000000 
+Kd 1 1 1 
+Ks 0.330000 0.330000 0.330000 
+
