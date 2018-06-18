@@ -17,14 +17,22 @@ public class PlayerMessager : NetworkBehaviour {
     int messageCount = 0;
     int lastNumber = -1;
 
-    [Range(0f, 0.1f)]
-    [SerializeField] float posLerp = 0.005f;
-    [Range(0f, 0.1f)]
-    [SerializeField] float rotLerp = 0.005f;
-
     Player player;
     WheelVehicle vehicle;
-	Rigidbody rigidbody;
+	new Rigidbody rigidbody;
+
+    float lerpValue;
+
+    Vector3 lastPos;
+    Quaternion lastRot;
+
+    Vector3 targetPos;
+    Quaternion targetRot;
+
+    void Start() {
+        lastPos = targetPos = transform.position;
+        lastRot = targetRot = transform.rotation;
+    }
 
     public override void OnStartServer() {
         NetworkServer.RegisterHandler(NetworkMessages.PlayerUpdatePos, OnServerVehiclePosMsg);
@@ -69,16 +77,16 @@ public class PlayerMessager : NetworkBehaviour {
         if (messager != null && !messager.isLocalPlayer && msg.number >  messager.lastNumber) { 
             messager.lastNumber = msg.number;
 
-            if (!msg.collision) {
-                messager.transform.position = Vector3.Lerp(messager.transform.position, msg.pos, messager.posLerp);
-                messager.transform.rotation = Quaternion.Lerp(messager.transform.rotation, msg.rot, messager.rotLerp);
-            } else {
-                messager.transform.position = msg.pos;
-                messager.transform.rotation = msg.rot;                
-            }
+            messager.lerpValue = 0;
 
-            messager.rigidbody.velocity = msg.velocity;
-            messager.rigidbody.angularVelocity = msg.angularVelocity;
+            messager.lastPos = messager.transform.position;
+            messager.lastRot = messager.transform.rotation;
+
+            messager.targetPos = msg.pos;
+            messager.targetRot = msg.rot;
+
+            // messager.rigidbody.velocity = msg.velocity;
+            // messager.rigidbody.angularVelocity = msg.angularVelocity;
             messager.vehicle.steering = msg.steering;
             messager.vehicle.throttle = msg.throttle;
             messager.vehicle.boosting = msg.boosting;
@@ -109,6 +117,11 @@ public class PlayerMessager : NetworkBehaviour {
             connectionToServer.SendByChannel(NetworkMessages.PlayerUpdatePos, msg, 1);
 
             player.collisionDetected = false;            
+        } else if (!isLocalPlayer && lerpValue <= 1f) {
+            lerpValue += Time.deltaTime * updateRate;
+
+            transform.position = Vector3.Lerp(lastPos, targetPos, lerpValue);
+            transform.rotation = Quaternion.Lerp(lastRot, targetRot, lerpValue);
         }
     }
 }
