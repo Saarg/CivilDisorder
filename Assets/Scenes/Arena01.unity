@@ -160,6 +160,14 @@ Prefab:
       propertyPath: m_Name
       value: grandStandCovered (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_TagString
+      value: Static
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
   m_IsPrefabParent: 0
@@ -1531,10 +1539,10 @@ GameObject:
   - component: {fileID: 47287843}
   m_Layer: 0
   m_Name: Bumps01
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 124
   m_IsActive: 1
 --- !u!114 &47287843
 MonoBehaviour:
@@ -2133,6 +2141,14 @@ Prefab:
       propertyPath: m_Name
       value: grandStandCovered (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_TagString
+      value: Static
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
   m_IsPrefabParent: 0
@@ -2202,6 +2218,14 @@ Prefab:
     - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
       propertyPath: m_Name
       value: grandStandCovered (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_TagString
+      value: Static
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
@@ -4173,6 +4197,14 @@ Prefab:
       propertyPath: m_Name
       value: grandStandCovered (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_TagString
+      value: Static
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
   m_IsPrefabParent: 0
@@ -4212,10 +4244,10 @@ GameObject:
   - component: {fileID: 158509260}
   m_Layer: 0
   m_Name: sphere_dome_46
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 124
   m_IsActive: 1
 --- !u!114 &158509260
 MonoBehaviour:
@@ -4600,6 +4632,14 @@ Prefab:
       propertyPath: m_Name
       value: grandStandCovered (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_TagString
+      value: Static
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
   m_IsPrefabParent: 0
@@ -4907,6 +4947,14 @@ Prefab:
       propertyPath: m_Name
       value: grandStandCovered (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_TagString
+      value: Static
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
   m_IsPrefabParent: 0
@@ -5184,10 +5232,10 @@ GameObject:
   - component: {fileID: 190172061}
   m_Layer: 0
   m_Name: sphere_dome_45
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 124
   m_IsActive: 1
 --- !u!114 &190172061
 MonoBehaviour:
@@ -8353,10 +8401,10 @@ GameObject:
   - component: {fileID: 254866487}
   m_Layer: 0
   m_Name: slope_cornerOuter_42
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 124
   m_IsActive: 1
 --- !u!114 &254866487
 MonoBehaviour:
@@ -9927,6 +9975,14 @@ Prefab:
       propertyPath: m_Name
       value: grandStandCovered (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_TagString
+      value: Static
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
   m_IsPrefabParent: 0
@@ -10000,6 +10056,14 @@ Prefab:
     - target: {fileID: 400000, guid: f0db688d29cd347d5852dfde5943069b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: -90.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f0db688d29cd347d5852dfde5943069b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f0db688d29cd347d5852dfde5943069b, type: 3}
+      propertyPath: m_TagString
+      value: Static
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f0db688d29cd347d5852dfde5943069b, type: 3}
@@ -10517,10 +10581,10 @@ GameObject:
   - component: {fileID: 285021344}
   m_Layer: 0
   m_Name: sphere_dome_46
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 124
   m_IsActive: 1
 --- !u!114 &285021344
 MonoBehaviour:
@@ -10668,6 +10732,14 @@ Prefab:
     - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
       propertyPath: m_Name
       value: grandStandCovered (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_TagString
+      value: Static
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
@@ -13829,6 +13901,14 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -90.00001
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f0db688d29cd347d5852dfde5943069b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f0db688d29cd347d5852dfde5943069b, type: 3}
+      propertyPath: m_TagString
+      value: Static
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f0db688d29cd347d5852dfde5943069b, type: 3}
   m_IsPrefabParent: 0
@@ -15089,6 +15169,14 @@ Prefab:
       propertyPath: m_Name
       value: fenceCurved (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
+      propertyPath: m_TagString
+      value: Static
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
   m_IsPrefabParent: 0
@@ -15378,10 +15466,10 @@ GameObject:
   - component: {fileID: 399241801}
   m_Layer: 12
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 124
   m_IsActive: 1
 --- !u!64 &399241801
 MeshCollider:
@@ -18554,10 +18642,10 @@ GameObject:
   - component: {fileID: 474021491}
   m_Layer: 0
   m_Name: sphere_dome_49
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 124
   m_IsActive: 1
 --- !u!114 &474021491
 MonoBehaviour:
@@ -18941,6 +19029,14 @@ Prefab:
       propertyPath: m_Name
       value: grandStandCovered (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_TagString
+      value: Static
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
   m_IsPrefabParent: 0
@@ -19256,6 +19352,14 @@ Prefab:
     - target: {fileID: 100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
       propertyPath: m_Name
       value: fenceCurved (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
+      propertyPath: m_TagString
+      value: Static
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
@@ -20527,6 +20631,14 @@ Prefab:
       propertyPath: m_Name
       value: grandStandCovered (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_TagString
+      value: Static
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
   m_IsPrefabParent: 0
@@ -21543,6 +21655,14 @@ Prefab:
       propertyPath: m_Name
       value: grandStandCovered (29)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_TagString
+      value: Static
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
   m_IsPrefabParent: 0
@@ -21582,10 +21702,10 @@ GameObject:
   - component: {fileID: 538168404}
   m_Layer: 0
   m_Name: slope_cornerOuter_43
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 124
   m_IsActive: 1
 --- !u!114 &538168404
 MonoBehaviour:
@@ -21733,6 +21853,14 @@ Prefab:
     - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
       propertyPath: m_Name
       value: grandStandCovered (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_TagString
+      value: Static
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
@@ -23942,6 +24070,14 @@ Prefab:
       propertyPath: m_Name
       value: grandStandCovered (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_TagString
+      value: Static
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
   m_IsPrefabParent: 0
@@ -24011,6 +24147,14 @@ Prefab:
     - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
       propertyPath: m_Name
       value: grandStandCovered (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_TagString
+      value: Static
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
@@ -25237,10 +25381,10 @@ GameObject:
   - component: {fileID: 644807483}
   m_Layer: 0
   m_Name: sphere_dome_45
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 124
   m_IsActive: 1
 --- !u!114 &644807483
 MonoBehaviour:
@@ -25358,10 +25502,10 @@ GameObject:
   - component: {fileID: 652656838}
   m_Layer: 0
   m_Name: sphere_dome_51
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 124
   m_IsActive: 1
 --- !u!114 &652656838
 MonoBehaviour:
@@ -26846,10 +26990,10 @@ GameObject:
   - component: {fileID: 666440785}
   m_Layer: 0
   m_Name: sphere_dome_47
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 124
   m_IsActive: 1
 --- !u!114 &666440785
 MonoBehaviour:
@@ -29337,10 +29481,10 @@ GameObject:
   - component: {fileID: 715919748}
   m_Layer: 0
   m_Name: slope_cornerOuter_43
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 124
   m_IsActive: 1
 --- !u!114 &715919748
 MonoBehaviour:
@@ -31320,6 +31464,14 @@ Prefab:
       propertyPath: m_Name
       value: grandStandCovered (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_TagString
+      value: Static
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
   m_IsPrefabParent: 0
@@ -31870,6 +32022,14 @@ Prefab:
     - target: {fileID: 100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
       propertyPath: m_Name
       value: fenceCurved (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
+      propertyPath: m_TagString
+      value: Static
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
@@ -35868,10 +36028,10 @@ GameObject:
   - component: {fileID: 835914616}
   m_Layer: 0
   m_Name: slope_cornerOuter_43
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 124
   m_IsActive: 1
 --- !u!114 &835914616
 MonoBehaviour:
@@ -36730,6 +36890,14 @@ Prefab:
     - target: {fileID: 100000, guid: 7a919246d935a40519db05b590422953, type: 3}
       propertyPath: m_Name
       value: roadCornerLarge (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 7a919246d935a40519db05b590422953, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 7a919246d935a40519db05b590422953, type: 3}
+      propertyPath: m_TagString
+      value: Static
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a919246d935a40519db05b590422953, type: 3}
@@ -38231,6 +38399,14 @@ Prefab:
       propertyPath: m_Name
       value: grandStandCovered (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_TagString
+      value: Static
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
   m_IsPrefabParent: 0
@@ -38270,10 +38446,10 @@ GameObject:
   - component: {fileID: 914670441}
   m_Layer: 0
   m_Name: slope_default_39
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 124
   m_IsActive: 1
 --- !u!114 &914670441
 MonoBehaviour:
@@ -38421,6 +38597,14 @@ Prefab:
     - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
       propertyPath: m_Name
       value: grandStandCovered (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_TagString
+      value: Static
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
@@ -39169,10 +39353,10 @@ GameObject:
   - component: {fileID: 931828745}
   m_Layer: 0
   m_Name: sphere_dome_53
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 124
   m_IsActive: 1
 --- !u!114 &931828745
 MonoBehaviour:
@@ -40281,6 +40465,14 @@ Prefab:
       propertyPath: m_Name
       value: fenceCurved (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
+      propertyPath: m_TagString
+      value: Static
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
   m_IsPrefabParent: 0
@@ -41076,6 +41268,14 @@ Prefab:
       propertyPath: m_Name
       value: grandStandCovered (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_TagString
+      value: Static
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
   m_IsPrefabParent: 0
@@ -41145,6 +41345,14 @@ Prefab:
     - target: {fileID: 100000, guid: 7a919246d935a40519db05b590422953, type: 3}
       propertyPath: m_Name
       value: roadCornerLarge (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 7a919246d935a40519db05b590422953, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 7a919246d935a40519db05b590422953, type: 3}
+      propertyPath: m_TagString
+      value: Static
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a919246d935a40519db05b590422953, type: 3}
@@ -41692,6 +41900,14 @@ Prefab:
     - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
       propertyPath: m_Name
       value: grandStandCovered (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_TagString
+      value: Static
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
@@ -44375,6 +44591,14 @@ Prefab:
       propertyPath: m_Name
       value: fenceCurved (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
+      propertyPath: m_TagString
+      value: Static
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
   m_IsPrefabParent: 0
@@ -44665,10 +44889,10 @@ GameObject:
   - component: {fileID: 1010282829}
   m_Layer: 0
   m_Name: Ramp01
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 124
   m_IsActive: 1
 --- !u!114 &1010282829
 MonoBehaviour:
@@ -45010,6 +45234,14 @@ Prefab:
     - target: {fileID: 400000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: -90.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_TagString
+      value: Static
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
@@ -45555,6 +45787,14 @@ Prefab:
     - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
       propertyPath: m_Name
       value: grandStandCovered (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_TagString
+      value: Static
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
@@ -49771,10 +50011,10 @@ GameObject:
   - component: {fileID: 1121069457}
   m_Layer: 0
   m_Name: Ramp01 (2)
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 124
   m_IsActive: 1
 --- !u!114 &1121069457
 MonoBehaviour:
@@ -49989,6 +50229,14 @@ Prefab:
     - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
       propertyPath: m_Name
       value: grandStandCovered (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_TagString
+      value: Static
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
@@ -51929,10 +52177,10 @@ GameObject:
   - component: {fileID: 1159123391}
   m_Layer: 0
   m_Name: sphere_dome_52
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 124
   m_IsActive: 1
 --- !u!114 &1159123391
 MonoBehaviour:
@@ -52326,6 +52574,14 @@ Prefab:
     - target: {fileID: 400000, guid: 7a919246d935a40519db05b590422953, type: 3}
       propertyPath: m_LocalScale.z
       value: 1.0000005
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 7a919246d935a40519db05b590422953, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 7a919246d935a40519db05b590422953, type: 3}
+      propertyPath: m_TagString
+      value: Static
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a919246d935a40519db05b590422953, type: 3}
@@ -54305,6 +54561,14 @@ Prefab:
       propertyPath: m_Name
       value: fenceCurved (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
+      propertyPath: m_TagString
+      value: Static
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
   m_IsPrefabParent: 0
@@ -56049,6 +56313,14 @@ Prefab:
       propertyPath: m_Name
       value: grandStandCovered (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_TagString
+      value: Static
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
   m_IsPrefabParent: 0
@@ -56088,10 +56360,10 @@ GameObject:
   - component: {fileID: 1261059383}
   m_Layer: 0
   m_Name: sphere_dome_48
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 124
   m_IsActive: 1
 --- !u!114 &1261059383
 MonoBehaviour:
@@ -56685,10 +56957,10 @@ GameObject:
   - component: {fileID: 1270838269}
   m_Layer: 0
   m_Name: sphere_dome_52
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 124
   m_IsActive: 1
 --- !u!114 &1270838269
 MonoBehaviour:
@@ -56836,6 +57108,14 @@ Prefab:
     - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
       propertyPath: m_Name
       value: grandStandCovered (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_TagString
+      value: Static
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
@@ -59457,6 +59737,14 @@ Prefab:
       propertyPath: m_Name
       value: grandStandCovered (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_TagString
+      value: Static
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
   m_IsPrefabParent: 0
@@ -59971,10 +60259,10 @@ GameObject:
   - component: {fileID: 1369223977}
   m_Layer: 0
   m_Name: slope_cornerOuter_42
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 124
   m_IsActive: 1
 --- !u!114 &1369223977
 MonoBehaviour:
@@ -62372,6 +62660,14 @@ Prefab:
     - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
       propertyPath: m_Name
       value: grandStandCovered (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_TagString
+      value: Static
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
@@ -65910,10 +66206,10 @@ GameObject:
   - component: {fileID: 1501920619}
   m_Layer: 0
   m_Name: slope_cornerOuter_43
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 124
   m_IsActive: 1
 --- !u!114 &1501920619
 MonoBehaviour:
@@ -68100,10 +68396,10 @@ GameObject:
   - component: {fileID: 1541024895}
   m_Layer: 0
   m_Name: sphere_dome_47
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 124
   m_IsActive: 1
 --- !u!114 &1541024895
 MonoBehaviour:
@@ -68259,6 +68555,14 @@ Prefab:
     - target: {fileID: 100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
       propertyPath: m_Name
       value: fenceCurved (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
+      propertyPath: m_TagString
+      value: Static
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
@@ -69053,6 +69357,14 @@ Prefab:
     - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
       propertyPath: m_Name
       value: grandStandCovered (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_TagString
+      value: Static
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
@@ -71246,6 +71558,14 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f0db688d29cd347d5852dfde5943069b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f0db688d29cd347d5852dfde5943069b, type: 3}
+      propertyPath: m_TagString
+      value: Static
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f0db688d29cd347d5852dfde5943069b, type: 3}
   m_IsPrefabParent: 0
@@ -71799,6 +72119,14 @@ Prefab:
       propertyPath: m_Name
       value: fenceCurved (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
+      propertyPath: m_TagString
+      value: Static
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
   m_IsPrefabParent: 0
@@ -71882,6 +72210,14 @@ Prefab:
     - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
       propertyPath: m_Name
       value: grandStandCovered (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_TagString
+      value: Static
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
@@ -72774,10 +73110,10 @@ GameObject:
   - component: {fileID: 1646150780}
   m_Layer: 0
   m_Name: sphere_dome_53
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 124
   m_IsActive: 1
 --- !u!114 &1646150780
 MonoBehaviour:
@@ -73642,6 +73978,14 @@ Prefab:
       propertyPath: m_Name
       value: fenceCurved (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
+      propertyPath: m_TagString
+      value: Static
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
   m_IsPrefabParent: 0
@@ -73931,10 +74275,10 @@ GameObject:
   - component: {fileID: 1659743994}
   m_Layer: 0
   m_Name: Ramp01 (3)
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 124
   m_IsActive: 1
 --- !u!114 &1659743994
 MonoBehaviour:
@@ -74284,6 +74628,14 @@ Prefab:
       propertyPath: m_Name
       value: grandStandCovered (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_TagString
+      value: Static
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
   m_IsPrefabParent: 0
@@ -74616,6 +74968,14 @@ Prefab:
     - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
       propertyPath: m_Name
       value: grandStandCovered (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_TagString
+      value: Static
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
@@ -77680,10 +78040,10 @@ GameObject:
   - component: {fileID: 1741309077}
   m_Layer: 0
   m_Name: slope_default_39
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 124
   m_IsActive: 1
 --- !u!114 &1741309077
 MonoBehaviour:
@@ -78077,6 +78437,14 @@ Prefab:
     - target: {fileID: 100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
       propertyPath: m_Name
       value: fenceCurved (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
+      propertyPath: m_TagString
+      value: Static
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
@@ -78642,6 +79010,14 @@ Prefab:
     - target: {fileID: 100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
       propertyPath: m_Name
       value: fenceCurved (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
+      propertyPath: m_TagString
+      value: Static
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
@@ -79406,10 +79782,10 @@ GameObject:
   - component: {fileID: 1794762887}
   m_Layer: 0
   m_Name: slope_default_39
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 124
   m_IsActive: 1
 --- !u!114 &1794762887
 MonoBehaviour:
@@ -79527,10 +79903,10 @@ GameObject:
   - component: {fileID: 1796685228}
   m_Layer: 0
   m_Name: sphere_dome_50
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 124
   m_IsActive: 1
 --- !u!114 &1796685228
 MonoBehaviour:
@@ -80625,6 +81001,14 @@ Prefab:
     - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
       propertyPath: m_Name
       value: grandStandCovered (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_TagString
+      value: Static
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
@@ -81879,6 +82263,14 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 75
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
+      propertyPath: m_TagString
+      value: Static
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f50b8a99ac613448a9fc58ebd4e806e0, type: 3}
   m_IsPrefabParent: 0
@@ -82671,6 +83063,14 @@ Prefab:
     - target: {fileID: 400000, guid: 7a919246d935a40519db05b590422953, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: -90.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 7a919246d935a40519db05b590422953, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 7a919246d935a40519db05b590422953, type: 3}
+      propertyPath: m_TagString
+      value: Static
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a919246d935a40519db05b590422953, type: 3}
@@ -83693,10 +84093,10 @@ GameObject:
   - component: {fileID: 1873299302}
   m_Layer: 0
   m_Name: sphere_dome_48
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 124
   m_IsActive: 1
 --- !u!114 &1873299302
 MonoBehaviour:
@@ -84764,10 +85164,10 @@ GameObject:
   - component: {fileID: 1894894400}
   m_Layer: 12
   m_Name: Plane (1)
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 124
   m_IsActive: 1
 --- !u!4 &1894894399
 Transform:
@@ -84777,7 +85177,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1894894398}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.1, z: 0}
   m_LocalScale: {x: 20, y: 1, z: 20}
   m_Children: []
   m_Father: {fileID: 1123085650}
@@ -85330,10 +85730,10 @@ GameObject:
   - component: {fileID: 1906786248}
   m_Layer: 0
   m_Name: sphere_dome_51
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 124
   m_IsActive: 1
 --- !u!114 &1906786248
 MonoBehaviour:
@@ -86193,6 +86593,14 @@ Prefab:
     - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
       propertyPath: m_Name
       value: grandStandCovered (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
+      propertyPath: m_TagString
+      value: Static
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 392f7aad1bcd2412091f63895c9148a9, type: 3}
@@ -87660,10 +88068,10 @@ GameObject:
   - component: {fileID: 1955334717}
   m_Layer: 0
   m_Name: slope_default_39
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 124
   m_IsActive: 1
 --- !u!114 &1955334717
 MonoBehaviour:
@@ -89676,10 +90084,10 @@ GameObject:
   - component: {fileID: 1993833848}
   m_Layer: 0
   m_Name: Bumps01 (1)
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 124
   m_IsActive: 1
 --- !u!114 &1993833848
 MonoBehaviour:
@@ -90543,6 +90951,14 @@ Prefab:
       propertyPath: m_Name
       value: roadStraightLong (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f0db688d29cd347d5852dfde5943069b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f0db688d29cd347d5852dfde5943069b, type: 3}
+      propertyPath: m_TagString
+      value: Static
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f0db688d29cd347d5852dfde5943069b, type: 3}
   m_IsPrefabParent: 0
@@ -91294,10 +91710,10 @@ GameObject:
   - component: {fileID: 2034405057}
   m_Layer: 0
   m_Name: slope_cornerOuter_42
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 124
   m_IsActive: 1
 --- !u!114 &2034405057
 MonoBehaviour:
@@ -92308,10 +92724,10 @@ GameObject:
   - component: {fileID: 2063002420}
   m_Layer: 0
   m_Name: Ramp01 (1)
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 124
   m_IsActive: 1
 --- !u!114 &2063002420
 MonoBehaviour:
@@ -92392,10 +92808,10 @@ GameObject:
   - component: {fileID: 2068486344}
   m_Layer: 0
   m_Name: slope_cornerOuter_42
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 124
   m_IsActive: 1
 --- !u!114 &2068486344
 MonoBehaviour:
@@ -92989,10 +93405,10 @@ GameObject:
   - component: {fileID: 2075820335}
   m_Layer: 0
   m_Name: sphere_dome_49
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 124
   m_IsActive: 1
 --- !u!114 &2075820335
 MonoBehaviour:
@@ -95957,10 +96373,10 @@ GameObject:
   - component: {fileID: 2131300176}
   m_Layer: 0
   m_Name: sphere_dome_50
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 124
   m_IsActive: 1
 --- !u!114 &2131300176
 MonoBehaviour:
