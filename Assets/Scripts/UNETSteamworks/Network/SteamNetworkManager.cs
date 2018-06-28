@@ -37,14 +37,15 @@ public class SteamNetworkManager : MonoBehaviour
     public NetworkClient myClient;
 
     // steam state vars
-    public SessionConnectionState lobbyConnectionState {get; private set;}
+    private SessionConnectionState lobbyConnectionState;
+    public SessionConnectionState LobbyConnectionState {get { return lobbyConnectionState; } }
 	[HideInInspector]
     public CSteamID steamLobbyId;
 
     // callbacks
-    // private Callback<LobbyEnter_t> m_LobbyEntered;
-    // private Callback<GameLobbyJoinRequested_t> m_GameLobbyJoinRequested;
-    // private Callback<LobbyChatUpdate_t> m_LobbyChatUpdate;
+    private Callback<LobbyEnter_t> m_LobbyEntered;
+    private Callback<GameLobbyJoinRequested_t> m_GameLobbyJoinRequested;
+    private Callback<LobbyChatUpdate_t> m_LobbyChatUpdate;
     private CallResult<LobbyMatchList_t> m_LobbyMatchList;
 
 	public UnityEvent onJoinLobby;
@@ -81,9 +82,9 @@ public class SteamNetworkManager : MonoBehaviour
         LogFilter.currentLogLevel = LogFilter.Info;
 
         if (SteamManager.Initialized) {
-            /* m_LobbyEntered = */Callback<LobbyEnter_t>.Create(OnLobbyEntered);
-            /* m_GameLobbyJoinRequested = */Callback<GameLobbyJoinRequested_t>.Create (OnGameLobbyJoinRequested);
-            /* m_LobbyChatUpdate = */Callback<LobbyChatUpdate_t>.Create (OnLobbyChatUpdate);
+            m_LobbyEntered = Callback<LobbyEnter_t>.Create(OnLobbyEntered);
+            m_GameLobbyJoinRequested = Callback<GameLobbyJoinRequested_t>.Create (OnGameLobbyJoinRequested);
+            m_LobbyChatUpdate = Callback<LobbyChatUpdate_t>.Create (OnLobbyChatUpdate);
             m_LobbyMatchList = CallResult<LobbyMatchList_t>.Create(OnLobbyMatchList);
         } else {
             Debug.LogWarning("SteamManager not initialized !");

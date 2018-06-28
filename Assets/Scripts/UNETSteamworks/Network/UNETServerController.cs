@@ -48,7 +48,7 @@ public class UNETServerController {
 
     public bool StartUNETServer()
     {
-        if (SteamNetworkManager.Instance.lobbyConnectionState != SteamNetworkManager.SessionConnectionState.CONNECTED)
+        if (SteamNetworkManager.Instance.LobbyConnectionState != SteamNetworkManager.SessionConnectionState.CONNECTED)
         {
             Debug.LogError("Not connected to lobby");
             return false;

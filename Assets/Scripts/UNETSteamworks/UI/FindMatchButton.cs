@@ -13,7 +13,7 @@ public class FindMatchButton : MonoBehaviour {
 
     void Update()
     {
-        var state = SteamNetworkManager.Instance.lobbyConnectionState;
+        var state = SteamNetworkManager.Instance.LobbyConnectionState;
         GetComponent<Button>().interactable = state != SteamNetworkManager.SessionConnectionState.CONNECTING && state != SteamNetworkManager.SessionConnectionState.CONNECTED;
     }
 }
