@@ -98,6 +98,7 @@ namespace VehicleBehaviour.Trails
 						previousPosition = currentPosition;
 						//Add new vertices as the current position
 						Vector3 offset = par.right * width / 2f;
+						offset.y = 0;
 						verts.AddLast (currentPosition - offset);
 						verts.AddLast (currentPosition + offset);
 
